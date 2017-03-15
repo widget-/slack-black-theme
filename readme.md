@@ -4,7 +4,7 @@ A darker, more contrasty, Slack theme.
 
 # Preview
 
-TODO: Join a Slack team that I can screenshot.
+![Screenshot](https://cloud.githubusercontent.com/assets/7691630/23959908/7921f018-0974-11e7-951a-91390e0170dd.png)
 
 # Installing into Slack
 
