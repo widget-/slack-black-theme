@@ -22,14 +22,14 @@ limitations under the License.
    --background-elevated: #222;
    --background-hover: rgba(255, 255, 255, 0.1);
    --background-light: #AAA;
-   --background-bright: #FFF;
+   --background-bright: #777;
    --sidebar-background: #1a2129;
 
    --border-dim: #666;
    --border-bright: var(--primary);
 
    --text: #CCC;
-   --text-bright: #FFF;
+   --text-bright: #777;
    --text-alt: var(--accent);
    --text-special: var(--primary);
 
@@ -260,14 +260,14 @@ a:hover{
   color: var(--text-special) !important;
 }
 /*.channels_list_holder ul li.mention a, .channels_list_holder ul li.unread:not(.muted_channel) .channel_name, .channels_list_holder ul li.unread:not(.muted_channel) a.group_name, .channels_list_holder ul li.unread:not(.muted_channel) .im_name, .channels_list_holder ul li.unread:not(.muted_channel) .mpim_name, .channels_list_holder ul li.unread:not(.muted_channel)>a:link{
-  color: #fff !important;
+  color: #777 !important;
 }*/
 .channels_list_holder ul li a.channel_name, .channels_list_holder ul li:not(.unread) .group_name, .channels_list_holder ul li .im_name, .channels_list_holder ul li .mpim_name, .channels_list_holder ul li>a:link,
 ts-message a.timestamp{
   color: #aaa !important;
 }
 #channels_scroller.show_which_channel_is_active ul li.active .im_name{
-  color: #fff !important;
+  color: #777 !important;
 }
 
 #msgs_div .unread_divider.no_unreads .divider_label{
