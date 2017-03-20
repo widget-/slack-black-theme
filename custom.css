@@ -167,7 +167,7 @@ ts-message .action_hover_container .btn_msg_action,
 .search_result_with_extract,
 #search_filters a,
 .menu,
-.menu #menu_items_scroller{
+.menu #menu_items_scroller {
   background: var(--background-elevated) !important;
 }
 
@@ -200,11 +200,6 @@ ts-message .action_hover_container .btn_msg_action,
 
 }
 
-.client_container #col_channels_footer {
-   background-color: rgba(0, 0, 0, 0.5) !important;
-   margin-top: 2px;
-}
-
 .rxn,
 .search_result_with_extract,
 .flexbox_client.flexpane_redesign.flex_pane_showing #col_flex,
@@ -217,6 +212,11 @@ ts-message .action_hover_container .btn_msg_action,
 
 .search_result_with_extract {
   box-shadow: 0 1px 10px #555 !important;
+}
+
+#quick_switcher_btn:active, #quick_switcher_btn:focus, #quick_switcher_btn:hover {
+   background-color: var(--background-elevated);
+   border-color: var(--background-elevated);
 }
 
 .comment .mention, .feature_name_tagging_client .comment .mention, .feature_name_tagging_client ts-message .mention, ts-message .mention,
