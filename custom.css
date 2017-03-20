@@ -15,11 +15,13 @@ limitations under the License.
 */
 
 :root {
+   /* Modify these to change your theme colors: */
    --primary: #09F;
-   --accent: #57A;
-
+   --text: #CCC;
    --background: #080808;
    --background-elevated: #222;
+
+   /* These should be less important: */
    --background-hover: rgba(255, 255, 255, 0.1);
    --background-light: #AAA;
    --background-bright: #FFF;
@@ -27,9 +29,7 @@ limitations under the License.
    --border-dim: #666;
    --border-bright: var(--primary);
 
-   --text: #CCC;
    --text-bright: #FFF;
-   --text-alt: var(--accent);
    --text-special: var(--primary);
 
    --scrollbar-background: #000;
@@ -71,12 +71,12 @@ ts-jumper input[type="text"],
 
 ts-message, .channel_title .channel_name, ts-jumper input[type="text"],
 ts-jumper ol li .member_real_name, ts-jumper ol li .view_name, ts-jumper ol li .channel_name {
-  color: #eee !important;
+  color: var(--text) !important;
 }
 
 .light_theme ts-message .message_content a.message_sender, #msg_input::-webkit-input-placeholder,
 ts-jumper input[type="text"]::-webkit-input-placeholder {
-  color: #aaa !important;
+  color: var(--text) !important;
 }
 
 #msg_input, #primary_file_button {
@@ -118,13 +118,11 @@ textarea:focus, input[type="text"]:focus {
 ts-message {
    border-radius: 5px;
    margin: 1px !important;
-   border-right: 1px;
-   border-left: 1px;
-   1px solid transparent !important; /* reserve space for hover */
+   border-left: 1px solid transparent !important; /* reserve space for hover */
+   border-right: 1px solid transparent !important;
 }
 
 ts-message:hover {
-   margin: 1px 0 !important;
    background: var(--background-hover) !important;
    border: 1px solid var(--border-bright) !important
 }
@@ -230,16 +228,19 @@ span.match {
   border-radius: 10px;
 }
 
+.mention > .mention {
+   /* I'm assuming this is a Slack bug */
+   border: none;
+}
+
 pre.special_formatting{
   background: var(--background-elevated) !important;
 }
 
-code{
-  color: var(--text-alt) !important;
+code {
+  color: var(--text-special) !important;
   background-color: var(--background-elevated) !important;
   border-color: var(--border-dim) !important;
-  font-size: inherit !important;
-  font-family: inherit !important;
 }
 
 .supports_custom_scrollbar:not(.slim_scrollbar) #archive_msgs_scroller_div::-webkit-scrollbar-thumb,
@@ -268,9 +269,11 @@ ts-message a .mention{
 a:hover{
   color: var(--text-special) !important;
 }
-/*.channels_list_holder ul li.mention a, .channels_list_holder ul li.unread:not(.muted_channel) .channel_name, .channels_list_holder ul li.unread:not(.muted_channel) a.group_name, .channels_list_holder ul li.unread:not(.muted_channel) .im_name, .channels_list_holder ul li.unread:not(.muted_channel) .mpim_name, .channels_list_holder ul li.unread:not(.muted_channel)>a:link{
-  color: #fff !important;
-}*/
+
+#msgs_scroller_div #end_display_div p {
+  color: var(--text);
+}
+
 .channels_list_holder ul li a.channel_name,
 .channels_list_holder ul li:not(.unread) .group_name,
 .channels_list_holder ul li .im_name,
@@ -368,7 +371,7 @@ ts-message a.timestamp{
   -webkit-filter: drop-shadow(0 0 1px var(--background-bright)) drop-shadow(0 0 1px var(--background-bright));
 }
 
-.ts_icon.is_icon_smile_o {
+.ts_icon.ts_icon_smile_o {
    color: var(--text);
 }
 
