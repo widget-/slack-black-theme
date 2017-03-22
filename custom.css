@@ -360,15 +360,20 @@ ts-message a.timestamp{
 
 .rxn .emoji-sizer {
   background-color: transparent !important;
-  border-radius: 4px;
+  border-radius: 7px;
   width: 24px;
   height: 24px;
-  margin: 0 0 0 -2px;
+  margin: 0 0 0 -2px !important;
+  border: 1px solid transparent; /* looks silly but it makes the outline work */
 }
 
 .emoji-sizer {
-   /* twice for more glow since you can't 2.0 opacity */
-  -webkit-filter: drop-shadow(0 0 1px var(--background-bright)) drop-shadow(0 0 1px var(--background-bright));
+   /* outline for black-on-transparent emojis */
+   -webkit-filter: drop-shadow( 1px  0 0 var(--background-bright))
+                   drop-shadow(-1px  0 0 var(--background-bright))
+                   drop-shadow(-0  1px 0 var(--background-bright))
+                   drop-shadow( 0 -1px 0 var(--background-bright));
+   margin: 0 !important;
 }
 
 .ts_icon.ts_icon_smile_o {
