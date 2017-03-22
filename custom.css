@@ -528,3 +528,26 @@ ts-message .reply_bar:hover {
 #team_menu, #quick_switcher_btn, #team_menu_overlay, #col_channels_overlay {
    border-color: transparent !important;
 }
+
+/* spooky expiremental flexbox channel list */
+body .channels_list_holder ul#channel-list {
+   display: flex;
+   flex-wrap: wrap;
+   align-content: space-between;
+}
+body .channels_list_holder ul#channel-list li {
+   display: flex;
+   flex: 1 0 auto;
+   border-radius: 6px;
+   border-width: 1px;
+   /*font-size: 14px;*/
+   margin: 0;
+   height: auto !important;
+   line-height: initial;
+}
+body .channels_list_holder ul#channel-list li .primary_action {
+   padding: 0 5px;
+}
+.channels_list_holder ul li .primary_action .prefix:before {
+  line-height: 1.41rem;
+}
