@@ -47,7 +47,7 @@ h1, h2, h3, h4 {
    z-index: 1;
 }
 
-.TeamSelectorItem-indicator {
+.TeamSelectorItem.unreads > .TeamSelectorItem-indicator {
    background-color: var(--border-bright) !important;
    opacity: 1;
 }
