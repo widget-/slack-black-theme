@@ -41,15 +41,20 @@ h1, h2, h3, h4 {
 }
 
 /* left scrollbar */
-.TeamSelector, .TeamSidebar, .TeamSelector .StoplightContainer, .TeamSelector .TeamSelector-addArea, .TeamSidebar .TeamSidebar-addArea {
+.TeamSidebar, .TeamSidebar .StoplightContainer, .TeamSidebar .TeamSidebar-addArea {
    background-color: var(--background) !important;
    box-shadow: var(--background) 1px 1px 25px;
    z-index: 1;
 }
 
-.TeamSelectorItem.unreads, TeamSidebarItem-unreadHighlights > .TeamSelectorItem-indicator, TeamSidebarItem-hoverRect {
+.TeamSidebarItem.unreads .TeamSidebarItem-indicator {
    background-color: var(--border-bright) !important;
    opacity: 1;
+}
+
+.TeamSidebarItem-unreadHighlights {
+   background-color: var(--border-bright) !important;
+   color: var(--text-bright) !important;
 }
 
 #msgs_scroller_div::-webkit-scrollbar-track, #client_body::before, .client_container,
@@ -220,6 +225,15 @@ ts-message .action_hover_container .btn_msg_action,
   box-shadow: 0 1px 10px #555 !important;
 }
 
+.ql-placeholder {
+   color: var(--text);
+}
+
+.ql-container.texty_single_line_input {
+  background-color: var(--background-elevated);
+  color: var(--text);
+}
+
 #quick_switcher_btn:active, #quick_switcher_btn:focus, #quick_switcher_btn:hover {
    background-color: var(--background-elevated);
    border-color: var(--background-elevated);
@@ -388,7 +402,8 @@ ts-message a.timestamp{
 
 .emoji_menu_ng #emoji_input_container,
 #emoji_menu #emoji_menu_items_scroller,
-#emoji_menu #emoji_menu_footer {
+#emoji_menu #emoji_menu_footer,
+#emoji_menu #emoji_input_container {
    background-color: transparent;
 }
 
@@ -451,20 +466,16 @@ li.active {
    border-width: 1px 1px 1px 0;
 }
 
-/*li.active:after {
-  content: '';
-  border-color: var(--border-bright);
-  border-radius: 10px;
-  border-width: 11px;
-  border-style: groove;
-  position: absolute;
-  bottom: 1px;
-  right: 0px;
-}*/
+.im_name_background {
+   display: none;
+}
 
 li.active span,
-#channels_scroller.show_which_channel_is_active ul li.active .primary_action .prefix {
+#channels_scroller.show_which_channel_is_active ul li.active .primary_action .prefix,
+#channels_scroller.show_which_channel_is_active ul li.active .primary_action,
+#channels_scroller.show_which_channel_is_active ul li.active .primary_action.im_name > *:not(.unread_highlights) {
    color: var(--text-special) !important;
+   background-color: transparent;
    opacity: 1;
 }
 
@@ -619,6 +630,21 @@ select {
 }
 
 .lfs_list::-webkit-scrollbar-thumb {
+   color: transparent !important;
+   border: 1px solid var(--scrollbar-border) !important;
+   background-color: transparent !important;
+}
+
+/* profile */
+#fs_modal #fs_modal_footer {
+   background-color:var(--background-elevated)
+}
+
+#contents_container::-webkit-scrollbar-track {
+  display: none;
+}
+
+#contents_container::-webkit-scrollbar-thumb {
    color: transparent !important;
    border: 1px solid var(--scrollbar-border) !important;
    background-color: transparent !important;
