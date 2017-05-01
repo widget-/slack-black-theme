@@ -105,12 +105,12 @@ ts-jumper input[type="text"]::-webkit-input-placeholder {
   border-top: 1px solid var(--border-dim) !important;
 }
 
-textarea, input[type="text"] {
+textarea, input[type="text"], #file_comment_textarea {
    background-color: var(--background) !important;
    border-color: var(--border-dim) !important;
    color: var(--text) !important;
 }
-textarea:focus, input[type="text"]:focus {
+textarea:focus, input[type="text"]:focus, #file_comment_textarea {
    border-color: var(--border-bright) !important;
    color: var(--text-bright) !important;
 }
@@ -167,7 +167,8 @@ ts-message .action_hover_container .btn_msg_action,
 .search_result_with_extract,
 #search_filters a,
 .menu,
-.menu #menu_items_scroller {
+.menu #menu_items_scroller,
+.btn, .btn_outline {
   background: var(--background-elevated) !important;
 }
 
@@ -179,9 +180,14 @@ ts-message .action_hover_container .btn_msg_action,
 .flexpane_redesign #flex_contents .heading_text,
 #flex_contents .subheading,
 #search_filters.files #filter_files, #search_filters.messages #filter_messages,
-.menu ul li a{
+.menu ul li a,
+.btn, .btn_outline{
   color: var(--text) !important;
   border-color: var(--border-dim) !important;
+}
+
+.btn:hover:after {
+   border-color: var(--border-bright);
 }
 
 .action_hover_container {
@@ -402,6 +408,12 @@ ts-message a.timestamp{
    border-style: solid;
 }
 
+.light_theme .emoji-only {
+   line-height: 3rem;
+   font-size: 3rem;
+   margin-top: 3px !important;
+}
+
 /* menus */
 .menu ul li a, .menu ul li:not(.disabled) a {
    border: 1px solid var(--background-elevated) !important;
@@ -493,13 +505,25 @@ ts-message .reply_bar:hover {
 }
 
 /* preferences page */
-#fs_modal {
+#fs_modal, .modal, .modal-header, .modal-footer {
    background-color: var(--background-elevated);
 }
 
 #fs_modal, #fs_modal h1, #fs_modal h2,
-#fs_modal h3, #fs_modal h4, #fs_modal h5 {
+#fs_modal h3, #fs_modal h4, #fs_modal h5,
+.modal, .modal h1, .modal h2, .modal h3,
+.modal h4, .modal h5 {
    color: var(--text);
+}
+
+#fs_modal .fs_modal_file_viewer_header {
+   background: transparent;
+}
+#fs_modal .fs_modal_file_viewer_content .viewer {
+   background: var(--background);
+}
+.fs_modal_file_viewer_header .control_btn {
+   color: var(--text) !important;
 }
 
 .section_rollup:hover:not(.is_active) {
@@ -532,4 +556,70 @@ ts-message .reply_bar:hover {
 
 #team_menu, #quick_switcher_btn, #team_menu_overlay, #col_channels_overlay {
    border-color: transparent !important;
+}
+
+/* CodeMirror syntax highlighting */
+.cm-s-default .cm-header {color: #66f}
+.cm-s-default .cm-quote {color: #0f0}
+.cm-negative {color: #f44}
+.cm-positive {color: #2f2}
+.cm-s-default .cm-keyword {color: #f0a}
+.cm-s-default .cm-atom {color: #7ff}
+.cm-s-default .cm-number {color: #5fa}
+.cm-s-default .cm-def {color: #37f}
+.cm-s-default .cm-variable-2 {color: #09f}
+.cm-s-default .cm-variable-3 {color: #0fa}
+.cm-s-default .cm-comment {color: #f80}
+.cm-s-default .cm-string {color: #f33}
+.cm-s-default .cm-string-2 {color: #f50}
+.cm-s-default .cm-meta,.cm-s-default .cm-qualifier {color: #aaa}
+.cm-s-default .cm-builtin {color: #96f}
+.cm-s-default .cm-bracket {color: #ffa}
+.cm-s-default .cm-tag {color: #5f0}
+.cm-s-default .cm-attribute {color: #33f}
+.cm-s-default .cm-hr {color: #ccc}
+.cm-s-default .cm-link {color: #33f}
+
+/* Snippets */
+select {
+   background-color: var(--background);
+   color: var(--text);
+   border-color: var(--border-dim);
+}
+
+.CodeMirror, .CodeMirror .CodeMirror-gutters, .CodeMirror-gutter {
+   background-color: var(--background) !important;;
+   border-color: var(--border-bright);
+   color: var(--text);
+}
+
+.CodeMirror .CodeMirror-line {
+   background-color: var(--background);
+}
+
+.CodeMirror-cursor {
+   border-left-color: var(--text);
+}
+
+.CodeMirror-selected {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.modal div, .modal span, .modal label {
+  color: var(--text);
+}
+
+.lazy_filter_select .lfs_list_container,
+.lazy_filter_select .lfs_list .lfs_item.active {
+  background-color: var(--background-elevated);
+}
+
+.lfs_list::-webkit-scrollbar-track {
+  display: none;
+}
+
+.lfs_list::-webkit-scrollbar-thumb {
+   color: transparent !important;
+   border: 1px solid var(--scrollbar-border) !important;
+   background-color: transparent !important;
 }
