@@ -12,7 +12,7 @@ Find your Slack's application directory.
 
 * Windows: `%homepath%\AppData\Local\slack\`
 * Mac: `/Applications/Slack.app/Contents/`
-* Linux: `???`
+* Linux: `/usr/lib/slack/` (Debian-based)
 
 
 Open up the most recent version (e.g. `app-2.5.1`) then open
