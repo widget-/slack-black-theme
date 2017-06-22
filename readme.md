@@ -90,6 +90,15 @@ Here's some example color variations you might like.
 --background-elevated: #222;
 ```
 
+## One Dark
+![One Dark](https://user-images.githubusercontent.com/806101/27455546-826b3d88-5752-11e7-8a6b-87285b90eb3e.png)
+```
+--primary: #61AFEF;
+--text: #ABB2BF;
+--background: #282C34;
+--background-elevated: #3B4048;
+```
+
 ## Low Contrast
 ![Low Contrast](https://cloud.githubusercontent.com/assets/7691630/24120352/4ccdedf2-0d82-11e7-8ff7-c88e48b8e917.png)
 ```
