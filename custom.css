@@ -64,9 +64,9 @@ ts-jumper input[type="text"],
   background: var(--background)  !important;
 }
 
-#channels_scroller.show_which_channel_is_active li.active .presence.active i.presence_icon,
-#channels_scroller.show_which_channel_is_active li.active .slackbot_icon,
-#channels_scroller.show_which_channel_is_active li.active .presence.away i.presence_icon {
+#channels_scroller.show_which_channel_is_active[class] li.active .presence.active i.presence_icon,
+#channels_scroller.show_which_channel_is_active[class] li.active .slackbot_icon,
+#channels_scroller.show_which_channel_is_active[class] li.active .presence.away i.presence_icon {
   color: inherit !important;
 }
 
@@ -122,14 +122,15 @@ textarea:focus, input[type="text"]:focus, #file_comment_textarea {
 
 ts-message {
    border-radius: 5px;
-   margin: 1px !important;
+   margin: 1px 5px !important;
+   padding-right: 20px !important;
    border-left: 1px solid transparent !important; /* reserve space for hover */
    border-right: 1px solid transparent !important;
 }
 
 ts-message:hover {
    background: var(--background-hover) !important;
-   border: 1px solid var(--border-bright) !important
+   /*border: 1px solid var(--border-bright) !important*/
 }
 
 /*#msgs_unread_divider + ts-message:hover, ts-message:first-child {
@@ -407,6 +408,14 @@ ts-message a.timestamp{
    background-color: transparent;
 }
 
+.menu .p-emoji_picker__input_container,
+.menu .p-emoji_picker__list_container,
+.menu .p-emoji_picker__heading {
+   background: transparent;
+   color: var(--text);
+}
+
+
 #emoji_menu h3, #emoji_menu #emoji_preview_text {
    background-color: var(--background-elevated);
    color: var(--text);
@@ -470,10 +479,10 @@ li.active {
    display: none;
 }
 
-li.active span,
-#channels_scroller.show_which_channel_is_active ul li.active .primary_action .prefix,
-#channels_scroller.show_which_channel_is_active ul li.active .primary_action,
-#channels_scroller.show_which_channel_is_active ul li.active .primary_action.im_name > *:not(.unread_highlights) {
+li.active[class] span,
+#channels_scroller.show_which_channel_is_active[class] ul li.active .primary_action .prefix,
+#channels_scroller.show_which_channel_is_active[class] ul li.active .primary_action,
+#channels_scroller.show_which_channel_is_active[class] ul li.active .primary_action.im_name > *:not(.unread_highlights) {
    color: var(--text-special) !important;
    background-color: transparent;
    opacity: 1;
@@ -648,4 +657,30 @@ select {
    color: transparent !important;
    border: 1px solid var(--scrollbar-border) !important;
    background-color: transparent !important;
+}
+
+/* scroll border fix */
+.client_channels_list_container {
+   border-right: none;
+}
+
+/* setting menu fix */
+#fs_modal.prefs_modal .global_notification_block {
+   background: transparent;
+   border: none;
+}
+#fs_modal.prefs_modal .global_notification_block.selected {
+   background: transparent;
+   border: 1px solid var(border-bright);
+}
+.notification_example.mac {
+  color: #555459; /* default color - leave unthemed */
+}
+
+/* global jumper */
+ts-jumper, ts-jumper.active {
+  background-color: rgba(32,32,32,0.6);
+}
+ts-jumper ts-jumper-container {
+  box-shadow: 0 5px 20px rgba(0,0,0,1);
 }
