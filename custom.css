@@ -235,6 +235,10 @@ ts-message .action_hover_container .btn_msg_action,
   color: var(--text);
 }
 
+.ql-container .ql-editor p {
+  color: var(--text);
+}
+
 #quick_switcher_btn:active, #quick_switcher_btn:focus, #quick_switcher_btn:hover {
    background-color: var(--background-elevated);
    border-color: var(--background-elevated);
