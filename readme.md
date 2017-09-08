@@ -77,6 +77,16 @@ That's it! Restart Slack and see how well it works.
 
 NB: You'll have to do this every time Slack updates.
 
+# Debian Package
+
+On Ubuntu, you have the option of installing a package that will apply the
+patch automatically when Slack is updated/changed. This has been tested on
+Ubuntu 14.04 and 16.04 with `slack-desktop` 2.7.1.
+
+To build the package run:
+
+ `debuild -us -uc -b -tc --lintian-opts --profile debian`
+
 # Color Schemes
 
 Here's some example color variations you might like.

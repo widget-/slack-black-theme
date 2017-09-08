@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -eu
+
+file="/usr/lib/slack/resources/app.asar.unpacked/src/static/index.js"
+
+if [ "$1" = "remove" ]; then
+  echo "DEBUG: slack-black-theme is being removed"
+  if [ -f ${file}.orig ]; then
+    mv -f ${file}.orig ${file}
+  fi
+fi
+
+#DEBHELPER#
+
