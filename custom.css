@@ -40,28 +40,134 @@ h1, h2, h3, h4 {
   color: var(--text);
 }
 
-/* left scrollbar */
-.TeamSidebar, .TeamSidebar .StoplightContainer, .TeamSidebar .TeamSidebar-addArea {
-   background-color: var(--background) !important;
-   box-shadow: var(--background) 1px 1px 25px;
+/* Channel selector */
+/*.TeamSidebar, .TeamSidebar .StoplightContainer, .TeamSidebar .TeamSidebar-addArea {*/
+/*nav.p-channel_sidebar {*/
+div.client_channels_list_container {
+   background-color: var(--background-elevated) !important;
+   box-shadow: var(--background-elevated) 1px 1px 25px;
+   color: var(--text);
    z-index: 1;
 }
 
-.TeamSidebarItem.unreads .TeamSidebarItem-indicator {
+nav.p-channel_sidebar, #team_menu,
+body:not(.loading) #team_menu:hover,
+body:not(.loading) #team_menu:active {
+   background-color: var(--background-elevated) !important;
+}
+
+/* Channel with unread messages */
+.p-channel_sidebar__channel--unread:not(.p-channel_sidebar__channel--muted):not(.p-channel_sidebar__channel--selected) .p-channel_sidebar__name a,
+.p-channel_sidebar__link--unread:not(.p-channel_sidebar__link--selected) .p-channel_sidebar__name a,
+.p-channel_sidebar__link--invites:not(.p-channel_sidebar__link--dim) .p-channel_sidebar__name a,
+.p-channel_sidebar__section_heading_label--clickable:hover a,
+.p-channel_sidebar__quickswitcher:hover a {
+   color: var(--text-bright) !important;
+}
+
+/*broken*/
+__TODO-highlight-indicator {
    background-color: var(--border-bright) !important;
    opacity: 1;
 }
 
-.TeamSidebarItem-unreadHighlights {
-   background-color: var(--border-bright) !important;
-   color: var(--text-bright) !important;
-}
-
-#msgs_scroller_div::-webkit-scrollbar-track, #client_body::before, .client_container,
-#search_terms, #client_body, #footer, ts-message, .channel_header, ts-jumper ts-jumper-container,
+#msgs_scroller_div::-webkit-scrollbar-track, .client_container,
+#search_terms, #footer, ts-message, .channel_header, ts-jumper ts-jumper-container,
 ts-jumper input[type="text"],
 .supports_custom_scrollbar:not(.slim_scrollbar) #col_channels:hover #channels_scroller::-webkit-scrollbar-track{
   background: var(--background)  !important;
+}
+
+.channel_header, #col_messages, #footer {
+   box-shadow: none;
+}
+
+/* channel list */
+.p-channel_sidebar__channel {
+  border-radius: 0 15px 15px 0;
+  height: 24px !important;
+}
+
+.p-channel_sidebar__channel a {
+  color: var(--text);
+}
+
+.p-channel_sidebar__static_list div {
+   margin-right: 2px;
+   height: 24px !important;
+}
+
+.p-channel_sidebar__channel--selected,
+.p-channel_sidebar__link--selected,
+.p-channel_sidebar__channel--selected:link,
+.p-channel_sidebar__link--selected:link,
+.p-channel_sidebar__channel--selected:visited,
+.p-channel_sidebar__link--selected:visited,
+.p-channel_sidebar__channel--selected:hover,
+.p-channel_sidebar__link--selected:hover {
+   background-color: var(--background) !important;
+   border: solid var(--border-bright);
+   border-width: 1px 1px 1px 0;
+}
+
+.p-channel_sidebar__channel:hover,
+.p-channel_sidebar__link:hover{
+   background-color: var(--background-hover) !important;
+   border-color: transparent;
+   color: var(--text) !important;
+   height: 24px !important;
+}
+
+.p-channel_sidebar__channel--selected:hover,
+.p-channel_sidebar__link--selected:hover {
+   border: solid var(--border-dim);
+   border-width: 1px 1px 1px 0;
+}
+
+/*broken*/
+li.active[class] span,
+#channels_scroller.show_which_channel_is_active[class] ul li.active .primary_action .prefix,
+#channels_scroller.show_which_channel_is_active[class] ul li.active .primary_action,
+#channels_scroller.show_which_channel_is_active[class] ul li.active .primary_action.im_name > *:not(.unread_highlights) {
+   color: var(--text-special) !important;
+   background-color: transparent;
+   opacity: 1;
+}
+
+/*"more unreads" bottom*/
+.p-channel_sidebar__banner--top {
+   background-color: var(--background);
+   border: 1px solid var(--border-bright);
+   border-top: none;
+   border-radius: 0 0 15px 15px;
+}
+
+/*"more unreads" bottom */
+.p-channel_sidebar__banner--bottom {
+   background-color: var(--background);
+   border: 1px solid var(--border-bright);
+   border-bottom: none;
+   border-radius: 15px 15px 0 0;
+}
+
+/*"unread mentions"*/
+.p-channel_sidebar__badge,
+.p-channel_sidebar__banner--mentions {
+   /*inverted because important*/
+   background-color: var(--border-bright) !important;
+   border-color: var(--text-bright);
+   color: var(--text-bright);
+}
+
+/*also add border to unread count for individual channels*/
+.p-channel_sidebar__badge {
+   border: 1px solid;
+}
+
+/* new scrollbar */
+.p-channel_sidebar div.c-custom_scrollbar__thumb_vertical, .p-channel_sidebar div.c-scrollbar__bar {
+  background: var(--background-elevated);
+  border: 1px solid var(--scrollbar-border);
 }
 
 #channels_scroller.show_which_channel_is_active[class] li.active .presence.active i.presence_icon,
@@ -70,8 +176,14 @@ ts-jumper input[type="text"],
   color: inherit !important;
 }
 
-#client_body::before {
-  border-bottom: 1px solid var(--background) !important;
+#client_body::before, #client_body:not(.onboarding):before {
+  border-bottom: 1px solid var(--border-dim) !important;
+  background: var(--background);
+  box-shadow: none;
+}
+
+#client_body, #messages_container.has_top_messages_banner:before {
+   background: var(--background) !important;
 }
 
 ts-message, .channel_title .channel_name, ts-jumper input[type="text"],
@@ -108,6 +220,8 @@ ts-jumper input[type="text"]::-webkit-input-placeholder {
 
 .day_container .day_msgs {
   border-top: 1px solid var(--border-dim) !important;
+  padding-right: 10px;
+  padding-left: 2px;
 }
 
 textarea, input[type="text"], #file_comment_textarea {
@@ -123,22 +237,12 @@ textarea:focus, input[type="text"]:focus, #file_comment_textarea {
 ts-message {
    border-radius: 5px;
    margin: 1px 5px !important;
-   padding-right: 20px !important;
-   border-left: 1px solid transparent !important; /* reserve space for hover */
-   border-right: 1px solid transparent !important;
+   box-shadow: none !important;
 }
 
 ts-message:hover {
    background: var(--background-hover) !important;
-   /*border: 1px solid var(--border-bright) !important*/
 }
-
-/*#msgs_unread_divider + ts-message:hover, ts-message:first-child {
-  margin-top: 1px !important;
-}
-ts-message:last-child {
-  margin-bottom: 1px !important;
-}*/
 
 #messages_container::after {
    background: none !important;
@@ -157,12 +261,10 @@ ts-message:last-child {
 }
 
 .rxn,
-#team_menu,
 #col_channels,
 #col_channels_footer,
 pre,
 ts-message .action_hover_container .btn_msg_action,
-#messages_container.has_top_messages_banner:before,
 .file_container,
 .file_container .CodeMirror .CodeMirror-code>div:before, .file_container .CodeMirror .sssh-line:before, .file_container .sssh-code .CodeMirror-code>div:before, .file_container .sssh-code .sssh-line:before,
 #col_flex,
@@ -223,7 +325,7 @@ ts-message .action_hover_container .btn_msg_action,
 }
 
 .search_result_with_extract {
-  box-shadow: 0 1px 10px #555 !important;
+  box-shadow: 0 1px 10px var(--background-elevated) !important;
 }
 
 .ql-placeholder {
@@ -286,7 +388,7 @@ code {
 }
 
 a, a:link, a:visited{
-  color: var(--text-special) !important;
+  color: var(--text-special);
 }
 ts-message a .mention{
   color: var(--text-special) !important;
@@ -365,6 +467,25 @@ ts-message a.timestamp{
 }
 .file_preview_action.btn.ts_tip:hover, .file_preview_link.btn.file_comment_link:hover {
    background-color: var(--background) !important;
+}
+
+/* user mentions for other people */
+.app_preview_link_slug.ts_tip,
+.internal_member_link.ts_tip,
+.internal_user_group_link.ts_tip,
+ts-mention.ts_tip
+{
+   color: var(--text-bright);
+   background: var(--background-elevated);
+   border: 1px solid var(--border-dim);
+}
+.app_preview_link_slug.ts_tip:hover,
+.internal_member_link.ts_tip:hover,
+.internal_user_group_link.ts_tip:hover,
+ts-mention.ts_tip:hover
+{
+   color: var(--text-bright) !important;
+   border: 1px solid var(--border-bright);
 }
 
 /* emojis */
@@ -461,46 +582,24 @@ ts-message a.timestamp{
   border-color: transparent;
 }
 
-/* channel list */
-body .channels_list_holder ul li {
-  height: 1.8rem !important;
-  border-radius: 0 15px 15px 0;
-}
-
-body .channels_list_holder ul li .primary_action {
-   border: 1px solid rgba(0, 0, 0, 0.01) !important;
-   background-color: transparent !important;
-}
-
-/*body #channels_scroller.show_which_channel_is_active ul li.active .primary_action {*/
-li.active {
-   background-color: var(--background) !important;
-   border: solid var(--border-bright);
-   border-width: 1px 1px 1px 0;
-}
-
-.im_name_background {
-   display: none;
-}
-
-li.active[class] span,
-#channels_scroller.show_which_channel_is_active[class] ul li.active .primary_action .prefix,
-#channels_scroller.show_which_channel_is_active[class] ul li.active .primary_action,
-#channels_scroller.show_which_channel_is_active[class] ul li.active .primary_action.im_name > *:not(.unread_highlights) {
-   color: var(--text-special) !important;
-   background-color: transparent;
-   opacity: 1;
-}
-
-body .channels_list_holder ul li:hover {
-   background-color: var(--background-hover);
-   border-color: var(--border-dim) !important;
-}
-
 /* threads */
 ts-message .reply_bar:hover {
   background: var(--background) !important;
   border: 1px solid var(--border-dim) !important;
+}
+/* editor in thread reply */
+#convo_tab .message_input, #convo_tab textarea#msg_text {
+   color: var(--text) !important;
+}
+.inline_message_input_container .ql-container.focus,
+.inline_message_input_container .ql-container:active {
+   border-color: var(--border-dim) !important;
+}
+#file_reply_container .reply_container_info .reply_broadcast_buttons_container .reply_broadcast_label_container,
+#reply_container .reply_container_info .reply_broadcast_buttons_container .reply_broadcast_label_container,
+.reply_input_container .reply_container_info .reply_broadcast_buttons_container .reply_broadcast_label_container,
+#convo_tab #convo_tab_header {
+   color: var(--text) !important;
 }
 
 /* other */
