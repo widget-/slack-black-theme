@@ -17,8 +17,8 @@ limitations under the License.
 :root {
    /* Modify these to change your theme colors: */
    --primary: #09F;
-   --text: #CCC;
-   --background: #080808;
+   --text: #DDD;
+   --background: #111;
    --background-elevated: #222;
 
    /* These should be less important: */
@@ -40,6 +40,15 @@ h1, h2, h3, h4 {
   color: var(--text);
 }
 
+/* Team Picker */
+.TeamSidebar, .TeamSidebar .StoplightContainer, .TeamSidebar .TeamSidebar-addArea {
+   background-color: var(--background) !important;
+   box-shadow: var(--background) 1px 1px 25px;
+   color: var(--text);
+   z-index: 1;
+}
+
+
 /* Channel selector */
 /*.TeamSidebar, .TeamSidebar .StoplightContainer, .TeamSidebar .TeamSidebar-addArea {*/
 /*nav.p-channel_sidebar {*/
@@ -50,18 +59,34 @@ div.client_channels_list_container {
    z-index: 1;
 }
 
-nav.p-channel_sidebar, #team_menu,
+nav.p-channel_sidebar {
+   background-color: var(--background-elevated);
+   color: var(--text);
+}
+
+#team_menu,
 body:not(.loading) #team_menu:hover,
 body:not(.loading) #team_menu:active {
    background-color: var(--background-elevated) !important;
 }
 
+.p-channel_sidebar__channel,
+.p-channel_sidebar__link,
+.p-channel_sidebar__channel:link,
+.p-channel_sidebar__link:link,
+.p-channel_sidebar__channel:visited,
+.p-channel_sidebar__link:visited,
+.p-channel_sidebar__channel:hover,
+.p-channel_sidebar__link:hover {
+   color: var(--text) !important;
+}
+
 /* Channel with unread messages */
-.p-channel_sidebar__channel--unread:not(.p-channel_sidebar__channel--muted):not(.p-channel_sidebar__channel--selected) .p-channel_sidebar__name a,
-.p-channel_sidebar__link--unread:not(.p-channel_sidebar__link--selected) .p-channel_sidebar__name a,
-.p-channel_sidebar__link--invites:not(.p-channel_sidebar__link--dim) .p-channel_sidebar__name a,
-.p-channel_sidebar__section_heading_label--clickable:hover a,
-.p-channel_sidebar__quickswitcher:hover a {
+.p-channel_sidebar__channel--unread:not(.p-channel_sidebar__channel--muted):not(.p-channel_sidebar__channel--selected) .p-channel_sidebar__name,
+.p-channel_sidebar__link--unread:not(.p-channel_sidebar__link--selected) .p-channel_sidebar__name,
+.p-channel_sidebar__link--invites:not(.p-channel_sidebar__link--dim) .p-channel_sidebar__name,
+.p-channel_sidebar__section_heading_label--clickable:hover,
+.p-channel_sidebar__quickswitcher:hover {
    color: var(--text-bright) !important;
 }
 
@@ -116,6 +141,10 @@ ts-jumper input[type="text"],
    border-color: transparent;
    color: var(--text) !important;
    height: 24px !important;
+}
+
+.p-channel_sidebar__close_container {
+   background: none !important;
 }
 
 .p-channel_sidebar__channel--selected:hover,
