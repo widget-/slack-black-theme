@@ -70,8 +70,8 @@ document.addEventListener("DOMContentLoaded", function() {
 ```
 
 Notice that you can edit any of the theme colors using the custom CSS (for
-the already-custom theme.) Also notice that you can put any CSS URL you want,
-so feel free to fork this theme if you don't like it.
+the already-custom theme.) Also, you can put any CSS URL you want here,
+so you don't necessarily need to create an entire fork to change some small styles.
 
 That's it! Restart Slack and see how well it works.
 
@@ -125,6 +125,53 @@ Here's some example color variations you might like.
 --background: #F00;
 --background-elevated: #FF0;
 ```
+
+# Development
+
+`git clone` the project and `cd` into it.
+
+Change the CSS URL to `const cssPath = 'http://localhost:8080/custom.css';`
+
+Run a static webserver of some sort on port 8080:
+
+```bash
+npm install -g static
+static .
+```
+
+In addition to running the required modifications, you will likely want to add auto-reloading:
+
+```js
+const cssPath = 'http://localhost:8080/custom.css';
+const localCssPath = '/Users/bryankeller/Code/slack-black-theme/custom.css';
+
+window.reloadCss = function() {
+   const webviews = document.querySelectorAll(".TeamView webview");
+   fetch(cssPath + '?zz=' + Date.now(), {cache: "no-store"}) // qs hack to prevent cache
+      .then(response => response.text())
+      .then(css => {
+         console.log(css.slice(0,50));
+         webviews.forEach(webview =>
+            webview.executeJavaScript(`
+               (function() {
+                  let styleElement = document.querySelector('style#slack-custom-css');
+                  styleElement.innerHTML = \`${css}\`;
+               })();
+            `)
+         )
+      });
+};
+
+fs.watchFile(localCssPath, reloadCss);
+```
+
+Instead of launching Slack normally, you'll need to enable developer mode to be able to inspect things.
+
+* Mac: `export SLACK_DEVELOPER_MENU=true; open -a /Applications/Slack.app`
+
+* Linux: (todo)
+
+* Windows: (todo)
 
 # License
 
