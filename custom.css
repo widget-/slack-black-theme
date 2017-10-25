@@ -390,10 +390,11 @@ ts-message .action_hover_container .btn_msg_action,
    border-color: var(--background-elevated);
 }
 
-.comment .mention, .feature_name_tagging_client .comment .mention, .feature_name_tagging_client ts-message .mention, ts-message .mention,
+.feature_name_tagging_client ts-message .mention, ts-message .mention,
 span.match {
-  border: 1px solid var(--border-bright);
+  border: 1px solid var(--border-bright) !important;
   background-color: var(--background-elevated) !important;
+  font-weight: bold;
   padding: 2px 4px;
   margin: 2px;
   border-radius: 10px;
@@ -538,6 +539,9 @@ ts-mention.ts_tip
    color: var(--text-bright);
    background: var(--background-elevated);
    border: 1px solid var(--border-dim);
+   padding: 2px 4px;
+   margin: 2px;
+   border-radius: 10px;
 }
 .app_preview_link_slug.ts_tip:hover,
 .internal_member_link.ts_tip:hover,
