@@ -108,7 +108,8 @@ ts-jumper input[type="text"],
 }
 
 /* channel list */
-.p-channel_sidebar__channel {
+.p-channel_sidebar__channel,
+.p-channel_sidebar__link {
   border-radius: 0 15px 15px 0;
   height: 24px !important;
 }
@@ -442,7 +443,8 @@ ts-message a.timestamp{
   color: #fff !important;
 }
 
-#msgs_div .unread_divider.no_unreads .divider_label{
+#msgs_div .unread_divider.no_unreads .divider_label
+{
  background: #000 !important;
  color: #aaa !important;
 }
@@ -656,6 +658,35 @@ ts-message .reply_bar:hover {
    border-radius: 10px 10px 0 0;
 }
 
+#threads_msgs_scroller_div, ts-thread {
+   background-color: var(--background);
+}
+
+ts-thread .thread_header .thread_channel_name a {
+   color: var(--text-special);
+}
+
+#convo_tab .thread_participants, ts-thread .thread_participants {
+   color: var(--text);
+}
+
+ts-thread .thread_messages,
+.reply_input_container .ql-container {
+   background-color: var(--background);
+   border-color: var(--border-dim);
+}
+
+#threads_msgs_scroller_div ts-thread ts-message {
+   margin: 0 !important;
+   border-radius: 10px;
+}
+
+ts-thread .collapse_inline_thread_container:hover,
+ts-thread .view_all_replies_container:hover {
+   background-color: var(--background-elevated);
+}
+
+
 /* preferences page */
 #fs_modal, .modal, .modal-header, .modal-footer {
    background-color: var(--background-elevated);
@@ -696,6 +727,50 @@ ts-message .reply_bar:hover {
 
 #fs_modal #fs_modal_sidebar a.is_active {
   border-color: var(--border-bright);
+}
+
+
+#threads_msgs_scroller_div .threads_caught_up_divider .divider_line,
+#threads_msgs_scroller_div .threads_caught_up_divider .divider_label {
+   background-color: var(--background-elevated);
+   border: 1px solid var(--border-dim);
+   color: var(--text);
+}
+
+/* unreads */
+.unread_empty_state {
+   color: var(--text);
+}
+
+.unread_group_header,
+.sli_briefing, .sli_briefing__header, .sli_briefing__title,
+.sli_briefing_view__footer_title, .bottom_mark_all_read {
+   background-color: var(--background);
+   color: var(--text);
+   border-color: var(--border-dim);
+}
+.unread_group_header button {
+   color: var(--text-special);
+},
+
+
+/* scroller for threads & unreads */
+#threads_msgs_scroller_div:not(.loading):before {
+   background: var(--background);
+}
+
+.supports_custom_scrollbar:not(.slim_scrollbar) div::-webkit-scrollbar-track {
+  display: none !important;
+}
+
+.supports_custom_scrollbar:not(.slim_scrollbar) div::-webkit-scrollbar-thumb {
+   color: transparent !important;
+   border: 1px solid var(--scrollbar-border) !important;
+   background-color: transparent !important;
+}
+
+#threads_msgs_scroller_div:not(.loading):before {
+   background: none;
 }
 
 
