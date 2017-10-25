@@ -40,6 +40,10 @@ h1, h2, h3, h4 {
   color: var(--text);
 }
 
+.popover_mask {
+   background-color: rgba(0, 0, 0, 0.3);
+}
+
 /* Team Picker */
 .TeamSidebar, .TeamSidebar .StoplightContainer, .TeamSidebar .TeamSidebar-addArea {
    background-color: var(--background) !important;
@@ -528,6 +532,14 @@ ts-message a.timestamp{
 }
 .file_preview_action.btn.ts_tip:hover, .file_preview_link.btn.file_comment_link:hover {
    background-color: var(--background) !important;
+}
+
+/* user profile popup */
+#member_preview_scroller, #member_preview_web_container,
+.menu_member_header, .menu_member_footer {
+   background-color: var(--background-elevated);
+   border-color: var(--border-dim);
+   color: var(--text);
 }
 
 /* user mentions for other people */
