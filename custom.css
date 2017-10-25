@@ -233,13 +233,18 @@ ts-jumper input[type="text"]::-webkit-input-placeholder {
   border-color: var(--border-dim) !important;
 }
 
-.day_container .day_divider .day_divider_label, .day_divider .day_divider_label,
+.day_divider .day_divider_label,
 #convo_container .convo_flexpane_divider .reply_count {
   color: var(--text) !important;
   background-color: var(--background) !important;
   border: 1px solid var(--border-bright) !important;
   border-radius: 1rem;
 }
+
+.mention_day_container_div .day_divider .day_divider_label {
+   border: 1px solid var(--border-dim) !important;
+}
+
 #convo_container .convo_flexpane_divider .reply_count {
    border-radius: 10px;
    padding: 0px 10px;
@@ -251,7 +256,7 @@ ts-jumper input[type="text"]::-webkit-input-placeholder {
 }
 
 .day_container .day_msgs {
-  border-top: 1px solid var(--border-dim) !important;
+  border-top: 1px solid var(--border-bright) !important;
   padding-right: 10px;
   padding-left: 2px;
 }
@@ -590,11 +595,39 @@ ts-mention.ts_tip:hover
 
 .menu .p-emoji_picker__input_container,
 .menu .p-emoji_picker__list_container,
-.menu .p-emoji_picker__heading {
+.menu .p-emoji_picker__heading,
+.menu .p-emoji_picker__footer {
    background: transparent;
    color: var(--text);
 }
 
+.p-emoji_picker__group_tab {
+   border: 1px solid transparent;
+   border-bottom-width: 2px;
+}
+
+.menu .p-emoji_picker__group_tab--active {
+   background-color: var(--background);
+   color: var(--text-special);
+   border-color: var(--border-bright);
+   border-width: 1px 1px 2px 1px;
+   border-style: solid;
+}
+.p-emoji_picker__group_tab:hover {
+   background-color: var(--background-elevated);
+   border-color: var(--border-dim);
+}
+.p-emoji_picker__group_tab .emoji-sizer {
+   filter: none;
+   -webkit-filter: none;
+}
+.p-emoji_picker__group_tab:hover .emoji-sizer {
+   color: var(--text);
+}
+.p-emoji_picker__preview_text {
+   background-color: var(--bacground-elevated);
+   color: var(--text);
+}
 
 #emoji_menu h3, #emoji_menu #emoji_preview_text {
    background-color: var(--background-elevated);
@@ -789,11 +822,11 @@ ts-thread .view_all_replies_container:hover {
    background: var(--background);
 }
 
-.supports_custom_scrollbar:not(.slim_scrollbar) div::-webkit-scrollbar-track {
+/* putting this on so many elements might cause performance issues but #yolo */
+div::-webkit-scrollbar-track {
   display: none !important;
 }
-
-.supports_custom_scrollbar:not(.slim_scrollbar) div::-webkit-scrollbar-thumb {
+div::-webkit-scrollbar-thumb {
    color: transparent !important;
    border: 1px solid var(--scrollbar-border) !important;
    background-color: transparent !important;
