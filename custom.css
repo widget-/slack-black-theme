@@ -99,8 +99,9 @@ __TODO-highlight-indicator {
 #msgs_scroller_div::-webkit-scrollbar-track, .client_container,
 #search_terms, #footer, ts-message, .channel_header, ts-jumper ts-jumper-container,
 ts-jumper input[type="text"],
-.supports_custom_scrollbar:not(.slim_scrollbar) #col_channels:hover #channels_scroller::-webkit-scrollbar-track{
-  background: var(--background)  !important;
+.supports_custom_scrollbar:not(.slim_scrollbar) #col_channels:hover #channels_scroller::-webkit-scrollbar-track,
+#channel_header_info, #channel_topic_text, #channel_topic_text code, #edit_topic_inner:before {
+  background: var(--background) !important;
 }
 
 .channel_header, #col_messages, #footer {
@@ -235,7 +236,7 @@ ts-jumper input[type="text"]::-webkit-input-placeholder {
 .day_container .day_divider .day_divider_label, .day_divider .day_divider_label,
 #convo_container .convo_flexpane_divider .reply_count {
   color: var(--text) !important;
-  background-color: var(--background-elevated) !important;
+  background-color: var(--background) !important;
   border: 1px solid var(--border-bright) !important;
   border-radius: 1rem;
 }
@@ -246,6 +247,7 @@ ts-jumper input[type="text"]::-webkit-input-placeholder {
 
 .mention_day_container_div .day_divider:before {
    background-color: transparent !important;
+   border-color: var(--border-dim);
 }
 
 .day_container .day_msgs {
@@ -299,15 +301,22 @@ ts-message .action_hover_container .btn_msg_action,
 .file_container .CodeMirror .CodeMirror-code>div:before, .file_container .CodeMirror .sssh-line:before, .file_container .sssh-code .CodeMirror-code>div:before, .file_container .sssh-code .sssh-line:before,
 #col_flex,
 .search_message_result,
-#flex_contents .heading,
-#flex_contents .heading a,
-#flex_contents .subheading,
 .search_result_with_extract,
 #search_filters a,
 .menu,
 .menu #menu_items_scroller,
 .btn, .btn_outline {
   background: var(--background-elevated) !important;
+}
+
+
+#flex_contents .heading,
+#flex_contents .heading a,
+#flex_contents .heading_text,
+#flex_contents .subheading {
+   background: var(--background) !important;
+   color: var(--text) !important;
+   border-color: var(--border-dim);
 }
 
 pre,
@@ -319,7 +328,7 @@ ts-message .action_hover_container .btn_msg_action,
 #flex_contents .subheading,
 #search_filters.files #filter_files, #search_filters.messages #filter_messages,
 .menu ul li a,
-.btn, .btn_outline{
+.btn, .btn_outline, .menu {
   color: var(--text) !important;
   border-color: var(--border-dim) !important;
 }
@@ -388,6 +397,21 @@ span.match {
 .mention > .mention {
    /* I'm assuming this is a Slack bug */
    border: none;
+}
+
+.mention_rxn {
+   border-radius: 5px;
+   margin: 1px 5px;
+}
+
+.mention_rxn .mention_rxn_summary .app_preview_link,
+.mention_rxn .mention_rxn_summary .member_preview_link,
+.mention_rxn .mention_rxn_summary .mention_rxn_summary_members {
+   color: var(--text);
+}
+
+#member_mentions h3 a {
+   color: var(--text-special);
 }
 
 pre.special_formatting{
@@ -648,6 +672,12 @@ ts-message .reply_bar:hover {
 #sli_recap_toggle.active, #stars_toggle.active {
   background-color: var(--background-elevated);
   border: 1px solid var(--border-bright);
+  color: var(--border-bright);
+}
+
+.star_item,
+.current_status_input_for_team_menu .current_status_presets {
+   border-color: var(--border-dim);
 }
 
 #archives_return, .messages_banner {
@@ -773,6 +803,13 @@ ts-thread .view_all_replies_container:hover {
    background: none;
 }
 
+/* thread side panel */
+
+#mentions_scroller {
+   background: var(--background) !important;
+   color: var(--text) !important;
+}
+
 
 /* global (left sidebar) */
 
@@ -869,6 +906,10 @@ select {
 /* scroll border fix */
 .client_channels_list_container {
    border-right: none;
+}
+
+.flex_pane_showing #col_flex {
+   border-color: var(--border-dim);
 }
 
 /* setting menu fix */
