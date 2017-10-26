@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -eu
+
+echo DEBUG: slack-black-theme postinst called, $# args: "$@"
+
+if [ "$1" = "configure" ]; then
+  slack-black-theme-patch
+elif [ "$1" = "triggered" ]; then
+  echo DEBUG: processing trigger "'$triggername'"
+  slack-black-theme-patch
+fi
+
+#DEBHELPER#
+

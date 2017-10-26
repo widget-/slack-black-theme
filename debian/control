@@ -1,0 +1,16 @@
+Source: slack-black-theme
+Section: misc
+Priority: extra
+Maintainer: Lucas Magasweran <lucas.magasweran@ieee.org>
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.8.3
+
+Package: slack-black-theme
+Architecture: all
+Depends: ${misc:Depends}, slack-desktop (>= 2.7.1)
+Description: This package will apply the Slack theme.
+ This package will monitor the Slack JavaScript code directory
+ /usr/lib/slack/resources/app.asar.unpacked/src/static and re-apply
+ the patch so you can keep Slack up to date and themed at the same
+ time.
+
