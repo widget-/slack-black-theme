@@ -2,11 +2,31 @@
 
 A darker, more contrasty, Slack theme.
 
-# Preview
+## Preview
 
-![Screenshot](https://cloud.githubusercontent.com/assets/7691630/24120350/4cbb643e-0d82-11e7-8353-5d4eb65dfd6a.png)
+![Screenshot][101]
 
-# Installing into Slack
+
+## Table of Contents
+
+|SN|HEADING|SUBHEADING|
+|---|---|---|
+| |[TITLE][1]| |
+|1.|[Preview][10]| |
+|2.|[Table of Contents][20]| |
+|3.|[Installing into Slack][30]| |
+|4.|[Color Schemes][40]| |
+|4.1| |[Default][41]|
+|4.2| |[One Dark][42]|
+|4.3| |[Low Contrast][43]|
+|4.4| |[Navy][44]|
+|4.5| |[Hot Dog Stand][45]|
+|5|[Automatic Application][50]| |
+|5.1| |[Windows][51]|
+|6.|[Development][60]| |
+|7.|[License][70]| |
+
+## Installing into Slack
 
 Find your Slack's application directory.
 
@@ -77,12 +97,12 @@ That's it! Restart Slack and see how well it works.
 
 NB: You'll have to do this every time Slack updates.
 
-# Color Schemes
+## Color Schemes
 
 Here's some example color variations you might like.
 
-## Default
-![Default](https://cloud.githubusercontent.com/assets/7691630/24120350/4cbb643e-0d82-11e7-8353-5d4eb65dfd6a.png)
+### Default
+![Default][411]
 ```
 --primary: #09F;
 --text: #CCC;
@@ -90,8 +110,8 @@ Here's some example color variations you might like.
 --background-elevated: #222;
 ```
 
-## One Dark
-![One Dark](https://user-images.githubusercontent.com/806101/27455546-826b3d88-5752-11e7-8a6b-87285b90eb3e.png)
+### One Dark
+![One Dark][421]
 ```
 --primary: #61AFEF;
 --text: #ABB2BF;
@@ -99,8 +119,8 @@ Here's some example color variations you might like.
 --background-elevated: #3B4048;
 ```
 
-## Low Contrast
-![Low Contrast](https://cloud.githubusercontent.com/assets/7691630/24120352/4ccdedf2-0d82-11e7-8ff7-c88e48b8e917.png)
+### Low Contrast
+![Low Contrast][431]
 ```
 --primary: #CCC;
 --text: #999;
@@ -108,8 +128,8 @@ Here's some example color variations you might like.
 --background-elevated: #444;
 ```
 
-## Navy
-![Navy](https://cloud.githubusercontent.com/assets/7691630/24120353/4cd08c4c-0d82-11e7-851a-4c62340456ad.png)
+### Navy
+![Navy][441]
 ```
 --primary: #FFF;
 --text: #CCC;
@@ -117,8 +137,8 @@ Here's some example color variations you might like.
 --background-elevated: #114;
 ```
 
-## Hot Dog Stand
-![Hot Dog Stand](https://cloud.githubusercontent.com/assets/7691630/24120351/4cca6182-0d82-11e7-8de8-7ab99dcde042.png)
+### Hot Dog Stand
+![Hot Dog Stand][451]
 ```
 --primary: #000;
 --text: #FFF;
@@ -126,7 +146,15 @@ Here's some example color variations you might like.
 --background-elevated: #FF0;
 ```
 
-# Development
+## Automatic Application
+
+Automatic application of __Slack-Black-Theme__ is available for select platforms.
+
+### Windows
+
+![Automatic application of Slack-Black-Theme, demo on Windows-10][511]
+
+## Development
 
 `git clone` the project and `cd` into it.
 
@@ -173,6 +201,38 @@ Instead of launching Slack normally, you'll need to enable developer mode to be 
 
 * Windows: (todo)
 
-# License
+## License
 
-Apache 2.0
+[Apache 2.0][71]
+
+
+
+[1]: #slack-black-theme
+
+[10]: #preview
+[101]: https://cloud.githubusercontent.com/assets/7691630/24120350/4cbb643e-0d82-11e7-8353-5d4eb65dfd6a.png
+
+[20]: #table-of-contents
+
+[30]: #installing-into-slack
+
+[40]: #color-schemes
+[41]: #default
+[411]: https://cloud.githubusercontent.com/assets/7691630/24120350/4cbb643e-0d82-11e7-8353-5d4eb65dfd6a.png
+[42]: #one-dark
+[421]: https://user-images.githubusercontent.com/806101/27455546-826b3d88-5752-11e7-8a6b-87285b90eb3e.png
+[43]: #low-contrast
+[431]: https://cloud.githubusercontent.com/assets/7691630/24120352/4ccdedf2-0d82-11e7-8ff7-c88e48b8e917.png
+[44]: #navy
+[441]: https://cloud.githubusercontent.com/assets/7691630/24120353/4cd08c4c-0d82-11e7-851a-4c62340456ad.png
+[45]: #hot-dog-stand
+[451]: https://cloud.githubusercontent.com/assets/7691630/24120351/4cca6182-0d82-11e7-8de8-7ab99dcde042.png
+
+[50]: #automatic-application
+[51]: #windows
+[511]: static/img/slack-black-theme-win.gif "Run slack-black-theme-win.bat to automatically apply Slack-Black-Theme on Windows; this demo, on Windows-10"
+
+[60]: #development
+
+[70]: #license
+[71]: https://github.com/widget-/slack-black-theme/blob/master/LICENSE
