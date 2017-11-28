@@ -1,69 +1,92 @@
-@echo off
+@echo OFF
+REM Automatic Slack-Black-Theme Applicator
+REM for Slack 2.9.0 and Slack 3.0.0 beta on Windows
+REM ::::::::::::::::::::OPTIONS:::::::::::::::::::::
+SET "themeCSS='https://cdn.rawgit.com/laCour/slack-night-mode/master/css/raw/black.css'"
+REM Or, go with original: https://cdn.rawgit.com/widget-/slack-black-theme/master/custom.css
+SET "oldPatchLocation=index.js"
+SET "newPatchLocation=ssb-interop.js"
+REM :::::::::::::::::::::::::::::::::::::::::::::::::
 title Slack-Black-Theme-Addon
 echo Set objArgs = WScript.Arguments > MessageBox.vbs
 echo messageText = objArgs(0) >> MessageBox.vbs
 echo MsgBox messageText >> MessageBox.vbs
-FOR /F "delims=" %%x IN ('cd') DO SET origin=%%x
-FOR /F "delims=" %%i IN ('dir /on /ad /b /t:c %homedrive%%homepath%\AppData\Local\slack\app-*') DO SET a=%%i
+FOR /F "delims=" %%X IN ('cd') DO SET origin=%%X
+FOR /F "delims=" %%I IN ('dir /on /ad /b /t:c %homedrive%%homepath%\AppData\Local\slack\app-*') DO SET a=%%I
 echo Applying addon to Latest Update: %a%
-findstr /i /c:"Slack-Black-Theme-Addon" %homedrive%%homepath%\AppData\Local\slack\%a%\resources\app.asar.unpacked\src\static\index.js >nul || goto AppendSlackBlackTheme
+if not %a:app-2=% == %a% (SET writeToFile=%oldPatchLocation% & SET newVersionFlag=0) ELSE (SET writeToFile=%newPatchLocation% & SET newVersionFlag=1)
+findstr /i /c:"Slack-Black-Theme-Addon" %homedrive%%homepath%\AppData\Local\slack\%a%\resources\app.asar.unpacked\src\static\%writeToFile% >nul || goto AppendSlackBlackTheme
 start %origin%\MessageBox.vbs "Looks like Slack-Black-Theme is already a part of your Slack Desktop"
 goto Cleanup
 :AppendSlackBlackTheme
 %homedrive%
 cd %homedrive%%homepath%\AppData\Local\slack\%a%\resources\app.asar.unpacked\src\static\
-echo[ >> index.js
-echo[ >> index.js
-echo // Slack-Black-Theme-Addon >> index.js
-echo // First make sure the wrapper app is loaded >> index.js
-echo document.addEventListener("DOMContentLoaded", function() { >> index.js
-echo[ >> index.js
-echo   // Then get its webviews >> index.js
-echo   let webviews = document.querySelectorAll(".TeamView webview"); >> index.js
-echo[ >> index.js
-echo   // Fetch our CSS in parallel ahead of time >> index.js
-echo   const cssPath = 'https://cdn.rawgit.com/widget-/slack-black-theme/master/custom.css'; >> index.js
-echo   let cssPromise = fetch(cssPath).then(response =^> response.text()); >> index.js
-echo[ >> index.js
-echo   let customCustomCSS = ` >> index.js
-echo   :root { >> index.js
-echo      /* Modify these to change your theme colors: */ >> index.js
-echo      --primary: #09F; >> index.js
-echo      --text: #CCC; >> index.js
-echo      --background: #080808; >> index.js
-echo      --background-elevated: #222; >> index.js
-echo   } >> index.js
-echo   ` >> index.js
-echo[ >> index.js
-echo   // Insert a style tag into the wrapper view >> index.js
-echo   cssPromise.then(css =^> { >> index.js
-echo      let s = document.createElement('style'); >> index.js
-echo      s.type = 'text/css'; >> index.js
-echo      s.innerHTML = css + customCustomCSS; >> index.js
-echo      document.head.appendChild(s); >> index.js
-echo   }); >> index.js
-echo[ >> index.js
-echo   // Wait for each webview to load >> index.js
-echo   webviews.forEach(webview =^> { >> index.js
-echo      webview.addEventListener('ipc-message', message =^> { >> index.js
-echo         if (message.channel == 'didFinishLoading') >> index.js
-echo            // Finally add the CSS into the webview >> index.js
-echo            cssPromise.then(css =^> { >> index.js
-echo               let script = ` >> index.js
-echo                     let s = document.createElement('style'); >> index.js
-echo                     s.type = 'text/css'; >> index.js
-echo                     s.id = 'slack-custom-css'; >> index.js
-echo                     s.innerHTML = \`${css + customCustomCSS}\`; >> index.js
-echo                     document.head.appendChild(s); >> index.js
-echo                     ` >> index.js
-echo               webview.executeJavaScript(script); >> index.js
-echo            }) >> index.js
-echo      }); >> index.js
-echo   }); >> index.js
-echo }); >> index.js
-echo // End Slack-Black-Theme-Addon >> index.js
-echo[ >> index.js
-findstr /i /c:"Slack-Black-Theme-Addon" %homedrive%%homepath%\AppData\Local\slack\%a%\resources\app.asar.unpacked\src\static\index.js >nul || goto ErrorHandler
+if %newVersionFlag% == 1 (goto NewVersionPatch) ELSE (goto OldVersionPatch)
+:NewVersionPatch
+echo[ >> %writeToFile% & echo[ >> %writeToFile%
+echo // Slack-Black-Theme-Addon >> %writeToFile%
+echo document.addEventListener('DOMContentLoaded', function() { >> %writeToFile%
+echo 	$.ajax({ >> %writeToFile%
+echo 		url: %themeCSS%, >> %writeToFile%
+echo 		success: function(css) { >> %writeToFile%
+echo 		$("<style></style>").appendTo('head').html(css); >> %writeToFile%
+echo 		} >> %writeToFile%
+echo 	}); >> %writeToFile%
+echo }); >> %writeToFile%
+echo // End Slack-Black-Theme-Addon >> %writeToFile%
+goto ResumeAfterPatch
+:OldVersionPatch
+echo[ >> %writeToFile% & echo[ >> %writeToFile%
+echo // Slack-Black-Theme-Addon >> %writeToFile%
+echo // First make sure the wrapper app is loaded >> %writeToFile%
+echo document.addEventListener("DOMContentLoaded", function() { >> %writeToFile%
+echo[ >> %writeToFile%
+echo   // Then get its webviews >> %writeToFile%
+echo   let webviews = document.querySelectorAll(".TeamView webview"); >> %writeToFile%
+echo[ >> %writeToFile%
+echo   // Fetch our CSS in parallel ahead of time >> %writeToFile%
+echo   const cssPath = %themeCSS%; >> %writeToFile%
+echo   let cssPromise = fetch(cssPath).then(response =^> response.text()); >> %writeToFile%
+echo[ >> %writeToFile%
+echo   let customCustomCSS = ` >> %writeToFile%
+echo   :root { >> %writeToFile%
+echo      /* Modify these to change your theme colors: */ >> %writeToFile%
+echo      --primary: #09F; >> %writeToFile%
+echo      --text: #CCC; >> %writeToFile%
+echo      --background: #080808; >> %writeToFile%
+echo      --background-elevated: #222; >> %writeToFile%
+echo   } >> %writeToFile%
+echo   ` >> %writeToFile%
+echo[ >> %writeToFile%
+echo   // Insert a style tag into the wrapper view >> %writeToFile%
+echo   cssPromise.then(css =^> { >> %writeToFile%
+echo      let s = document.createElement('style'); >> %writeToFile%
+echo      s.type = 'text/css'; >> %writeToFile%
+echo      s.innerHTML = css + customCustomCSS; >> %writeToFile%
+echo      document.head.appendChild(s); >> %writeToFile%
+echo   }); >> %writeToFile%
+echo[ >> %writeToFile%
+echo   // Wait for each webview to load >> %writeToFile%
+echo   webviews.forEach(webview =^> { >> %writeToFile%
+echo      webview.addEventListener('ipc-message', message =^> { >> %writeToFile%
+echo         if (message.channel == 'didFinishLoading') >> %writeToFile%
+echo            // Finally add the CSS into the webview >> %writeToFile%
+echo            cssPromise.then(css =^> { >> %writeToFile%
+echo               let script = ` >> %writeToFile%
+echo                     let s = document.createElement('style'); >> %writeToFile%
+echo                     s.type = 'text/css'; >> %writeToFile%
+echo                     s.id = 'slack-custom-css'; >> %writeToFile%
+echo                     s.innerHTML = \`${css + customCustomCSS}\`; >> %writeToFile%
+echo                     document.head.appendChild(s); >> %writeToFile%
+echo                     ` >> %writeToFile%
+echo               webview.executeJavaScript(script); >> %writeToFile%
+echo            }) >> %writeToFile%
+echo      }); >> %writeToFile%
+echo   }); >> %writeToFile%
+echo }); >> %writeToFile%
+echo // End Slack-Black-Theme-Addon >> %writeToFile%
+:ResumeAfterPatch
+findstr /i /c:"Slack-Black-Theme-Addon" %homedrive%%homepath%\AppData\Local\slack\%a%\resources\app.asar.unpacked\src\static\%writeToFile% >nul || goto ErrorHandler
 start %origin%\MessageBox.vbs "Slack-Black-Theme has been added to your Slack Desktop"
 goto Cleanup
 :ErrorHandler
