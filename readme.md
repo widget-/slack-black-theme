@@ -39,6 +39,9 @@ document.addEventListener("DOMContentLoaded", function() {
       --background: #080808;
       --background-elevated: #222;
    }
+   #fs_modal #fs_modal_sidebar a {
+       color: var(--text) !important;
+   }   
    `
 
    // Insert a style tag into the wrapper view
