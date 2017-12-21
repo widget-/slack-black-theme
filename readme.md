@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
       --text-special: #89b9c4;
    }
    #details_tab div, #details_tab span, #fs_modal #fs_modal_sidebar a, #member_preview_scroller div, 
-   .current_status_placeholder, #member_preview_scroller span {
+   .current_status_placeholder, #member_preview_scroller span, .bot_message .message_sender a {
       color: var(--text) !important;
    }
     #details_tab a, #member_preview_scroller a {
