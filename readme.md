@@ -38,10 +38,16 @@ document.addEventListener("DOMContentLoaded", function() {
       --text: #CCC;
       --background: #080808;
       --background-elevated: #222;
+      --border-bright: #89b9c4;
+      --text-special: #89b9c4;
    }
-   #fs_modal #fs_modal_sidebar a {
-       color: var(--text) !important;
-   }   
+   #details_tab div, #details_tab span, #fs_modal #fs_modal_sidebar a, #member_preview_scroller div, 
+   .current_status_placeholder, #member_preview_scroller span {
+      color: var(--text) !important;
+   }
+    #details_tab a, #member_preview_scroller a {
+      color: var(--primary) !important;
+    }
    `
 
    // Insert a style tag into the wrapper view
