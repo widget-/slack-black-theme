@@ -30,7 +30,7 @@ At the very bottom, add this js.
 [addEventListener JavaScript](addEventListener.js)
 
 ## Automate js addition
-- [ ] Windows: TODO
+- [x] Windows 10: (automate-windows10.md)
 - [x] Mac: [Automator](automate-mac.md)
 - [ ] Linux: TODO
 
