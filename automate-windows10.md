@@ -6,7 +6,8 @@
 create your file here...
 
 slack-black-theme.bat
-```bat@echo OFF
+```batch
+@echo OFF
 REM Automatic Slack-Black-Theme Applicator
 REM ::::::::::::::::::::OPTIONS:::::::::::::::::::::
 SET "themeJS='https://cdn.rawgit.com/Artistan/slack-black-theme/master/addEventListener.js'"
@@ -37,11 +38,6 @@ type addEventListener.js>>addEventListener-new.js
 del addEventListener.js
 ren addEventListener-new.js addEventListener.js
 :CustomizeStyleHere
-: This is an example of the One Dark theme automated also.
-powershell "(gc addEventListener.js) -replace 'primary: .*;', 'primary: #61AFEF;' | out-file addEventListener.js"
-powershell "(gc addEventListener.js) -replace 'text: .*;', 'text: #ABB2BF;' | out-file addEventListener.js"
-powershell "(gc addEventListener.js) -replace 'background: .*;', 'background: #282C34;' | out-file addEventListener.js"
-powershell "(gc addEventListener.js) -replace 'background-elevated: .*;', 'background-elevatedy: #3B4048;' | out-file addEventListener.js"
 :AppendFile
 type addEventListener.js >> index.js
 type addEventListener.js >> ssb-interop.js
@@ -59,6 +55,18 @@ start %origin%\MessageBox.vbs "Slack-Black-Theme could not be added to the desti
 ping -n 2 127.0.0.1 > nul
 del %origin%\MessageBox.vbs
 start /wait slack.exe
+```
+
+### optional colors
+
+`:CustomizeStyleHere` -- look for this line and add it there.
+
+```batch
+: This is an example of the One Dark theme automated also.
+powershell "(gc addEventListener.js) -replace 'primary: .*;', 'primary: #61AFEF;' | out-file addEventListener.js"
+powershell "(gc addEventListener.js) -replace 'text: .*;', 'text: #ABB2BF;' | out-file addEventListener.js"
+powershell "(gc addEventListener.js) -replace 'background: .*;', 'background: #282C34;' | out-file addEventListener.js"
+powershell "(gc addEventListener.js) -replace 'background-elevated: .*;', 'background-elevatedy: #3B4048;' | out-file addEventListener.js"
 ```
 
 ## shortcut - minimized
