@@ -71,11 +71,18 @@ powershell "(gc addEventListener.js) -replace 'background-elevated: .*;', 'backg
 
 ## shortcut - minimized
 
-change Icon to slack icon ... "%LOCALAPPDATA%\slack"
+- copy and paste your bat file so it creates a shortcut
+- update the shortcut properties (image below)
+  - change Icon to slack icon ... "%LOCALAPPDATA%\slack"
+  - set to minimized for running
+  - advanced
+    - run as administrator (image below)
+
+## properties
 
 ![Icon](https://user-images.githubusercontent.com/801349/34311448-4b032e76-e723-11e7-919a-7146121a1222.png)
 
-## run as administrator
+## advanced
 
 ![administrator](https://user-images.githubusercontent.com/801349/34311438-43a859bc-e723-11e7-9a9d-010c82965a8f.png)
 
