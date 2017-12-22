@@ -19,13 +19,24 @@ open /Applications/Slack.app
 cd /Applications/Slack.app/Contents/Resources/app.asar.unpacked/src/static
 $(grep -q slack-black-theme index.js)
 if [[ $? == 1 ]]; then
-    echo "\n\n$(curl https://cdn.rawgit.com/Artistan/slack-black-theme/master/addEventListener.js)" >> index.js
-    echo "\n\n$(curl https://cdn.rawgit.com/Artistan/slack-black-theme/master/addEventListener.js)" >> ssb-interop.js
-    # add any sed replacements here if you want a different theme.
+    addEventListener="\n\n$(curl https://cdn.rawgit.com/Artistan/slack-black-theme/master/addEventListener.js)"
+    # theme color changes -- here
+    echo "$addEventListener" >> index.js
+    echo "$addEventListener" >> ssb-interop.js
     kill `pgrep Slack`
     sleep 2
     open /Applications/Slack.app
 fi
+```
+
+### Optional Color Changes
+This is an example of the One Dark theme automated also.
+```sh
+# theme color changes -- here
+addEventListener=$(sed 's/primary: .*;/primary: #61AFEF;/' <<< $addEventListener)
+addEventListener=$(sed 's/text: .*;/text: #ABB2BF;/' <<< $addEventListener)
+addEventListener=$(sed 's/background: .*;/background: #282C34;/' <<< $addEventListener)
+addEventListener=$(sed 's/background-elevated: .*;/background-elevated: #3B4048;/' <<< $addEventListener)
 ```
 
 ![Automator](https://i.imgur.com/v3QPpjV.png)
