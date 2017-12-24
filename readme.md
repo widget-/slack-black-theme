@@ -14,68 +14,28 @@ Find your Slack's application directory.
 * Mac: `/Applications/Slack.app/Contents/`
 * Linux: `/usr/lib/slack/` (Debian-based)
 
-
 Open up the most recent version (e.g. `app-2.5.1`) then open
 `resources\app.asar.unpacked\src\static\index.js`
 
-At the very bottom, add
-
-```js
-// First make sure the wrapper app is loaded
-document.addEventListener("DOMContentLoaded", function() {
-
-   // Then get its webviews
-   let webviews = document.querySelectorAll(".TeamView webview");
-
-   // Fetch our CSS in parallel ahead of time
-   const cssPath = 'https://cdn.rawgit.com/widget-/slack-black-theme/master/custom.css';
-   let cssPromise = fetch(cssPath).then(response => response.text());
-
-   let customCustomCSS = `
-   :root {
-      /* Modify these to change your theme colors: */
-      --primary: #09F;
-      --text: #CCC;
-      --background: #080808;
-      --background-elevated: #222;
-   }
-   `
-
-   // Insert a style tag into the wrapper view
-   cssPromise.then(css => {
-      let s = document.createElement('style');
-      s.type = 'text/css';
-      s.innerHTML = css + customCustomCSS;
-      document.head.appendChild(s);
-   });
-
-   // Wait for each webview to load
-   webviews.forEach(webview => {
-      webview.addEventListener('ipc-message', message => {
-         if (message.channel == 'didFinishLoading')
-            // Finally add the CSS into the webview
-            cssPromise.then(css => {
-               let script = `
-                     let s = document.createElement('style');
-                     s.type = 'text/css';
-                     s.id = 'slack-custom-css';
-                     s.innerHTML = \`${css + customCustomCSS}\`;
-                     document.head.appendChild(s);
-                     `
-               webview.executeJavaScript(script);
-            })
-      });
-   });
-});
-```
-
-Notice that you can edit any of the theme colors using the custom CSS (for
+## Notice 
+You may edit any of the theme colors using the custom CSS (for
 the already-custom theme.) Also, you can put any CSS URL you want here,
 so you don't necessarily need to create an entire fork to change some small styles.
 
-That's it! Restart Slack and see how well it works.
+## Manual js addition
+You'll have to do this every time Slack updates.
 
-NB: You'll have to do this every time Slack updates.
+At the very bottom, add this js.
+
+[addEventListener JavaScript](addEventListener.js)
+
+## Automate js addition
+- [x] Windows 10: [Shortcut](automate-windows10.md)
+- [x] Mac: [Automator](automate-mac.md)
+- [ ] Linux: TODO
+
+## That's it! 
+Restart Slack and see how well it works.
 
 # Color Schemes
 
