@@ -46,9 +46,9 @@ document.addEventListener("DOMContentLoaded", function() {
    #member_preview_scroller span, .p-apps_browser__app_name strong {
       color: var(--text) !important;
    }
-    #details_tab a, #member_preview_scroller a {
+   #details_tab a, #member_preview_scroller a {
       color: var(--primary) !important;
-    }
+   }
    `
 
    // Insert a style tag into the wrapper view
