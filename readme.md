@@ -41,8 +41,9 @@ document.addEventListener("DOMContentLoaded", function() {
       --border-bright: #89b9c4;
       --text-special: #89b9c4;
    }
-   #details_tab div, #details_tab span, #fs_modal #fs_modal_sidebar a, #member_preview_scroller div, 
-   .current_status_placeholder, #member_preview_scroller span {
+   .bot_message .message_sender a, .c-member__name span, #details_tab div, .current_status_placeholder, 
+   #details_tab span, #fs_modal #fs_modal_sidebar a, #im_browser span, #member_preview_scroller div, 
+   #member_preview_scroller span, .p-apps_browser__app_name strong {
       color: var(--text) !important;
    }
     #details_tab a, #member_preview_scroller a {
