@@ -40,24 +40,27 @@ document.addEventListener("DOMContentLoaded", function() {
       --background-elevated: #222;
       --border-bright: #89b9c4;
       --text-special: #89b9c4;
-   }
-   .bot_message .message_sender a, .c-member__name span, #details_tab div, .current_status_placeholder, 
-   #details_tab span, #fs_modal #fs_modal_sidebar a, #im_browser span, #member_preview_scroller div, 
-   #member_preview_scroller span, .p-apps_browser__app_name strong, span.c-message__body, a.c-message__sender_link, span.c-message_attachment__text, 
-   span.c-message_attachment__media_trigger.c-message_attachment__media_trigger--caption, div.p-message_pane__foreword__description span {
+    }
+    .bot_message .message_sender a, .c-member__name span, #details_tab div, .current_status_placeholder, 
+    #details_tab span, #fs_modal #fs_modal_sidebar a, #im_browser span, #member_preview_scroller div, .c-message_attachment, 
+    #member_preview_scroller span, .p-apps_browser__app_name strong, span.c-message__body, 
+    a.c-message__sender_link, div.p-message_pane__foreword__description span {
       color: var(--text) !important;
-   }
-   #details_tab a, #member_preview_scroller a {
+    }
+    #details_tab a, #member_preview_scroller a {
       color: var(--primary) !important;
-   }
-  .c-message:hover:not(.c-message--highlight):not(.c-message--standalone):not(.c-message--pinned):not(.c-message--ephemeral):not(.c-message--custom_response):not(.c-message--starred):not(.c-message--sli_highlight), 
-  .c-message--hover:not(.c-message--highlight):not(.c-message--standalone):not(.c-message--pinned):not(.c-message--ephemeral):not(.c-message--custom_response):not(.c-message--starred):not(.c-message--sli_highlight), 
-  .c-message--focus:not(.c-message--highlight):not(.c-message--standalone):not(.c-message--pinned):not(.c-message--ephemeral):not(.c-message--custom_response):not(.c-message--starred):not(.c-message--sli_highlight) {
-      background-color: var(--background-hover) !important;
-  }
-  .p-message_pane .c-message_list:not(.c-virtual_list--scrollbar):before, .p-message_pane .c-message_list.c-virtual_list--scrollbar > .c-scrollbar__hider:before {
-    height: 5px; 
-  }  
+    }
+    .c-mrkdwn__broadcast, .c-mrkdwn__broadcast--linkm, .c-mrkdwn__broadcast--mention {
+      color: var(--text-special) !important;
+    }
+    .c-message:hover:not(.c-message--highlight):not(.c-message--standalone):not(.c-message--pinned):not(.c-message--ephemeral):not(.c-message--custom_response):not(.c-message--starred):not(.c-message--sli_highlight), 
+    .c-message--hover:not(.c-message--highlight):not(.c-message--standalone):not(.c-message--pinned):not(.c-message--ephemeral):not(.c-message--custom_response):not(.c-message--starred):not(.c-message--sli_highlight), 
+    .c-message--focus:not(.c-message--highlight):not(.c-message--standalone):not(.c-message--pinned):not(.c-message--ephemeral):not(.c-message--custom_response):not(.c-message--starred):not(.c-message--sli_highlight) {
+        background-color: var(--background-hover) !important;
+    }
+    .p-message_pane .c-message_list:not(.c-virtual_list--scrollbar):before, .p-message_pane .c-message_list.c-virtual_list--scrollbar > .c-scrollbar__hider:before {
+      height: 5px; 
+    }  
    `
 
    // Insert a style tag into the wrapper view
