@@ -80,6 +80,85 @@ That's it! Restart Slack and see how well it works.
 
 NB: You'll have to do this every time Slack updates.
 
+# Installing into Franz
+
+If you are running Slack as a service inside Franz, the above instructions will not help you. You need
+to tweak the service definition for Slack to inject the custom CSS.
+
+Find your Franz's service configuration for Slack.
+
+* Windows: ???
+* Mac: `~/Library/Application Support/Franz/recipes/slack`
+* Linux: ???
+
+The instructions below assume you download the css from `https://cdn.rawgit.com/widget-/slack-black-theme/master/custom.css` and copy it to the
+Slack recipe folder. 
+
+Open the file `webview.js` and add the following to the bottom of the file:
+
+```js
+const fs = require('fs');
+
+const injectDarkTheme = function injectDarkTheme(Franz) {
+    var webviews = document.querySelectorAll(".TeamView webview");
+
+    var themeCssPath = _path2.default.join(__dirname, 'custom.css');
+    Franz.injectCSS(themeCssPath);
+
+    fs.readFile(themeCssPath, (err, data) => {
+        // Wait for each webview to load
+        webviews.forEach(webview => {
+            webview.addEventListener('ipc-message', message => {
+                if (message.channel == 'didFinishLoading')
+                // Finally add the CSS into the webview
+                    cssPromise.then(css => {
+                        var script = `
+                       let s = document.createElement('style');
+                       s.type = 'text/css';
+                       s.id = 'slack-custom-css';
+                       s.innerHTML = \'${data.toString()}\';
+                       document.head.appendChild(s);
+                       `
+                        webview.executeJavaScript(script);
+                    });
+            });
+        });
+    });
+};
+```
+
+Then, find the piece of code that starts with `module.exports = Franz => {` and add a call to the `injectDarkTheme` function at the end. It should then look a little like this:
+
+```js
+module.exports = Franz => {
+  const getMessages = () => {
+    const directMessages = document.querySelectorAll('.p-channel_sidebar__badge').length;
+    const allMessages = document.querySelectorAll('.p-channel_sidebar__channel--unread:not([class*="p-channel_sidebar__channel--muted"])').length - directMessages;
+
+    // set Franz badge
+    Franz.setBadge(directMessages, allMessages);
+  };
+  Franz.loop(getMessages);
+
+  setTimeout(() => {
+    getTeamIcon();
+  }, 4000);
+
+  // inject franz.css stylesheet
+  Franz.injectCSS(_path2.default.join(__dirname, 'service.css'));
+
+  // Insert this call to enable the use of the dark theme
+  injectDarkTheme(Franz);
+};
+```
+
+Notice that you can edit any of the theme colors using the stored CSS file in the `recipe` folder.
+
+That's it, reload your Slack service or restart Franz for it to take effect.
+
+NB: You'll have to do this every time Franz updates your services. The good thing is that updating the services will only revert the `webview.js` file. The `custom.css` file
+will remain intact. 
+
 # Color Schemes
 
 Here's some example color variations you might like.
