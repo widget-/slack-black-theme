@@ -174,7 +174,7 @@ Instead of launching Slack normally, you'll need to enable developer mode to be 
 
 * Linux: (todo)
 
-* Windows: (todo)
+* Windows: duplicate (or edit) the start menu shortcut and change the target to `C:\Windows\System32\cmd.exe /c " SET SLACK_DEVELOPER_MENU=TRUE && start C:\existing\path\to\slack.exe"` obviously using the path to `slack.exe` that you already have
 
 # License
 
