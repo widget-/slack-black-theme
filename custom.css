@@ -17,7 +17,7 @@ limitations under the License.
 :root {
    /* Modify these to change your theme colors: */
    --primary: #09F;
-   --text: #999;
+   --text: #888;
    --background: #111;
    --background-elevated: #222;
 
@@ -29,7 +29,7 @@ limitations under the License.
    --border-dim: #666;
    --border-bright: var(--primary);
 
-   --text-bright: #999;
+   --text-bright: #888;
    --text-special: var(--primary);
 
    --scrollbar-background: #000;

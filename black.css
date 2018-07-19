@@ -1,4 +1,4 @@
-body { background: #222; color: #919293; }
+body { background: #222; color: #818283; }
 
 a { color: #949494; }
 
@@ -8,11 +8,11 @@ a:hover, a:active, a:focus { color: #c7c7c7; }
 
 hr { border-bottom: 1px solid #424242; border-top: 1px solid #222; }
 
-h1, h2, h3, h4 { color: #919293; }
+h1, h2, h3, h4 { color: #818283; }
 
-h1 a { color: #919293; }
+h1 a { color: #818283; }
 
-h1 a:active, h1 a:hover, h1 a:link, h1 a:visited { color: #919293; }
+h1 a:active, h1 a:hover, h1 a:link, h1 a:visited { color: #818283; }
 
 .bordered { border: 1px solid #363636; }
 
@@ -26,13 +26,13 @@ h1 a:active, h1 a:hover, h1 a:link, h1 a:visited { color: #919293; }
 
 .bullet { color: #949494; }
 
-.alert { background-color: #363636; border-color: #000; color: #919293; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5); }
+.alert { background-color: #363636; border-color: #000; color: #818283; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5); }
 
-.alert h4 { color: #919293; }
+.alert h4 { color: #818283; }
 
-.alert-info { background-color: #363636; border-color: #000; color: #919293; }
+.alert-info { background-color: #363636; border-color: #000; color: #818283; }
 
-.alert-info h4 { color: #919293; }
+.alert-info h4 { color: #818283; }
 
 ::-webkit-scrollbar-track { background: #363636 !important; border-left-color: #363636 !important; border-right-color: #363636 !important; color: #363636 !important; }
 
@@ -58,19 +58,19 @@ h1 a:active, h1 a:hover, h1 a:link, h1 a:visited { color: #919293; }
 
 .client_channels_list_container { background-color: #363636; border-right-color: #222; }
 
-#col_channels { color: #919293; }
+#col_channels { color: #818283; }
 
-.p-channel_sidebar { background-color: #363636; color: #919293; }
+.p-channel_sidebar { background-color: #363636; color: #818283; }
 
 .p-channel_sidebar__channel, .p-channel_sidebar__channel:link, .p-channel_sidebar__channel:visited, .p-channel_sidebar__channel:hover, .p-channel_sidebar__link, .p-channel_sidebar__link:link, .p-channel_sidebar__link:visited, .p-channel_sidebar__link:hover { color: rgba(230, 230, 230, 0.8) !important; }
 
-.p-channel_sidebar__channel--selected, .p-channel_sidebar__channel--selected:link, .p-channel_sidebar__channel--selected:visited, .p-channel_sidebar__channel--selected:hover, .p-channel_sidebar__link--selected, .p-channel_sidebar__link--selected:link, .p-channel_sidebar__link--selected:visited, .p-channel_sidebar__link--selected:hover { color: #919293; }
+.p-channel_sidebar__channel--selected, .p-channel_sidebar__channel--selected:link, .p-channel_sidebar__channel--selected:visited, .p-channel_sidebar__channel--selected:hover, .p-channel_sidebar__link--selected, .p-channel_sidebar__link--selected:link, .p-channel_sidebar__link--selected:visited, .p-channel_sidebar__link--selected:hover { color: #818283; }
 
 .p-channel_sidebar__channel:hover, .p-channel_sidebar__link:hover { background: #222 !important; }
 
-.p-channel_sidebar__header { color: #919293 !important; }
+.p-channel_sidebar__header { color: #818283 !important; }
 
-.p-channel_sidebar__channel--im.p-channel_sidebar__channel--selected .c-presence, .p-channel_sidebar__channel--im-slackbot.p-channel_sidebar__channel--selected::before { color: #919293; }
+.p-channel_sidebar__channel--im.p-channel_sidebar__channel--selected .c-presence, .p-channel_sidebar__channel--im-slackbot.p-channel_sidebar__channel--selected::before { color: #818283; }
 
 .p-channel_sidebar__channel--im .c-presence--away { color: #949494; }
 
@@ -78,9 +78,9 @@ h1 a:active, h1 a:hover, h1 a:link, h1 a:visited { color: #919293; }
 
 .p-channel_sidebar__channel--selected:hover, .p-channel_sidebar__link--selected:hover { background: #545454 !important; }
 
-.p-channel_sidebar__channel--selected::before, .p-channel_sidebar__channel--selected:hover::before, .p-channel_sidebar__channel--selected::after, .p-channel_sidebar__channel--selected:hover::after { color: #919293; }
+.p-channel_sidebar__channel--selected::before, .p-channel_sidebar__channel--selected:hover::before, .p-channel_sidebar__channel--selected::after, .p-channel_sidebar__channel--selected:hover::after { color: #818283; }
 
-.p-channel_sidebar__link--selected::before, .p-channel_sidebar__link--selected::after { color: #919293; }
+.p-channel_sidebar__link--selected::before, .p-channel_sidebar__link--selected::after { color: #818283; }
 
 .p-channel_sidebar__badge, .p-channel_sidebar__banner--mentions { background: #bf360c; }
 
@@ -92,11 +92,11 @@ h1 a:active, h1 a:hover, h1 a:link, h1 a:visited { color: #919293; }
 
 .p-channel_sidebar__jumper { background: transparent !important; }
 
-.channels_list_holder h2 { color: #919293 !important; }
+.channels_list_holder h2 { color: #818283 !important; }
 
-.channels_list_holder h2.hoverable:not(.jquery_hover):hover { color: #919293; opacity: 0.8; }
+.channels_list_holder h2.hoverable:not(.jquery_hover):hover { color: #818283; opacity: 0.8; }
 
-.channels_list_holder ul { color: #919293 !important; }
+.channels_list_holder ul { color: #818283 !important; }
 
 .channels_list_holder ul li { text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15); }
 
@@ -106,17 +106,17 @@ h1 a:active, h1 a:hover, h1 a:link, h1 a:visited { color: #919293; }
 
 .channels_list_holder ul li .primary_action.im_name:hover .im_name_background, .channels_list_holder ul li .primary_action.feature_user_custom_status:hover .im_name_background, .channels_list_holder ul li .primary_action:not(.feature_user_custom_status):hover { background: #222; }
 
-.channels_list_holder ul li.mention a { color: #919293; }
+.channels_list_holder ul li.mention a { color: #818283; }
 
 .channels_list_holder ul li.unread:not(.muted_channel) .primary_action { color: whitesmoke !important; }
 
-.channels_list_holder ul li.unread .prefix { color: #919293 !important; opacity: 1; }
+.channels_list_holder ul li.unread .prefix { color: #818283 !important; opacity: 1; }
 
 .channels_list_holder .group_close, .channels_list_holder .im_close, .channels_list_holder .mpim_close { color: #949494 !important; }
 
-.channels_list_holder .unread_highlights { background: #bf360c; color: #919293; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15); }
+.channels_list_holder .unread_highlights { background: #bf360c; color: #818283; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15); }
 
-.channels_list_holder .unread_msgs { background: #222; color: #919293; }
+.channels_list_holder .unread_msgs { background: #222; color: #818283; }
 
 #channel_list_invites_link { border-bottom: 1px dotted #949494; color: #949494 !important; font-size: 0.9rem; }
 
