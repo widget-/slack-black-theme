@@ -1,4 +1,4 @@
-body { background: #222; color: #d0d0d0; }
+body { background: #222; color: #a0a0a0; }
 
 a { color: #949494; }
 
@@ -150,7 +150,7 @@ body.loading #team_menu, body.loading #quick_switcher_btn, body.loading #team_me
 
 .p-degraded_list__loading { background-color: #222; color: #e6e6e6; }
 
-input[type=text], input[type=password], input[type=datetime], input[type=datetime-local], input[type=date], input[type=month], input[type=time], input[type=week], input[type=number], input[type=email], input[type='url'], input[type=tel], input[type=color], input[type=search] { background-color: #545454; border-color: #000; color: #e6e6e6; }
+input[type=text], input[type=password], input[type=datetime], input[type=datetime-local], input[type=date], input[type=month], input[type=time], input[type=week], input[type=number], input[type=email], input[type='url'], input[type=tel], input[type=color], input[type=search] { background-color: #545454; border-color: #000; color: #a0a0a0; }
 
 input[type=text]:focus, input[type=password]:focus, input[type=datetime]:focus, input[type=datetime-local]:focus, input[type=date]:focus, input[type=month]:focus, input[type=time]:focus, input[type=week]:focus, input[type=number]:focus, input[type=email]:focus, input[type='url']:focus, input[type=tel]:focus, input[type=color]:focus, input[type=search]:focus { border-color: rgba(54, 54, 54, 0.8); box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(130, 130, 130, 0.6); }
 
@@ -182,7 +182,7 @@ legend small { color: #949494; }
 
 .uneditable-input:focus, .uneditable-textarea:focus { border-color: rgba(130, 130, 130, 0.8); box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(130, 130, 130, 0.6); }
 
-textarea { background-color: #545454; border: 1px solid #000; color: #e6e6e6; }
+textarea { background-color: #545454; border: 1px solid #000; color: #a0a0a0; }
 
 textarea:focus { border-color: rgba(130, 130, 130, 0.8); box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(130, 130, 130, 0.6); }
 
@@ -194,13 +194,13 @@ textarea:focus { border-color: rgba(130, 130, 130, 0.8); box-shadow: inset 0 1px
 
 [data-placeholder]:empty::before { color: #e6e6e6 !important; }
 
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #e6e6e6 !important; -webkit-filter: none; filter: none; opacity: 0.5; }
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #a0a0a0 !important; -webkit-filter: none; filter: none; opacity: 0.5; }
 
-input::-moz-placeholder, textarea::-moz-placeholder { color: #e6e6e6 !important; filter: none; opacity: 0.5; }
+input::-moz-placeholder, textarea::-moz-placeholder { color: #a0a0a0 !important; filter: none; opacity: 0.5; }
 
-input::placeholder, textarea::placeholder { color: #e6e6e6 !important; filter: none; opacity: 0.5; }
+input::placeholder, textarea::placeholder { color: #a0a0a0 !important; filter: none; opacity: 0.5; }
 
-input[data-placeholder]:empty::before, textarea[data-placeholder]:empty::before { color: #e6e6e6 !important; }
+input[data-placeholder]:empty::before, textarea[data-placeholder]:empty::before { color: #a0a0a0 !important; }
 
 input[disabled], input[readonly], textarea[disabled], textarea[readonly] { background-color: #545454 !important; }
 
