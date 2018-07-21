@@ -44,6 +44,10 @@ body {
     background: var(--background);
     color: var(--text);
 }
+hr {
+    border: 0;
+    border-bottom: 1px solid var(--background-elevated);
+}
 
 .popover_mask {
    background-color: rgba(0, 0, 0, 0.3);
@@ -147,6 +151,11 @@ ts-jumper input[type="text"],
 .c-message_group {
     background-color: unset;
 }
+
+.msg_inline_attachment_column.column_border {
+    background-color: var(--border-dim);
+}
+
 .c-message_attachment__border {
 	background-color: var(--background-elevated) !important;
 }
@@ -1160,7 +1169,6 @@ ts-jumper ts-jumper-container {
 .c-message_attachment {
     color: var(--text-bright);
 }
-
 /* file drafts */
 ts-rocket, ts-rocket.post_body {
     color: var(--text);
@@ -1216,4 +1224,70 @@ nav {
 .c-dialog__cancel {
     background: var(--background-elevated);
 }
-	
+/* unread message divider badge */
+.c-message_list__unread_divider__label {
+    background: var(--background-elevated);
+}
+
+/* message editor */
+.c-message__editor__input {
+    background: var(--background-elevated);
+}
+.c-message--highlight, .c-message--highlight_yellow_bg {
+    background: var(--background);
+}
+/* new filelist */
+#client-ui .file_list_item.file_list_item--redesign {
+    border: 1px solid var(--border-dim);
+}
+#client-ui .file_list_item .monospace {
+    color: var(--text);	
+}
+.c-pillow_file_container {
+    background: var(--background-elevated);
+}
+.c-input_select {
+    background: var(--background-elevated);
+}
+.p-search_filter__dates, .p-search_filter .p-file_list__file_type_select, .p-search_filter__select .c-input_select {
+    border: 1px solid var(--border-dim);
+}
+
+/* side lists */
+#client-ui .searchable_member_list .team_list_item:hover {
+    background: var(--background-hover);
+}
+#client-ui .member_file_filter_menu .searchable_member_list_scroller .team_list_item .c-unified_member__name {
+    color: var(--text);
+}
+.c-pillow_file__title {
+    color: var(--text);
+}
+.active .tab_container .file_list_item {
+    background-color: var(--background);
+}
+.c-pillow_file__description {
+    color: var(--text-bright);
+}
+
+/* browse apps */
+.c-filter_input, .p-apps_browser__category_header {
+    background: var(--background-elevated);
+}	
+.p-apps_browser__category_header {
+	color: var(--text);
+}
+.charcoal_grey {
+	color: var(--text) !important;
+}
+
+/* people mentioning */
+.tab_complete_ui .tab_complete_ui_header {
+    background: var(--background);
+}
+.tab_complete_ui {
+    background: var(--background-elevated);
+}
+.tab_complete_ui ul.type_members .unify_broadcast {
+	color: var(--text);	
+}
