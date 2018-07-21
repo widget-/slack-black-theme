@@ -981,3 +981,13 @@ ts-jumper, ts-jumper.active {
 ts-jumper ts-jumper-container {
   box-shadow: 0 5px 20px rgba(0,0,0,1);
 }
+
+.c-search_autocomplete footer,
+.c-search__input_box { background-color: unset; }
+
+.c-search__input_and_close__close { color: unset; }
+
+
+.c-search_autocomplete__suggestion_content { color: var(--text); }
+
+.c-search_modal .popover>div { background-color: var(--background); }
