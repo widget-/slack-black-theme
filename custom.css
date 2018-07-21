@@ -104,8 +104,22 @@ __TODO-highlight-indicator {
 #search_terms, #footer, ts-message, .channel_header, ts-jumper ts-jumper-container,
 ts-jumper input[type="text"],
 .supports_custom_scrollbar:not(.slim_scrollbar) #col_channels:hover #channels_scroller::-webkit-scrollbar-track,
-#channel_header_info, #channel_topic_text, #channel_topic_text code, #edit_topic_inner:before {
+#channel_header_info, #channel_topic_text, #channel_topic_text code, #edit_topic_inner:before,
+.p-message_pane .c-message_list.c-virtual_list--scrollbar>.c-scrollbar__hider, .p-message_pane .c-message_list:not(.c-virtual_list--scrollbar)
+{
   background: var(--background) !important;
+}
+
+.c-message--focus:not(.c-message--highlight):not(.c-message--standalone):not(.c-message--pinned):not(.c-message--ephemeral):not(.c-message--custom_response):not(.c-message--starred):not(.c-message--sli_highlight), .c-message--hover:not(.c-message--highlight):not(.c-message--standalone):not(.c-message--pinned):not(.c-message--ephemeral):not(.c-message--custom_response):not(.c-message--starred):not(.c-message--sli_highlight), .c-message:hover:not(.c-message--highlight):not(.c-message--standalone):not(.c-message--pinned):not(.c-message--ephemeral):not(.c-message--custom_response):not(.c-message--starred):not(.c-message--sli_highlight) {
+    background-color: var(--background-hover);
+}
+.c-message_list__day_divider__line {
+    border-top: 1px solid var(--border-dim);
+}
+
+.c-message_list__day_divider__label__pill {
+    background: var(--background-elevated);
+    color: var(--text-bright);
 }
 
 .channel_header, #col_messages, #footer {
@@ -377,7 +391,7 @@ ts-message .action_hover_container .btn_msg_action,
 }
 
 .ql-placeholder {
-   color: var(--text);
+   color: var(--text) !important;
 }
 
 .ql-container.texty_single_line_input {
@@ -691,6 +705,10 @@ ts-message .reply_bar:hover {
   background: var(--background) !important;
   border: 1px solid var(--border-dim) !important;
 }
+ts-message.active .edited, ts-message.active .reply_bar .last_reply_at, ts-message.active .timestamp, ts-message.active.automated .message_body, ts-message.message--focus .edited, ts-message.message--focus .reply_bar .last_reply_at, ts-message.message--focus .timestamp, ts-message.message--focus.automated .message_body, ts-message:hover .edited, ts-message:hover .reply_bar .last_reply_at, ts-message:hover .timestamp, ts-message:hover.automated .message_body {
+	color: var(--text-bright);
+}
+
 /* editor in thread reply */
 #convo_tab .message_input, #convo_tab textarea#msg_text {
    color: var(--text) !important;
