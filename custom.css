@@ -1043,6 +1043,11 @@ ts-jumper ts-jumper-container {
 .c-fullscreen_modal__content {
     background-color: var(--background-elevated);
 }
+
+/* modal transition */
+#fs_modal_bg, .fs_modal_bg {
+    background: var(--background-elevated);
+}
 /* new search modal */
 .c-search_autocomplete footer,
 .c-search,
@@ -1077,24 +1082,51 @@ ts-jumper ts-jumper-container {
     color: var(--text);
 }
 
+.channel_option_item:hover {
+    background: var(--background-hover);
+}
+
+/** menus **/
+
+.c-menu_item__header {
+    background: var(--background-hover);
+}
+
+.sidebar_menu_list_item {
+	color: var(--text-bright);
+}
+
 /* message action menu */
 .c-menu {
     background-color: var(--background-elevated);
-	color: 
+	color: var(--text-bright);
 }
 .c-menu_item__label {
     color: var(--text-bright);
 }
+.c-message_actions__container {
+    background: var(--background-elevated);
+}
 
 .c-message_actions__button:active {
     background: var(--background-hover);
-    border-radius: 24px;
+    border-radius: .375rem;
 }
+
+/** menus end **/
+
 /* member detail view */
 #member_preview_scroller .member_data_table tr, #member_preview_web_container .member_data_table tr, #team_list .member_data_table tr, .menu_member_header .member_data_table tr {
 	color: var(--text-bright);
 }
 #member_preview_scroller .member_details .member_name_and_presence .member_name, #member_preview_web_container .member_details .member_name_and_presence .member_name, .menu_member_header .member_details .member_name_and_presence .member_name {
+	color: var(--text);
+}
+
+/* channel detail view */
+#details_tab .feature_sli_channel_insights .channel_created_section .creator_link, #details_tab .feature_sli_channel_insights .channel_purpose_section .channel_purpose_text,
+.c-team__display-name, .c-unified_member__display-name, .c-usergroup__handle {
+{
 	color: var(--text);
 }
 
@@ -1118,6 +1150,18 @@ nav {
     background-color: var(--background-elevated);
 }
 
+/* calendar */
+.pickmeup  {
+	background-color: var(--background-elevated);
+}
+
+.pmu-disabled {
+    background: var(--background-elevated);
+}
+
+.pmu-days * { 
+   border: 1px solid var(--border-dim);
+}
 /* history loading */
 .p-degraded_list__loading {
     background: var(--background-elevated);
