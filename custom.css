@@ -147,6 +147,9 @@ ts-jumper input[type="text"],
 .c-message_attachment__border {
 	background-color: var(--background-elevated) !important;
 }
+.c-member_slug--link {
+    background: var(--background-elevated);
+}
 
 .channel_header, #col_messages, #footer {
    box-shadow: none;
@@ -1043,7 +1046,9 @@ ts-jumper ts-jumper-container {
 .c-fullscreen_modal__content {
     background-color: var(--background-elevated);
 }
-
+.ts_toggle .ts_toggle_secondary_label {
+	color: var(--text);
+}
 /* modal transition */
 #fs_modal_bg, .fs_modal_bg {
     background: var(--background-elevated);
@@ -1069,12 +1074,19 @@ ts-jumper ts-jumper-container {
 }
 .c-search_autocomplete__suggestion_content .c-channel_name .c-deprecated-icon, .c-search_autocomplete__suggestion_content .c-search_autocomplete__suggestion_icon, .c-search_autocomplete__suggestion_content .c-search_autocomplete__suggestion_text .filetype_description,
 .c-search_autocomplete__suggestion_content .c-search_autocomplete__suggestion_text .token
-{ color: var(--text); }
-
+{ 
+	color: var(--text);
+}
+.token {
+	background-color: var(--background-elevated);
+}
 .c-search_modal .popover>div { background-color: var(--background); }
 
 .c-search_autocomplete__suggestion_content {
     color: var(--text-bright);
+}
+.c-team__display-name, .c-unified_member__display-name, .c-usergroup__handle {
+    color: var(--text);
 }
 
 /* channel options */
@@ -1127,7 +1139,7 @@ ts-jumper ts-jumper-container {
 #details_tab .feature_sli_channel_insights .channel_created_section .creator_link, #details_tab .feature_sli_channel_insights .channel_purpose_section .channel_purpose_text,
 .c-team__display-name, .c-unified_member__display-name, .c-usergroup__handle {
 {
-	color: var(--text);
+    color: var(--text);
 }
 
 /* snippet / file container */
