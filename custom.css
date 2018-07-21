@@ -42,7 +42,7 @@ h1, h2, h3, h4 {
 
 body {
     background: var(--background);
-    color: var(--text-bright);
+    color: var(--text);
 }
 
 .popover_mask {
@@ -140,7 +140,10 @@ ts-jumper input[type="text"],
     background: var(--background-elevated);
     color: var(--text-bright);
 }
-
+.attachment_group .inline_attachment.message_unfurl .attachment_source .attachment_source_name a, .attachment_group .inline_attachment.message_unfurl .attachment_source .attachment_source_name span
+{
+	color: var(--text);
+}
 .c-message_group {
     background-color: unset;
 }
@@ -635,10 +638,10 @@ ts-mention.ts_tip:hover
 
 .emoji-sizer {
    /* outline for black-on-transparent emojis */
-   -webkit-filter: drop-shadow( 1px  0 0 var(--background-bright))
-                   drop-shadow(-1px  0 0 var(--background-bright))
-                   drop-shadow(-0  1px 0 var(--background-bright))
-                   drop-shadow( 0 -1px 0 var(--background-bright));
+   -webkit-filter: drop-shadow( 1px  0 0 var(--background))
+                   drop-shadow(-1px  0 0 var(--background))
+                   drop-shadow(-0  1px 0 var(--background))
+                   drop-shadow( 0 -1px 0 var(--background));
    margin: 0 !important;
 }
 
@@ -1188,3 +1191,29 @@ nav {
     background: var(--scrollbar-background);
 	border: 1px solid var(--scrollbar-border);
 }
+/* actions */
+.c-button--outline {
+    background: var(--background-elevated);
+    color: var(--text);
+}
+.c-button--outline-primary {
+    background: var(--background-elevated);
+}
+.c-message_attachment__pretext {
+    color: var(--text);
+}
+/* dialogs */
+.c-dialog__header {
+    background: var(--background-elevated);
+}
+
+.c-dialog__title {
+    color: var(--text);
+}
+.c-dialog__content, .c-dialog__footer {
+    background: var(--background);
+}
+.c-dialog__cancel {
+    background: var(--background-elevated);
+}
+	
