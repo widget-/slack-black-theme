@@ -1090,6 +1090,13 @@ ts-jumper ts-jumper-container {
     background: var(--background-hover);
     border-radius: 24px;
 }
+/* member detail view */
+#member_preview_scroller .member_data_table tr, #member_preview_web_container .member_data_table tr, #team_list .member_data_table tr, .menu_member_header .member_data_table tr {
+	color: var(--text-bright);
+}
+#member_preview_scroller .member_details .member_name_and_presence .member_name, #member_preview_web_container .member_details .member_name_and_presence .member_name, .menu_member_header .member_details .member_name_and_presence .member_name {
+	color: var(--text);
+}
 
 /* snippet / file container */
 .c-snippet__code .CodeMirror-code>div:before {
@@ -1100,6 +1107,15 @@ ts-jumper ts-jumper-container {
 }
 . c-message_attachment {
     color: var(--text-bright);
+}
+
+/* file drafts */
+ts-rocket, ts-rocket.post_body {
+    color: var(--text);
+}
+
+nav {
+    background-color: var(--background-elevated);
 }
 
 /* history loading */
