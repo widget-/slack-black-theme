@@ -115,7 +115,7 @@ ts-jumper input[type="text"],
   background: var(--background) !important;
 }
 .p-message_pane .c-message_list.c-virtual_list--scrollbar>.c-scrollbar__hider:before, .p-message_pane .c-message_list:not(.c-virtual_list--scrollbar):before {
-    background: var(--background-hover);
+    background: var(--background);
 }
 .p-message_pane__limited_history_foreword {	
     color: var(--text);
@@ -1038,6 +1038,11 @@ ts-jumper ts-jumper-container {
     color: var(--text);
 }
 
+/* modal content */
+.c-fullscreen_modal__header,
+.c-fullscreen_modal__content {
+    background-color: var(--background-elevated);
+}
 /* new search modal */
 .c-search_autocomplete footer,
 .c-search,
@@ -1067,14 +1072,23 @@ ts-jumper ts-jumper-container {
     color: var(--text-bright);
 }
 
+/* channel options */
+.channel_option_item .title {
+    color: var(--text);
+}
 
-/* message menu */
+/* message action menu */
 .c-menu {
     background-color: var(--background-elevated);
 	color: 
 }
 .c-menu_item__label {
     color: var(--text-bright);
+}
+
+.c-message_actions__button:active {
+    background: var(--background-hover);
+    border-radius: 24px;
 }
 
 /* snippet / file container */
