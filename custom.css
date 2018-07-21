@@ -40,6 +40,11 @@ h1, h2, h3, h4 {
   color: var(--text);
 }
 
+body {
+    background: var(--background);
+    color: var(--text-bright);
+}
+
 .popover_mask {
    background-color: rgba(0, 0, 0, 0.3);
 }
@@ -109,6 +114,9 @@ ts-jumper input[type="text"],
 {
   background: var(--background) !important;
 }
+.p-message_pane .c-message_list.c-virtual_list--scrollbar>.c-scrollbar__hider:before, .p-message_pane .c-message_list:not(.c-virtual_list--scrollbar):before {
+    background: var(--background-hover);
+}
 
 .c-message--focus:not(.c-message--highlight):not(.c-message--standalone):not(.c-message--pinned):not(.c-message--ephemeral):not(.c-message--custom_response):not(.c-message--starred):not(.c-message--sli_highlight), .c-message--hover:not(.c-message--highlight):not(.c-message--standalone):not(.c-message--pinned):not(.c-message--ephemeral):not(.c-message--custom_response):not(.c-message--starred):not(.c-message--sli_highlight), .c-message:hover:not(.c-message--highlight):not(.c-message--standalone):not(.c-message--pinned):not(.c-message--ephemeral):not(.c-message--custom_response):not(.c-message--starred):not(.c-message--sli_highlight) {
     background-color: var(--background-hover);
@@ -120,6 +128,13 @@ ts-jumper input[type="text"],
 .c-message_list__day_divider__label__pill {
     background: var(--background-elevated);
     color: var(--text-bright);
+}
+
+.c-message_group {
+    background-color: unset;
+}
+.c-message_attachment__border {
+	background-color: var(--background-elevated) !important;
 }
 
 .channel_header, #col_messages, #footer {
@@ -1000,12 +1015,32 @@ ts-jumper ts-jumper-container {
   box-shadow: 0 5px 20px rgba(0,0,0,1);
 }
 
+/* tabs */
+.c-tabs__tab.c-tabs__tab--active, .c-tabs__tab:active, .c-tabs__tab:focus {
+    color: var(--text);
+}
+
+/* new search modal */
 .c-search_autocomplete footer,
+.c-search,
+.c-search__tabs,
 .c-search__input_box { background-color: unset; }
 
+.c-search,
+.c-search__tabs,
 .c-search__input_and_close__close { color: unset; }
-
-
-.c-search_autocomplete__suggestion_content { color: var(--text); }
+.p-message_limit_banner {
+    color: unset;
+    background-color: unset;
+}
+.p-search_filter__title_text {
+	background-color: var(--background);
+}
+.p-search_filter__dates {
+	background-color: var(--background-elevated) !important;
+}
+.c-search_autocomplete__suggestion_content .c-channel_name .c-deprecated-icon, .c-search_autocomplete__suggestion_content .c-search_autocomplete__suggestion_icon, .c-search_autocomplete__suggestion_content .c-search_autocomplete__suggestion_text .filetype_description,
+.c-search_autocomplete__suggestion_content .c-search_autocomplete__suggestion_text .token
+{ color: var(--text); }
 
 .c-search_modal .popover>div { background-color: var(--background); }
