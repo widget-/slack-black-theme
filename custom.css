@@ -133,7 +133,7 @@ ts-jumper input[type="text"],
 }
 
 .c-message__body {
-	color: var(--text-bright);
+	color: var(--text);
 }
 
 .c-message_list__day_divider__label__pill {
@@ -1087,6 +1087,10 @@ ts-jumper ts-jumper-container {
     color: var(--text-bright);
 }
 .c-team__display-name, .c-unified_member__display-name, .c-usergroup__handle {
+    color: var(--text);
+}
+
+.c-search_message__body {
     color: var(--text);
 }
 
