@@ -1158,12 +1158,36 @@ ts-jumper ts-jumper-container {
     color: unset;
 }
 
-/* snippet / file container */
+/* snippet / file container / download bar */
 .c-snippet__code .CodeMirror-code>div:before {
     background-color: var(--background);
 }
 .c-file_container--gradient:after {
     background: linear-gradient(180deg,hsla(0,0%,100%,0),var(--background));
+}
+.c-file__title {
+    color: var(--text);
+}
+.c-file_container, .c-file__slide--meta {
+    background-color: var(--background-elevated);
+}
+.c-file__action_button, .c-file__action_button:link, .c-file__action_button:visited {
+    color: var(--text);
+}
+.p-flexpane_header {
+    background: var(--background);
+}
+.p-downloads_list__shift_hint {
+    background: linear-gradient(180deg,hsla(0,0%,100%,0),var(--background-elevated)); 
+}
+.p-download_item {
+    border: 1px solid var(--border-dim);
+}
+.p-download_item__container .p-download_item__name_row {
+    color: var(--text);
+}
+.p-download_item__actions {
+    background: var(--background-hover);
 }
 
 .c-message_attachment {
