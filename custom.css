@@ -1129,6 +1129,7 @@ ts-jumper ts-jumper-container {
 .c-menu {
     background-color: var(--background-elevated);
 	color: var(--text-bright);
+    border: 1px solid var(--border-dim);
 }
 .c-menu_item__label {
     color: var(--text-bright);
@@ -1171,8 +1172,12 @@ ts-jumper ts-jumper-container {
 .c-file_container, .c-file__slide--meta {
     background-color: var(--background-elevated);
 }
+.c-file_container {
+    border: 1px solid var(--border-dim);
+}
 .c-file__action_button, .c-file__action_button:link, .c-file__action_button:visited {
     color: var(--text);
+    background-color: var(--background-hover);
 }
 .p-flexpane_header {
     background: var(--background);
