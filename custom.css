@@ -819,7 +819,10 @@ ts-thread .thread_messages,
    margin: 0 !important;
    border-radius: 10px;
 }
-
+.p-message_pane .p-message_pane__top_banners:not(:empty)+div .c-message_list.c-virtual_list--scrollbar>.c-scrollbar__hider:before, .p-message_pane .p-message_pane__top_banners:not(:empty)+div .c-message_list:not(.c-virtual_list--scrollbar):before
+{
+	box-shadow: 0 32px var(--background);
+}
 ts-thread .collapse_inline_thread_container:hover,
 ts-thread .view_all_replies_container:hover {
    background-color: var(--background-elevated);
@@ -1115,6 +1118,24 @@ ts-jumper ts-jumper-container {
     background: var(--background-hover);
 }
 
+.channel_options_modal .c-fullscreen_modal__title {
+    color: var(--text);
+}
+.c-fullscreen_modal__back:hover, .c-fullscreen_modal__close:hover {
+    background-color: #e8e8e8;
+    color: var(--text-bright);
+}
+/* channel invite */
+#channel_invite_modal #channel_invite_container:not(.keyboard_active).not_scrolling .channel_invite_row:not(.disabled):hover, #channel_invite_modal .channel_invite_row.highlighted:not(.disabled) {
+    background: var(--background-hover);
+}
+
+.c-unified_member__secondary-name--medium {
+    color: var(--text);
+}
+.channel_modal .btn_large {
+    border: 1px solid;
+}
 /** menus **/
 
 .c-menu_item__header {
@@ -1157,6 +1178,14 @@ ts-jumper ts-jumper-container {
 #details_tab .feature_sli_channel_insights .channel_created_section .creator_link, #details_tab .feature_sli_channel_insights .channel_purpose_section .channel_purpose_text, .c-team__display-name, .c-unified_member__display-name, .c-usergroup__handle
 {
     color: unset;
+}
+.c-channel_insights__date_heading span {
+	background-color: var(--background-light);
+}
+
+/* workspace directory */
+.searchable_member_list_filter .faux_input {
+    color: var(--text);
 }
 
 /* snippet / file container / download bar */
@@ -1319,4 +1348,18 @@ nav {
 }
 .tab_complete_ui ul.type_members .unify_broadcast {
 	color: var(--text);	
+}
+
+/* message thumbs up */
+.c-reaction {
+    background: var(--background);
+    border: 1px solid var(--border-dim); 	
+}
+.c-reaction__count {
+	color: var(--text-bright);
+}
+
+/* tool tips */
+.ts_tip .ts_tip_tip {
+	color: var(--text);
 }
