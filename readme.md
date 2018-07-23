@@ -172,9 +172,19 @@ Instead of launching Slack normally, you'll need to enable developer mode to be 
 
 * Mac: `export SLACK_DEVELOPER_MENU=true; open -a /Applications/Slack.app`
 
-* Linux: (todo)
+* Linux: `export SLACK_DEVELOPER_MENU=true && /usr/bin/slack`
 
-* Windows: (todo)
+* Windows (PowerShell):
+
+```powershell
+# Set environment variable
+[System.Environment]::SetEnvironmentVariable('SLACK_DEVELOPER_MENU', 'true', 'Process')
+
+# Launch Slack (replace x.y.z with the latest version)
+& $env:LOCALAPPDATA\slack\app-x.y.z\slack.exe
+
+# Open developer console by pressing: Ctrl + Alt + I
+```
 
 # License
 
