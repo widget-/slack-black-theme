@@ -170,6 +170,9 @@ ts-jumper input[type="text"],
 .btn.disabled, .btn.disabled:active, .btn.disabled:hover, .btn:disabled, .btn:disabled:active, .btn:disabled:hover {
     background-color: var(--background-light) !important;
 }
+.btn_basic:focus, .btn_basic:hover {
+    color: var(--text-special);
+}
 
 /* channel list */
 .p-channel_sidebar__channel,
@@ -837,6 +840,10 @@ ts-thread .view_all_replies_container:hover {
    background-color: var(--background-elevated);
 }
 
+#fs_modal .fs_modal_btn:hover {
+    color: var(--text);
+}
+
 #fs_modal, #fs_modal h1, #fs_modal h2,
 #fs_modal h3, #fs_modal h4, #fs_modal h5,
 .modal, .modal h1, .modal h2, .modal h3,
@@ -1156,6 +1163,20 @@ ts-jumper ts-jumper-container {
 .sk_black {
     color: var(--text);
 }
+
+/* app browsing */
+.p-apps_browser__app_limit_meter b {
+    color: var(--text);
+}
+.p-apps_browser__app_info {
+    color: var(--text);
+}
+.p-apps_browser__app_limit_meter__blank_app_box {
+    background-color: var(--background-hover);
+}
+.p-apps_browser__app--selected {	
+    background: var(--background-hover);
+}
 /** menus **/
 
 .c-menu_item__header {
@@ -1289,6 +1310,10 @@ nav {
     background: var(--background-elevated);
     color: var(--text);
 }
+.c-button--outline:active {
+    background: var(--background-light);
+    color: var(--text-bright);
+}
 .c-button--outline-primary {
     background: var(--background-elevated);
 }
@@ -1361,7 +1386,9 @@ nav {
 .c-pillow_file__description {
     color: var(--text-bright);
 }
-
+#stars_scroller {
+    background-color: var(--background);
+}
 /* browse apps */
 .c-filter_input, .p-apps_browser__category_header {
     background: var(--background-elevated);
