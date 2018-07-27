@@ -166,6 +166,13 @@ ts-jumper input[type="text"],
 .channel_header, #col_messages, #footer {
    box-shadow: none;
 }
+/* buttons */
+.btn.disabled, .btn.disabled:active, .btn.disabled:hover, .btn:disabled, .btn:disabled:active, .btn:disabled:hover {
+    background-color: var(--background-light) !important;
+}
+.btn_basic:focus, .btn_basic:hover {
+    color: var(--text-special);
+}
 
 /* channel list */
 .p-channel_sidebar__channel,
@@ -321,7 +328,7 @@ ts-jumper input[type="text"]::-webkit-input-placeholder {
 }
 
 textarea, input[type="text"], #file_comment_textarea {
-   background-color: var(--background) !important;
+	background-color: var(--background-elevated) !important;
    border-color: var(--border-dim) !important;
    color: var(--text) !important;
 }
@@ -355,7 +362,6 @@ ts-message:hover {
 .file_container:after{
    background-image: -webkit-linear-gradient(top,rgba(255,255,255,0) 0,#333 100%) !important;
 }
-
 .rxn,
 #col_channels,
 #col_channels_footer,
@@ -834,6 +840,10 @@ ts-thread .view_all_replies_container:hover {
    background-color: var(--background-elevated);
 }
 
+#fs_modal .fs_modal_btn:hover {
+    color: var(--text);
+}
+
 #fs_modal, #fs_modal h1, #fs_modal h2,
 #fs_modal h3, #fs_modal h4, #fs_modal h5,
 .modal, .modal h1, .modal h2, .modal h3,
@@ -1136,6 +1146,37 @@ ts-jumper ts-jumper-container {
 .channel_modal .btn_large {
     border: 1px solid;
 }
+/* channel browsing */
+#channel_browser .channel_browser_row_header {
+    color: var(--text);
+}
+#channel_browser .channel_browser_divider {
+	color: var(--text);
+    background: var(--background-hover);
+}
+#channel_browser .channel_browser_row {
+    background-color: var(--background);
+}
+#channel_browser #channel_list_container:not(.keyboard_active).not_scrolling .channel_browser_row:hover, #channel_browser .channel_browser_row.highlighted {
+    background: var(--background-elevated);
+}
+.sk_black {
+    color: var(--text);
+}
+
+/* app browsing */
+.p-apps_browser__app_limit_meter b {
+    color: var(--text);
+}
+.p-apps_browser__app_info {
+    color: var(--text);
+}
+.p-apps_browser__app_limit_meter__blank_app_box {
+    background-color: var(--background-hover);
+}
+.p-apps_browser__app--selected {	
+    background: var(--background-hover);
+}
 /** menus **/
 
 .c-menu_item__header {
@@ -1144,6 +1185,10 @@ ts-jumper ts-jumper-container {
 
 .sidebar_menu_list_item {
 	color: var(--text-bright);
+}
+
+.sidebar_menu_list_item:not(.is_active):hover {
+    background-color: var(--background-elevated);
 }
 
 /* message action menu */
@@ -1206,7 +1251,7 @@ ts-jumper ts-jumper-container {
 }
 .c-file__action_button, .c-file__action_button:link, .c-file__action_button:visited {
     color: var(--text);
-    background-color: var(--background-hover);
+    background-color: var(--background);
 }
 .p-flexpane_header {
     background: var(--background);
@@ -1226,6 +1271,9 @@ ts-jumper ts-jumper-container {
 
 .c-message_attachment {
     color: var(--text-bright);
+}
+.c-file_container--has_thumb .c-file__actions:before {
+	background-image: none;
 }
 /* file drafts */
 ts-rocket, ts-rocket.post_body {
@@ -1261,6 +1309,10 @@ nav {
 .c-button--outline {
     background: var(--background-elevated);
     color: var(--text);
+}
+.c-button--outline:active {
+    background: var(--background-light);
+    color: var(--text-bright);
 }
 .c-button--outline-primary {
     background: var(--background-elevated);
@@ -1302,15 +1354,22 @@ nav {
     color: var(--text);	
 }
 .c-pillow_file_container {
-    background: var(--background-elevated);
+    background: var(--background);
 }
 .c-input_select {
     background: var(--background-elevated);
+    color: var(--text);
 }
 .p-search_filter__dates, .p-search_filter .p-file_list__file_type_select, .p-search_filter__select .c-input_select {
     border: 1px solid var(--border-dim);
 }
-
+.p-file_list__filters {
+	background: var(--background-elevated);
+	padding-top: 12px;
+}
+.c-pillow_file_container--full_width:focus, .c-pillow_file_container--full_width:focus-within, .c-pillow_file_container--full_width:hover {
+	background-color: var(--background-elevated);
+}
 /* side lists */
 #client-ui .searchable_member_list .team_list_item:hover {
     background: var(--background-hover);
@@ -1327,7 +1386,9 @@ nav {
 .c-pillow_file__description {
     color: var(--text-bright);
 }
-
+#stars_scroller {
+    background-color: var(--background);
+}
 /* browse apps */
 .c-filter_input, .p-apps_browser__category_header {
     background: var(--background-elevated);
