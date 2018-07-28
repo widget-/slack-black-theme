@@ -185,11 +185,6 @@ ts-jumper input[type="text"],
   color: var(--text);
 }
 
-.p-channel_sidebar__static_list div {
-   margin-right: 2px;
-   height: 24px !important;
-}
-
 .p-channel_sidebar__channel--selected,
 .p-channel_sidebar__link--selected,
 .p-channel_sidebar__channel--selected:link,
@@ -1227,6 +1222,10 @@ ts-jumper ts-jumper-container {
 .c-channel_insights__date_heading span {
 	background-color: var(--background-light);
 }
+.channel_page_member_row:hover {
+    background-color: var(--background-hover);
+    border-color: var(--border-dim);
+}
 
 /* workspace directory */
 .searchable_member_list_filter .faux_input {
@@ -1386,8 +1385,32 @@ nav {
 .c-pillow_file__description {
     color: var(--text-bright);
 }
+.c-input_select_options_list_container:not(.c-input_select_options_list_container--always-open)
+{
+    background-color: var(--background);
+}
+.p-file_list__file_type_select .c-input_select__selected_value--placeholder {
+    color: var(--text);
+}
+.c-input_select_options_list__option {
+    color: var(--text);
+}
 #stars_scroller {
     background-color: var(--background);
+}
+/* whats' new */
+#whats_new_tab #whats_new_scroller {
+    background: var(--background);
+}
+#whats_new_tab p {
+    color: var(--text);
+}
+.indifferent_grey {
+    color: var(--text)!important;
+}
+/* overriding indifferent grey here to highlight whats'new links */
+#whats_new_tab .indifferent_grey {
+    color: var(--text-special)!important;
 }
 /* browse apps */
 .c-filter_input, .p-apps_browser__category_header {
@@ -1420,7 +1443,17 @@ nav {
 	color: var(--text-bright);
 }
 
-/* tool tips */
+/* tooltips */
 .ts_tip .ts_tip_tip {
 	color: var(--text);
+}
+
+/* "only visible to you" highlight */
+.c-message--ephemeral, .c-message--sli_highlight_negative {
+    background: var(--background-hover);
+}
+
+/* "jump to.." */
+ts-jumper .p-jumper__help {
+    background: var(--background);
 }
