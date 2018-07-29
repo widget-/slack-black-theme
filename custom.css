@@ -150,6 +150,7 @@ ts-jumper input[type="text"],
 }
 .c-message_group {
     background-color: unset;
+    border: 1px solid var(--border-dim);
 }
 
 .msg_inline_attachment_column.column_border {
@@ -169,6 +170,9 @@ ts-jumper input[type="text"],
 /* buttons */
 .btn.disabled, .btn.disabled:active, .btn.disabled:hover, .btn:disabled, .btn:disabled:active, .btn:disabled:hover {
     background-color: var(--background-light) !important;
+}
+.btn_outline.hover, .btn_outline:focus, .btn_outline:hover {
+    background: var(--background-hover) !important;
 }
 .btn_basic:focus, .btn_basic:hover {
     color: var(--text-special);
@@ -751,7 +755,10 @@ ts-message .reply_bar:hover {
 ts-message.active .edited, ts-message.active .reply_bar .last_reply_at, ts-message.active .timestamp, ts-message.active.automated .message_body, ts-message.message--focus .edited, ts-message.message--focus .reply_bar .last_reply_at, ts-message.message--focus .timestamp, ts-message.message--focus.automated .message_body, ts-message:hover .edited, ts-message:hover .reply_bar .last_reply_at, ts-message:hover .timestamp, ts-message:hover.automated .message_body {
 	color: var(--text-bright);
 }
-
+#threads_msgs .inline_message_input_container.with_file_upload {
+  background: var(--background);
+}
+	
 /* editor in thread reply */
 #convo_tab .message_input, #convo_tab textarea#msg_text {
    color: var(--text) !important;
@@ -790,7 +797,7 @@ ts-message.active .edited, ts-message.active .reply_bar .last_reply_at, ts-messa
    border-color: var(--border-dim);
 }
 
-#archives_return, .messages_banner {
+.messages_banner, .p-archives_banner {
    color: var(--text);
    background-color: var(--background-elevated);
    border: 1px solid var(--border-bright);
@@ -830,7 +837,7 @@ ts-thread .view_all_replies_container:hover {
 }
 
 
-/* preferences page */
+/* preferences page and modals in general*/
 #fs_modal, .modal, .modal-header, .modal-footer {
    background-color: var(--background-elevated);
 }
@@ -874,6 +881,9 @@ ts-thread .view_all_replies_container:hover {
 
 #fs_modal #fs_modal_sidebar a.is_active {
   border-color: var(--border-bright);
+}
+#fs_modal.prefs_modal legend {
+    color: var(--text);
 }
 
 
@@ -1215,7 +1225,7 @@ ts-jumper ts-jumper-container {
 }
 
 /* channel detail view */
-#details_tab .feature_sli_channel_insights .channel_created_section .creator_link, #details_tab .feature_sli_channel_insights .channel_purpose_section .channel_purpose_text, .c-team__display-name, .c-unified_member__display-name, .c-usergroup__handle
+#details_tab .feature_sli_channel_insights .channel_created_section .creator_link, #details_tab .feature_sli_channel_insights .channel_purpose_section .channel_purpose_text, .c-team__display-name, .c-usergroup__handle
 {
     color: unset;
 }
@@ -1230,6 +1240,15 @@ ts-jumper ts-jumper-container {
 /* workspace directory */
 .searchable_member_list_filter .faux_input {
     color: var(--text);
+}
+
+#member_preview_scroller .member_data_table .current_status_cell .current_status_container:not(.active) .current_status_cover.without_status_set .current_status_placeholder, .statuses_container .current_status_container:not(.active) .current_status_cover.without_status_set .current_status_placeholder {
+    color: var(--text);
+}
+
+#member_preview_scroller .member_data_table a:not(.current_status_preset_option):not(.current_status_presets_edit_link):not(.member_details_manage_link), #member_preview_web_container .member_data_table a:not(.current_status_preset_option):not(.current_status_presets_edit_link):not(.member_details_manage_link), #team_list .member_data_table a:not(.current_status_preset_option):not(.current_status_presets_edit_link):not(.member_details_manage_link), .menu_member_header .member_data_table a:not(.current_status_preset_option):not(.current_status_presets_edit_link):not(.member_details_manage_link) {
+    color: var(--text);
+    font-weight: 400!important;
 }
 
 /* snippet / file container / download bar */
@@ -1256,7 +1275,7 @@ ts-jumper ts-jumper-container {
     background: var(--background);
 }
 .p-downloads_list__shift_hint {
-    background: linear-gradient(180deg,hsla(0,0%,100%,0),var(--background-elevated)); 
+    background: linear-gradient(180deg,hsla(0,0%,100%,0),var(--background)); 
 }
 .p-download_item {
     border: 1px solid var(--border-dim);
@@ -1433,6 +1452,9 @@ nav {
 .tab_complete_ui ul.type_members .unify_broadcast {
 	color: var(--text);	
 }
+.c-mrkdwn__broadcast--mention, .c-mrkdwn__broadcast--mention:hover, .c-mrkdwn__highlight, .c-mrkdwn__mention, .c-mrkdwn__mention:hover, .c-mrkdwn__user_group--mention, .c-mrkdwn__user_group--mention:hover {
+    background: var(--background-elevated);
+}
 
 /* message thumbs up */
 .c-reaction {
@@ -1456,4 +1478,14 @@ nav {
 /* "jump to.." */
 ts-jumper .p-jumper__help {
     background: var(--background);
+}
+
+/* share alert dialog */
+.c-alert--inline, .c-alert--nested_box {
+    color: var(--text);
+}
+/* user groups */
+
+#user_groups_container .mention {
+    background-color: var(--background-hover);
 }
