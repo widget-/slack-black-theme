@@ -171,6 +171,9 @@ ts-jumper input[type="text"],
 .btn.disabled, .btn.disabled:active, .btn.disabled:hover, .btn:disabled, .btn:disabled:active, .btn:disabled:hover {
     background-color: var(--background-light) !important;
 }
+.btn_outline.hover, .btn_outline:focus, .btn_outline:hover {
+    background: var(--background-hover) !important;
+}
 .btn_basic:focus, .btn_basic:hover {
     color: var(--text-special);
 }
@@ -834,7 +837,7 @@ ts-thread .view_all_replies_container:hover {
 }
 
 
-/* preferences page */
+/* preferences page and modals in general*/
 #fs_modal, .modal, .modal-header, .modal-footer {
    background-color: var(--background-elevated);
 }
@@ -878,6 +881,9 @@ ts-thread .view_all_replies_container:hover {
 
 #fs_modal #fs_modal_sidebar a.is_active {
   border-color: var(--border-bright);
+}
+#fs_modal.prefs_modal legend {
+    color: var(--text);
 }
 
 
@@ -1234,6 +1240,15 @@ ts-jumper ts-jumper-container {
 /* workspace directory */
 .searchable_member_list_filter .faux_input {
     color: var(--text);
+}
+
+#member_preview_scroller .member_data_table .current_status_cell .current_status_container:not(.active) .current_status_cover.without_status_set .current_status_placeholder, .statuses_container .current_status_container:not(.active) .current_status_cover.without_status_set .current_status_placeholder {
+    color: var(--text);
+}
+
+#member_preview_scroller .member_data_table a:not(.current_status_preset_option):not(.current_status_presets_edit_link):not(.member_details_manage_link), #member_preview_web_container .member_data_table a:not(.current_status_preset_option):not(.current_status_presets_edit_link):not(.member_details_manage_link), #team_list .member_data_table a:not(.current_status_preset_option):not(.current_status_presets_edit_link):not(.member_details_manage_link), .menu_member_header .member_data_table a:not(.current_status_preset_option):not(.current_status_presets_edit_link):not(.member_details_manage_link) {
+    color: var(--text);
+    font-weight: 400!important;
 }
 
 /* snippet / file container / download bar */
