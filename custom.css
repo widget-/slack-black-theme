@@ -152,6 +152,9 @@ ts-jumper input[type="text"],
     background-color: unset;
     border: 1px solid var(--border-dim);
 }
+.c-message_group:hover {
+    border-color: var(--border-dim);
+}
 
 .msg_inline_attachment_column.column_border {
     background-color: var(--border-dim);
