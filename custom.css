@@ -760,10 +760,12 @@ ts-message .reply_bar:hover {
 ts-message.active .edited, ts-message.active .reply_bar .last_reply_at, ts-message.active .timestamp, ts-message.active.automated .message_body, ts-message.message--focus .edited, ts-message.message--focus .reply_bar .last_reply_at, ts-message.message--focus .timestamp, ts-message.message--focus.automated .message_body, ts-message:hover .edited, ts-message:hover .reply_bar .last_reply_at, ts-message:hover .timestamp, ts-message:hover.automated .message_body {
 	color: var(--text-bright);
 }
-#threads_msgs .inline_message_input_container.with_file_upload {
+#threads_msgs .inline_message_input_container.with_file_upload,
+#reply_container.upload_in_threads .inline_message_input_container {
   background: var(--background);
+   border-color: var(--border-dim);
 }
-	
+
 /* editor in thread reply */
 #convo_tab .message_input, #convo_tab textarea#msg_text {
    color: var(--text) !important;
@@ -913,7 +915,7 @@ ts-thread .view_all_replies_container:hover {
 }
 .unread_group_header button {
    color: var(--text-special);
-},
+}
 
 
 /* scroller for threads & unreads */
@@ -1231,8 +1233,11 @@ ts-jumper ts-jumper-container {
 #member_preview_scroller .member_data_table tr, #member_preview_web_container .member_data_table tr, #team_list .member_data_table tr, .menu_member_header .member_data_table tr {
 	color: var(--text-bright);
 }
-#member_preview_scroller .member_details .member_name_and_presence .member_name, #member_preview_web_container .member_details .member_name_and_presence .member_name, .menu_member_header .member_details .member_name_and_presence .member_name {
+#member_preview_scroller .member_details .member_name_and_presence .member_name, #member_preview_web_container .member_details .member_name_and_presence .member_name, .menu_member_header .member_details .member_name_and_presence .member_name, .menu_member_header .member_details .member_current_status, .menu_member_header .member_details .member_timezone_value {
 	color: var(--text);
+}
+.menu_member_header .member_details .member_current_status a, .menu_member_header .member_details .member_timezone_value a {
+	color: var(--text-special);
 }
 
 /* channel detail view */
