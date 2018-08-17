@@ -16,10 +16,11 @@ limitations under the License.
 
 :root {
    /* Modify these to change your theme colors: */
-   --primary: #09F;
-   --text: #888;
-   --background: #111;
-   --background-elevated: #222;
+   --primary: #61AFEF;
+   --text: #DADBDC;
+   --text-read: #72767D;
+   --background: #36393F;
+   --background-elevated: #2F3136;
    --team-picker: #202225;
 
    /* These should be less important: */
@@ -30,7 +31,7 @@ limitations under the License.
    --border-dim: #666;
    --border-bright: var(--primary);
 
-   --text-bright: #888;
+   --text-bright: #DCDDDE;
    --text-special: var(--primary);
 
    --scrollbar-background: #000;
@@ -69,13 +70,13 @@ hr {
 div.client_channels_list_container {
    background-color: var(--background-elevated) !important;
    box-shadow: var(--background-elevated) 1px 1px 25px;
-   color: var(--text);
+   color: var(--text-read);
    z-index: 1;
 }
 
 nav.p-channel_sidebar {
    background-color: var(--background-elevated);
-   color: var(--text);
+   color: var(--text-read);
 }
 
 #team_menu,
@@ -92,7 +93,7 @@ body:not(.loading) #team_menu:active {
 .p-channel_sidebar__link:visited,
 .p-channel_sidebar__channel:hover,
 .p-channel_sidebar__link:hover {
-   color: var(--text) !important;
+   color: var(--text-read) !important;
 }
 
 /* Channel with unread messages */
