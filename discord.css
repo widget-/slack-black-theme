@@ -37,6 +37,14 @@ limitations under the License.
    --scrollbar-background: #202225;
    --scrollbar-border: #202225;
    --input-background: #484B51;
+
+   --message-separator: #3E4147;
+}
+
+.c-message {
+	border-top: solid;
+	border-top-width: 1px;
+	border-top-color: var(--message-separator);
 }
 
 h1, h2, h3, h4 {
