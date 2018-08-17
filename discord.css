@@ -47,6 +47,15 @@ limitations under the License.
 	border-top-color: var(--message-separator);
 }
 
+.c-message--light .c-message__gutter, .c-message--light .c-message__label__gutter {
+	padding-right: 8px;
+	width: 60px;
+}
+
+.c-message--light .c-message__content {
+	margin-left: 68px;
+}
+
 div#search_container.c-react_search_input {
   background-color: var(--input-background);
   border-color: transparent;
