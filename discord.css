@@ -34,8 +34,8 @@ limitations under the License.
    --text-bright: #DCDDDE;
    --text-special: var(--primary);
 
-   --scrollbar-background: #000;
-   --scrollbar-border: var(--primary);
+   --scrollbar-background: #202225;
+   --scrollbar-border: #202225;
 }
 
 h1, h2, h3, h4 {
