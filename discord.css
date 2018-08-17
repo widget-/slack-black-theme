@@ -24,7 +24,7 @@ limitations under the License.
    --team-picker: #202225;
 
    /* These should be less important: */
-   --background-hover: #42454C;
+   --background-hover: #3B3F45;
    --background-light: #AAA;
    --background-bright: #FFF;
 
@@ -36,6 +36,7 @@ limitations under the License.
 
    --scrollbar-background: #202225;
    --scrollbar-border: #202225;
+   --input-background: #484B51;
 }
 
 h1, h2, h3, h4 {
@@ -298,9 +299,9 @@ ts-jumper input[type="text"]::-webkit-input-placeholder {
 }
 
 #msg_input, #primary_file_button {
-  background: transparent !important;
+  background: var(--input-background) !important;
   color: var(--text) !important;
-  border-color: var(--border-dim) !important;
+  border-color: transparent !important;
 }
 
 .day_divider .day_divider_label,
@@ -1096,7 +1097,7 @@ ts-jumper ts-jumper-container {
 .c-search_autocomplete footer,
 .c-search,
 .c-search__tabs,
-.c-search__input_box { background-color: unset; }
+.c-search__input_box { background-color: var(--input-background); }
 
 .c-search,
 .c-search__tabs,
@@ -1106,7 +1107,7 @@ ts-jumper ts-jumper-container {
     background-color: unset;
 }
 .p-search_filter__title_text {
-	background-color: var(--background);
+	background-color: var(--input-background);
 }
 .p-search_filter__dates {
 	background-color: var(--background-elevated) !important;
@@ -1506,4 +1507,9 @@ ts-jumper .p-jumper__help {
 
 #user_groups_container .mention {
     background-color: var(--background-hover);
+}
+
+/* message attachment footer text */
+.c-message_attachment__footer {
+  color: var(--text);
 }
