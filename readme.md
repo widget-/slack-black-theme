@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
    let webviews = document.querySelectorAll(".TeamView webview");
 
    // Fetch our CSS in parallel ahead of time
-   const cssPath = 'https://cdn.rawgit.com/widget-/slack-black-theme/master/custom.css';
+   const cssPath = 'https://raw.githubusercontent.com/Nockiro/slack-black-theme/master/custom.css';
    let cssPromise = fetch(cssPath).then(response => response.text());
 
    let customCustomCSS = `
