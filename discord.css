@@ -49,6 +49,7 @@ limitations under the License.
 
 div#search_container.c-react_search_input {
   background-color: var(--input-background);
+  border-color: transparent;
 }
 
 h1, h2, h3, h4 {
@@ -460,7 +461,7 @@ ts-message .action_hover_container .btn_msg_action,
 }
 
 .ql-container.texty_single_line_input {
-  background-color: var(--background-elevated);
+  background-color: var(--input-background);
   color: var(--text);
 }
 
