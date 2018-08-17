@@ -56,6 +56,13 @@ limitations under the License.
 	margin-left: 68px;
 }
 
+.c-avatar__emoji, .c-avatar__image {
+	border-radius: 20px;
+	display: block;
+	height: 100% !important;
+	width: 100% !important;
+}
+
 div#search_container.c-react_search_input {
   background-color: var(--input-background);
   border-color: transparent;
