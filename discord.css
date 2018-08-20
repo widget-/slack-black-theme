@@ -958,6 +958,9 @@ ts-thread .view_all_replies_container:hover {
    color: var(--text-special);
 }
 
+div.unread_group_footer {
+    margin-top: 0px;
+}
 
 /* scroller for threads & unreads */
 #threads_msgs_scroller_div:not(.loading):before {
