@@ -63,6 +63,10 @@ limitations under the License.
 	width: 100% !important;
 }
 
+/* Removing background behind preview text in search bar */
+#search_terms.ql-container.search_input.texty_hide_tooltips.texty_legacy.texty_single_line_input {
+  background: transparent;
+}
 div#search_container.c-react_search_input {
   background-color: var(--input-background);
   border-color: transparent;
