@@ -16,26 +16,67 @@ limitations under the License.
 
 :root {
    /* Modify these to change your theme colors: */
-   --primary: #09F;
-   --text: #888;
-   --background: #111;
-   --background-elevated: #222;
+   --primary: #61AFEF;
+   --text: #DADBDC;
+   --text-read: #72767D;
+   --background: #36393F;
+   --background-elevated: #2F3136;
    --team-picker: #202225;
 
    /* These should be less important: */
-   --background-hover: rgba(255, 255, 255, 0.1);
+   --background-hover: #3B3F45;
    --background-light: #AAA;
    --background-bright: #FFF;
 
-   --border-dim: #666;
+   --border-dim: #202225;
    --border-bright: var(--primary);
 
-   --text-bright: #888;
+   --text-bright: #DCDDDE;
    --text-special: var(--primary);
 
-   --scrollbar-background: #000;
-   --scrollbar-border: var(--primary);
+   --scrollbar-background: #202225;
+   --scrollbar-border: #202225;
+
+   --input-background: #484B51;
+   --message-separator: #3E4147;
 }
+
+/* ---------------------------------------------------------------------------------- */
+/* discord theme specific settings */
+
+/* message separators */
+.c-message {
+	border-top: solid;
+	border-top-width: 1px;
+	border-top-color: var(--message-separator);
+}
+
+/* adjust avatar spacing */
+.c-message--light .c-message__gutter, .c-message--light .c-message__label__gutter {
+	padding-right: 8px;
+	width: 60px;
+}
+.c-message--light .c-message__content {
+	margin-left: 68px;
+}
+.c-avatar__emoji, .c-avatar__image {
+	border-radius: 20px;
+	display: block;
+	height: 100% !important;
+	width: 100% !important;
+}
+
+/* Removing background behind preview text in search bar */
+div#search_container.c-react_search_input {
+  background-color: var(--input-background);
+  border-color: transparent;
+}
+
+/* set bot username to same color as others */
+.bot_message .message_sender, .bot_message .message_sender a{
+  color: var(--text);
+}
+/* ---------------------------------------------------------------------------------- */
 
 h1, h2, h3, h4 {
   color: var(--text);
@@ -69,13 +110,13 @@ hr {
 div.client_channels_list_container {
    background-color: var(--background-elevated) !important;
    box-shadow: var(--background-elevated) 1px 1px 25px;
-   color: var(--text);
+   color: var(--text-read);
    z-index: 1;
 }
 
 nav.p-channel_sidebar {
    background-color: var(--background-elevated);
-   color: var(--text);
+   color: var(--text-read);
 }
 
 #team_menu,
@@ -92,7 +133,7 @@ body:not(.loading) #team_menu:active {
 .p-channel_sidebar__link:visited,
 .p-channel_sidebar__channel:hover,
 .p-channel_sidebar__link:hover {
-   color: var(--text) !important;
+   color: var(--text-read) !important;
 }
 
 /* Channel with unread messages */
@@ -110,8 +151,7 @@ __TODO-highlight-indicator {
    opacity: 1;
 }
 
-#msgs_scroller_div::-webkit-scrollbar-track, .client_container,
-#search_terms, #footer, ts-message, .channel_header, ts-jumper ts-jumper-container,
+#msgs_scroller_div::-webkit-scrollbar-track, .client_container, #footer, ts-message, .channel_header, ts-jumper ts-jumper-container,
 ts-jumper input[type="text"],
 .supports_custom_scrollbar:not(.slim_scrollbar) #col_channels:hover #channels_scroller::-webkit-scrollbar-track,
 #channel_header_info, #channel_topic_text, #channel_topic_text code, #edit_topic_inner:before,
@@ -297,9 +337,9 @@ ts-jumper input[type="text"]::-webkit-input-placeholder {
 }
 
 #msg_input, #primary_file_button {
-  background: transparent !important;
+  background: var(--input-background) !important;
   color: var(--text) !important;
-  border-color: var(--border-dim) !important;
+  border-color: transparent !important;
 }
 
 .day_divider .day_divider_label,
@@ -446,7 +486,7 @@ ts-message .action_hover_container .btn_msg_action,
 }
 
 .ql-container.texty_single_line_input {
-  background-color: var(--background-elevated);
+  background-color: var(--input-background);
   color: var(--text);
 }
 
@@ -918,6 +958,9 @@ ts-thread .view_all_replies_container:hover {
    color: var(--text-special);
 }
 
+div.unread_group_footer {
+    margin-top: 0px;
+}
 
 /* scroller for threads & unreads */
 #threads_msgs_scroller_div:not(.loading):before {
@@ -1095,7 +1138,7 @@ ts-jumper ts-jumper-container {
 .c-search_autocomplete footer,
 .c-search,
 .c-search__tabs,
-.c-search__input_box { background-color: unset; }
+.c-search__input_box { background-color: var(--input-background); }
 
 .c-search,
 .c-search__tabs,
@@ -1105,7 +1148,7 @@ ts-jumper ts-jumper-container {
     background-color: unset;
 }
 .p-search_filter__title_text {
-	background-color: var(--background);
+	background-color: var(--input-background);
 }
 .p-search_filter__dates {
 	background-color: var(--background-elevated) !important;
@@ -1505,4 +1548,14 @@ ts-jumper .p-jumper__help {
 
 #user_groups_container .mention {
     background-color: var(--background-hover);
+}
+
+/* message attachment footer text */
+.c-message_attachment__footer {
+  color: var(--text);
+}
+
+/* message marked as read */
+.unread_group_header.display_flex.justify_content_between {
+  background: var(--background);
 }
