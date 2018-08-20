@@ -72,6 +72,10 @@ div#search_container.c-react_search_input {
   border-color: transparent;
 }
 
+/* set bot username to same color as others */
+.bot_message .message_sender, .bot_message .message_sender a{
+  color: var(--text);
+}
 /* ---------------------------------------------------------------------------------- */
 
 h1, h2, h3, h4 {
