@@ -41,21 +41,24 @@ limitations under the License.
    --message-separator: #3E4147;
 }
 
+/* ---------------------------------------------------------------------------------- */
+/* discord theme specific settings */
+
+/* message separators */
 .c-message {
 	border-top: solid;
 	border-top-width: 1px;
 	border-top-color: var(--message-separator);
 }
 
+/* adjust avatar spacing */
 .c-message--light .c-message__gutter, .c-message--light .c-message__label__gutter {
 	padding-right: 8px;
 	width: 60px;
 }
-
 .c-message--light .c-message__content {
 	margin-left: 68px;
 }
-
 .c-avatar__emoji, .c-avatar__image {
 	border-radius: 20px;
 	display: block;
@@ -68,6 +71,8 @@ div#search_container.c-react_search_input {
   background-color: var(--input-background);
   border-color: transparent;
 }
+
+/* ---------------------------------------------------------------------------------- */
 
 h1, h2, h3, h4 {
   color: var(--text);
@@ -1541,4 +1546,9 @@ ts-jumper .p-jumper__help {
 /* message attachment footer text */
 .c-message_attachment__footer {
   color: var(--text);
+}
+
+/* message marked as read */
+.unread_group_header.display_flex.justify_content_between {
+  background: var(--background);
 }
