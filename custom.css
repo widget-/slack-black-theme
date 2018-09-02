@@ -1527,3 +1527,13 @@ ts-jumper .p-jumper__help {
 #client_body:not(.onboarding):not(.feature_global_nav_layout):before {
     background: var(--background);
 }
+/* 3.3.1 search modal */
+.c-search_modal:not(.c-search_modal--primarysearch) .c-search__input_box {
+    background: var(--background);
+}
+.c-search__input_and_close {
+    border-bottom: 1px solid var(--border-dim);
+}
+.c-search_autocomplete__suggestion_item {
+    color: var(--text);
+}
