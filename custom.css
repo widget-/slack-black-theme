@@ -1199,6 +1199,7 @@ ts-jumper ts-jumper-container {
 
 .c-menu_item__header {
     background: var(--background-hover);
+    color: var(--text);
 }
 
 .sidebar_menu_list_item {
@@ -1507,6 +1508,11 @@ ts-jumper .p-jumper__help {
 }
 /* share channel */
 .p-file_details__share_channel {
+    color: var(--text);
+}
+
+/* share message */
+.c-message_attachment__author--distinct {
     color: var(--text);
 }
 
