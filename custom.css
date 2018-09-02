@@ -1505,3 +1505,19 @@ ts-jumper .p-jumper__help {
 #user_groups_container .mention {
     background-color: var(--background-hover);
 }
+/* share channel */
+.p-file_details__share_channel {
+    color: var(--text);
+}
+
+/* 3.3.1 emoji picker */
+.c-menu.p-emoji_picker, .c-menu.p-emoji_picker div, .c-menu.p-emoji_picker h3 {
+    background: var(--background);
+}
+.p-emoji_picker__group_tab--active {
+    background: var(--background-elevated);
+}
+/* 3.3.1 body part */
+#client_body:not(.onboarding):not(.feature_global_nav_layout):before {
+    background: var(--background);
+}
