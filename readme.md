@@ -41,8 +41,16 @@ document.addEventListener("DOMContentLoaded", function() {
       --text: #CCC;
       --background: #080808;
       --background-elevated: #222;
-   }
-   `
+   } 
+
+   a[aria-label^="NAME_OF_CHANNEL_OR_DIRECT_CONVO_TO_STYLE"]
+   {
+        --background: #4d0000  !important;
+        --text-transform: uppercase  !important;
+        --letter-spacing: 2px !important;
+        --text-shadow: 1px 1px white;
+
+    }   `
 
    // Insert a style tag into the wrapper view
    cssPromise.then(css => {
@@ -128,6 +136,43 @@ Here's some example color variations you might like.
 --background: #F00;
 --background-elevated: #FF0;
 ```
+
+## Coloring people/channel/conversations
+
+One of the most frustrating things about Slack is the lack of visual emphasis on key conversations beyond a long list of alphabetically ordered favorites. If you want to color a conversation that is easy to do. Using the browser developer tools accessible inside Slack (see section right below) you can find out what CSS to target, but the result is that you basically target the "aria-label" attributes which happen to contain your people and channel conversation names. 
+
+So if you have a channel called "*apj*-sa" then you target and style it like this with additional CSS:
+
+```
+   a[aria-label^="apj-sa"]
+   {
+        background: #4d0000  !important;
+        text-transform: uppercase  !important;
+        letter-spacing: 2px !important;
+        text-shadow: 1px 1px white;
+    }
+
+```
+
+You can also target multiple people or conversations at once, i.e. to target conversations with takuya, Rubs and Yuan Li use this css:
+
+```
+   a[aria-label^="takuya"],
+   a[aria-label^="Yuan Li"],
+   a[aria-label^="Rubs"]
+   {
+        background: #4d0000  !important;
+        text-transform: uppercase  !important;
+        letter-spacing: 2px !important;
+        text-shadow: 1px 1px white;
+
+    }
+
+```
+
+![Screenshot of people/channels/conversations colored](https://user-images.githubusercontent.com/1035157/45020404-39f64000-b072-11e8-981b-e02b5a582faa.png)
+
+
 
 # Development
 
