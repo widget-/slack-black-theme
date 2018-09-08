@@ -213,8 +213,8 @@ li.active[class] span,
 
 #client_body::before, #client_body:not(.onboarding):before {
   border-bottom: 1px solid var(--border-dim) !important;
-  background: var(--background);
-  box-shadow: none;
+  background: var(--background) !important;
+  box-shadow: none !important;
 }
 
 #client_body, #messages_container.has_top_messages_banner:before {
@@ -232,6 +232,12 @@ ts-jumper input[type="text"]::-webkit-input-placeholder {
 }
 
 #msg_input, #primary_file_button {
+  background: transparent !important;
+  color: var(--text) !important;
+  border-color: var(--border-dim) !important;
+}
+
+.inline_message_input_container, .inline_file_upload {
   background: transparent !important;
   color: var(--text) !important;
   border-color: var(--border-dim) !important;
