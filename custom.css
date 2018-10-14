@@ -1539,3 +1539,16 @@ ts-jumper .p-jumper__help {
 .c-search_autocomplete__suggestion_item {
     color: var(--text);
 }
+/* notification muter */
+.channel_prefs_body__section_header_title {
+    color: var(--text);
+}
+.channel_prefs_notifications_table {
+    color: var(--text);
+}
+.notification_prefs_icon:before {
+    color: var(--text);
+}
+.channel_prefs__muting_checkbox_label:not(.subtle_silver) {
+    color: var(--text) !important;
+}
