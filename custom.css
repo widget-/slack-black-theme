@@ -1526,6 +1526,8 @@ ts-jumper .p-jumper__help {
 /* 3.3.1 body part */
 #client_body:not(.onboarding):not(.feature_global_nav_layout):before {
     background: var(--background);
+    box-shadow: none;
+	content: none;
 }
 /* 3.3.1 search modal */
 .c-search_modal:not(.c-search_modal--primarysearch) .c-search__input_box {
