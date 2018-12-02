@@ -765,6 +765,10 @@ ts-message.active .edited, ts-message.active .reply_bar .last_reply_at, ts-messa
   background: var(--background);
    border-color: var(--border-dim);
 }
+.c-message__reply_bar--focus, .c-message__reply_bar:hover, .c-message__reply_bar--focus .c-message__reply_bar_view_thread, .c-message__reply_bar:hover .c-message__reply_bar_view_thread
+{
+    background-color: var(--background-elevated);
+}
 
 /* editor in thread reply */
 #convo_tab .message_input, #convo_tab textarea#msg_text {
@@ -1380,6 +1384,10 @@ nav {
 }
 .c-message--highlight, .c-message--highlight_yellow_bg {
     background: var(--background);
+}
+
+.c-message__editor__input--legacy {
+    background-color: var(--background-elevated);
 }
 /* new filelist */
 #client-ui .file_list_item.file_list_item--redesign {
