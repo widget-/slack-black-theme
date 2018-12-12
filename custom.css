@@ -160,9 +160,12 @@ ts-jumper input[type="text"],
     background-color: var(--border-dim);
 }
 
-.c-message_attachment__border {
+/* this styles only the brighter variant of attachment borders */
+.c-message_attachment__border[style="background-color: rgb(208, 208, 208)"], .c-message_attachment__border:not([style]) {
 	background-color: var(--background-elevated) !important;
 }
+
+
 .c-member_slug--link {
     background: var(--background-elevated);
 }
