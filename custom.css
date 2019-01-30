@@ -788,8 +788,23 @@ ts-message.active .edited, ts-message.active .reply_bar .last_reply_at, ts-messa
    color: var(--text) !important;
 }
 
+/** Until 3.3.5 **/
 #message_edit_container .message_input {
-    background:  var(--background-elevated);
+    background: var(--background-elevated);
+}
+
+/** With 3.3.6 **/
+.p-threads_footer__input .p-message_input_field {
+    background: var(--background-elevated);
+}
+button.c-button-unstyled.p-message_input_plus {
+    background-color: var(--background-hover);
+}
+.p-threads_flexpane__separator_count {
+    margin-right: 12px;
+    color: var(--text);
+}.p-threads_flexpane__separator_line {
+    border-bottom-color: var(--border-dim);
 }
 
 /* other */
@@ -1241,6 +1256,14 @@ ts-jumper ts-jumper-container {
 
 /** menus end **/
 
+.c-menu_item__icon {
+    color: var(--background-light);
+}
+/* sidebar in general */
+.p-flexpane_header {
+    border-bottom: 1px solid var(--border-dim);
+}
+
 /* member detail view */
 #member_preview_scroller .member_data_table tr, #member_preview_web_container .member_data_table tr, #team_list .member_data_table tr, .menu_member_header .member_data_table tr {
 	color: var(--text-bright);
@@ -1370,7 +1393,6 @@ nav {
 .c-dialog__header {
     background: var(--background-elevated);
 }
-
 .c-dialog__title {
     color: var(--text);
 }
@@ -1566,4 +1588,15 @@ ts-jumper .p-jumper__help {
 }
 .channel_prefs__muting_checkbox_label:not(.subtle_silver) {
     color: var(--text) !important;
+}
+/* message dialogs */
+.c-message__sender {
+    color: var(--text);
+}
+.c-message--standalone {
+    border: 1px solid var(--border-dim);
+}
+/* message not allowed */
+#msg_input_message {
+	background-color: var(--bacground-elevated);
 }
