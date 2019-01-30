@@ -806,7 +806,9 @@ button.c-button-unstyled.p-message_input_plus {
 }.p-threads_flexpane__separator_line {
     border-bottom-color: var(--border-dim);
 }
-
+.p-threads_flexpane__header_channel_name {
+     color: var(--text-special);
+}
 /* other */
 .special_formatting_quote .quote_bar {
    background: var(--border-bright) !important;
@@ -1258,6 +1260,9 @@ ts-jumper ts-jumper-container {
 
 .c-menu_item__icon {
     color: var(--background-light);
+}
+.c-icon {
+    color: var(--text);
 }
 /* sidebar in general */
 .p-flexpane_header {
