@@ -1613,3 +1613,22 @@ ts-jumper .p-jumper__help {
 #msg_input_message {
 	background-color: var(--bacground-elevated);
 }
+
+.internal_im_link,
+.c-button.c-button--outline {
+	color: var(--text) !important;
+}
+
+/* member details */
+.member_details_over_image {
+	text-shadow: 0 0 8px var(--background);
+}
+
+.member_details_over_image .member_name {
+	color: var(--background-light) !important;
+}
+
+/* unread counter */
+.p-channel_sidebar__channel--unread:not(.p-channel_sidebar__channel--muted):not(.p-channel_sidebar__channel--selected) .p-channel_sidebar__name {
+	color: var(--primary) !important;
+}
