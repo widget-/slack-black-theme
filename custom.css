@@ -1111,6 +1111,10 @@ ts-jumper ts-jumper-container {
 .c-fullscreen_modal__content {
     background-color: var(--background-elevated);
 }
+.c-fullscreen_modal__body {
+    color: var(--text);
+}
+
 .ts_toggle .ts_toggle_secondary_label {
 	color: var(--text);
 }
