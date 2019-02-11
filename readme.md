@@ -12,7 +12,7 @@ A darker, more contrasty, Slack theme.
 
 ```bash
 Usage:
-	./install.sh -t <default|low_contrast>
+	./install.sh -t <default|one_dark|low_contrast|navy|hot_dog_stand>
  	./install.sh -u
 
  -t: theme to install.
