@@ -1,12 +1,14 @@
 #!/bin/bash
 #
+# Slack Custom Theme Installer
 # Harry Kantas, 2019
+# Version 1.0
 
 DEST_DIR="/Applications/Slack.app/Contents/Resources/app.asar.unpacked/src/static"
 DEST_FILE1="index.js"
 DEST_FILE2="ssb-interop.js"
 
-THEMES=("default" "low_contrast")
+THEMES=("default" "one_dark" "low_contrast" "navy" "hot_dog_stand")
 
 usage() {
 cat << EOF
@@ -40,29 +42,30 @@ install_theme() {
 }
 
 while getopts "t:u" o; do
-    case "${o}" in
-        t)
-						t="${OPTARG}"
-						if [[ $(echo "${THEMES[@]}" | grep -o "$t" | wc -w) -gt 0 ]]
-						then
-							uninstall_theme
-            	install_theme "$t"
-						else
-							echo "Theme not found!"
-							echo
-							usage
-						fi
-            ;;
-        u)
-            uninstall_theme
-            ;;
-        *)
-            usage
-            ;;
-    esac
+  case "${o}" in
+    t)
+			t="${OPTARG}"
+			if [[ $(echo "${THEMES[@]}" | grep -o "$t" | wc -w) -gt 0 ]]
+			then
+				uninstall_theme
+      	install_theme "$t"
+			else
+				echo "Theme not found!"
+				echo
+				usage
+			fi
+      ;;
+    u)
+			t="original"
+      uninstall_theme
+      ;;
+    *)
+      usage
+      ;;
+  esac
 done
 if [[ "$#" -eq 0 ]]; then usage; fi
-shift $((OPTIND-1))
+if [[ -z "$t" ]]; then usage; fi
 
 echo "Restart Slack for changes to take effect."
 exit 0
