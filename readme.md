@@ -8,6 +8,21 @@ A darker, more contrasty, Slack theme.
 
 # Installing into Slack
 
+## Using the install script
+
+```bash
+Usage:
+	./install.sh -t <default|one_dark|low_contrast|navy|hot_dog_stand>
+ 	./install.sh -u
+
+ -t: theme to install.
+ -u: revert to the default Slack theme.
+
+Note: You will have to re-run this script whenever you upgrade Slack.
+```
+
+## Manually
+
 Find your Slack's application directory.
 
 * Windows: `%homepath%\AppData\Local\slack\`
