@@ -4,7 +4,17 @@
 # Harry Kantas, 2019
 # Version 1.0
 
-DEST_DIR="/Applications/Slack.app/Contents/Resources/app.asar.unpacked/src/static"
+OS="$(uname -s)"
+case "$OS" in
+	"Darwin")
+		DEST_DIR="/Applications/Slack.app/Contents/Resources/app.asar.unpacked/src/static"
+		;;
+	*)
+		echo "Your OS is not supported by this installer yet."
+		echo "Try installing the themes manually, following the README."
+		exit 1
+esac
+
 DEST_FILE1="index.js"
 DEST_FILE2="ssb-interop.js"
 
