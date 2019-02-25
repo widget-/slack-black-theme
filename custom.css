@@ -519,7 +519,7 @@ code {
 }
 
 a, a:link, a:visited{
-  color: var(--text-special) !important;
+  color: var(--text-special);
 }
 ts-message a .mention{
   color: var(--text-special) !important;
