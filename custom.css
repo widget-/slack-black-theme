@@ -1413,7 +1413,7 @@ nav {
 }
 
 .c-message_list__unread_divider__separator {
-    border-color: var(--background-elevated);
+	border-color: var(--background-bright);
 }
 
 /* message editor */
