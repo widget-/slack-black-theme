@@ -519,7 +519,7 @@ code {
 }
 
 a, a:link, a:visited{
-  color: var(--text-special);
+  color: var(--text-special) !important;
 }
 ts-message a .mention{
   color: var(--text-special) !important;
@@ -1278,10 +1278,18 @@ ts-jumper ts-jumper-container {
 	color: var(--text-bright);
 }
 #member_preview_scroller .member_details .member_name_and_presence .member_name, #member_preview_web_container .member_details .member_name_and_presence .member_name, .menu_member_header .member_details .member_name_and_presence .member_name, .menu_member_header .member_details .member_current_status, .menu_member_header .member_details .member_timezone_value {
-	color: var(--text);
+	color: var(--text) !important;
 }
 .menu_member_header .member_details .member_current_status a, .menu_member_header .member_details .member_timezone_value a {
 	color: var(--text-special);
+}
+
+.member_details_over_image {
+	text-shadow: 0 0 8px var(--background);
+}
+
+.member_details_over_image .member_name {
+	color: var(--background-light) !important;
 }
 
 /* channel detail view */
@@ -1617,15 +1625,6 @@ ts-jumper .p-jumper__help {
 .internal_im_link,
 .c-button.c-button--outline {
 	color: var(--text) !important;
-}
-
-/* member details */
-.member_details_over_image {
-	text-shadow: 0 0 8px var(--background);
-}
-
-.member_details_over_image .member_name {
-	color: var(--background-light) !important;
 }
 
 /* unread counter */
