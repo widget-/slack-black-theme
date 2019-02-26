@@ -1354,12 +1354,28 @@ ts-jumper ts-jumper-container {
 .p-download_item__actions {
     background: var(--background-hover);
 }
-
 .c-message_attachment {
     color: var(--text-bright);
 }
+.c-message_kit__file__meta {
+    color: var(--text);
+}
 .c-file_container--has_thumb .c-file__actions:before {
 	background-image: none;
+}
+.c-pillow_file__swap .c-pillow_file__slide {
+    background: var(--background-elevated);
+}
+.c-pillow_file__icon--slide:after {
+    color: var(--background);
+    border-color: var(--background);
+}
+.c-pillow_file__content--collapsed:after {
+    background: linear-gradient(0deg,var(--background),hsla(0,0%,100%,0) 40px);
+    border: 1px solid;
+}
+.c-pillow_file__snippet__content .CodeMirror-code>div:before {
+	color: var(--text);
 }
 /* file drafts */
 ts-rocket, ts-rocket.post_body {
