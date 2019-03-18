@@ -1546,11 +1546,23 @@ nav {
 .c-mrkdwn__broadcast--mention, .c-mrkdwn__broadcast--mention:hover, .c-mrkdwn__highlight, .c-mrkdwn__mention, .c-mrkdwn__mention:hover, .c-mrkdwn__user_group--mention, .c-mrkdwn__user_group--mention:hover {
     background: var(--background-elevated);
 }
+.c-member_slug--mention, .c-member_slug--mention:hover {
+    background: var(--background-hover);
+}
 
 /* message thumbs up */
 .c-reaction {
     background: var(--background);
     border: 1px solid var(--border-dim); 	
+}
+.c-reaction--reacted:hover {
+    background: var(--background-elevated);
+}
+.c-reaction_add {
+    background: var(--background);
+}
+.c-reaction_add:hover {
+    background: var(--background-hover);
 }
 .c-reaction__count {
 	color: var(--text-bright);
@@ -1597,6 +1609,7 @@ ts-jumper .p-jumper__help {
 .p-emoji_picker__group_tab--active {
     background: var(--background-elevated);
 }
+
 /* 3.3.1 body part */
 #client_body:not(.onboarding):not(.feature_global_nav_layout):before {
     background: var(--background);
