@@ -772,7 +772,37 @@ ts-message.active .edited, ts-message.active .reply_bar .last_reply_at, ts-messa
 {
     background-color: var(--background-elevated);
 }
-
+.p-threads_view {
+    background-color: var(--background);
+}
+.p-threads_view_header__permalink {
+    color: var(--text-special) !important;
+}
+.p-threads_view__default_background {
+    background-color: var(--background-elevated);
+}
+.p-threads_view__divider_line {
+    border-color: var(--border-dim);
+}
+.p-threads_view__divider_label {
+    background-color: var(--background-elevated);
+    color: var(--text);
+}
+.p-threads_view_root {
+    border-color: var(--border-dim);
+}
+.p-threads_view_reply {
+    border-color: var(--border-dim);
+}
+.p-threads_view__footer {
+    border-color: var(--border-dim);
+}
+.p-threads_view_reply {
+    background-color: var(--background-hover);
+}
+.p-threads_footer__input--legacy .p-message_input_file_button {
+    background-color: var(--background-elevated);
+}
 /* editor in thread reply */
 #convo_tab .message_input, #convo_tab textarea#msg_text {
    color: var(--text) !important;
@@ -1421,6 +1451,9 @@ nav {
 }
 .c-message_attachment__pretext {
     color: var(--text);
+}
+.c-button--disabled {
+    background-color: var(--background-light);
 }
 /* dialogs */
 .c-dialog__header {
