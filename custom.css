@@ -40,6 +40,15 @@ h1, h2, h3, h4 {
   color: var(--text);
 }
 
+body {
+    background: var(--background);
+    color: var(--text);
+}
+hr {
+    border: 0;
+    border-bottom: 1px solid var(--background-elevated);
+}
+
 .popover_mask {
    background-color: rgba(0, 0, 0, 0.3);
 }
