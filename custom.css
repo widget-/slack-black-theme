@@ -172,6 +172,17 @@ ts-jumper input[type="text"],
    box-shadow: none;
 }
 
+/* buttons */
+.btn.disabled, .btn.disabled:active, .btn.disabled:hover, .btn:disabled, .btn:disabled:active, .btn:disabled:hover {
+	background-color: var(--background-light) !important;
+}
+.btn_outline.hover, .btn_outline:focus, .btn_outline:hover {
+	background: var(--background-hover) !important;
+}
+.btn_basic:focus, .btn_basic:hover {
+	color: var(--text-special);
+}
+
 /* channel list */
 .p-channel_sidebar__channel,
 .p-channel_sidebar__link {
