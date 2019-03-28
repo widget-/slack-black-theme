@@ -282,7 +282,9 @@ li.active[class] span,
   color: inherit !important;
 }
 
-#client_body::before, #client_body:not(.onboarding):before {
+#client_body::before,
+#client_body:not(.onboarding):before,
+#client_body:not(.onboarding):not(.feature_global_nav_layout):before {
   border-bottom: 1px solid var(--border-dim) !important;
   background: var(--background);
   box-shadow: none;
@@ -393,7 +395,8 @@ ts-message .action_hover_container .btn_msg_action,
 #flex_contents .heading,
 #flex_contents .heading a,
 #flex_contents .heading_text,
-#flex_contents .subheading {
+#flex_contents .subheading,
+#flex_contents .toolbar_container {
    background: var(--background) !important;
    color: var(--text) !important;
    border-color: var(--border-dim);
@@ -448,7 +451,7 @@ ts-message .action_hover_container .btn_msg_action,
 }
 
 .ql-placeholder {
-   color: var(--text);
+   color: var(--text) !important;
 }
 
 .ql-container.texty_single_line_input {
@@ -603,6 +606,10 @@ ts-message a.timestamp{
 }
 .file_preview_action.btn.ts_tip:hover, .file_preview_link.btn.file_comment_link:hover {
    background-color: var(--background) !important;
+}
+
+.p-file_details__name {
+	color: var(--text);
 }
 
 /* user profile popup */
