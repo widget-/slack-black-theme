@@ -769,6 +769,46 @@ ts-message .reply_bar:hover {
   background: var(--background) !important;
   border: 1px solid var(--border-dim) !important;
 }
+ts-message.active .edited, ts-message.active .reply_bar .last_reply_at, ts-message.active .timestamp, ts-message.active.automated .message_body, ts-message.message--focus .edited, ts-message.message--focus .reply_bar .last_reply_at, ts-message.message--focus .timestamp, ts-message.message--focus.automated .message_body, ts-message:hover .edited, ts-message:hover .reply_bar .last_reply_at, ts-message:hover .timestamp, ts-message:hover.automated .message_body {
+	color: var(--text-bright);
+}
+#threads_msgs .inline_message_input_container.with_file_upload,
+#reply_container.upload_in_threads .inline_message_input_container {
+  background: var(--background);
+	border-color: var(--border-dim);
+}
+.p-threads_view {
+	background-color: var(--background) !important;
+}
+.p-threads_view_root,
+.p-threads_view_reply,
+.p-threads_view__footer {
+	border-color: var(--border-dim) !important;
+	color: var(--text);
+}
+.p-threads_view_reply--new_reply {
+	background-color: var(--background-light) !important;
+	color: var(--text-bright);
+}
+.p-threads_view__default_background,
+.p-threads_view__divider_label {
+	background-color: var(--background-elevated) !important;
+	color: var(--text);
+}
+.p_threads_view_load_newer_button,
+.p_threads_view_load_older_button {
+	border-color: var(--border-dim) !important;
+	background-color: var(--background) !important;
+}
+.p-threads_view_header__permalink,
+.p-threads_flexpane__header_channel_name {
+	color: var(--text-special) !important;
+}
+.p-threads_footer__input .p-message_input_field,
+.p-threads_footer__input .p-message_input_file_button {
+	background: var(--background) !important;
+}
+
 /* editor in thread reply */
 #convo_tab .message_input, #convo_tab textarea#msg_text {
    color: var(--text) !important;
