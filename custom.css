@@ -117,6 +117,7 @@ ts-jumper input[type="text"],
 .p-message_pane .c-message_list.c-virtual_list--scrollbar>.c-scrollbar__hider, .p-message_pane .c-message_list:not(.c-virtual_list--scrollbar)
 {
   background: var(--background) !important;
+  border-color: var(--border-dim);
 }
 .p-message_pane .c-message_list.c-virtual_list--scrollbar>.c-scrollbar__hider:before, .p-message_pane .c-message_list:not(.c-virtual_list--scrollbar):before {
     background: var(--background);
@@ -1141,6 +1142,9 @@ ts-jumper ts-jumper-container {
 .c-fullscreen_modal__content {
     background-color: var(--background-elevated);
 }
+.c-fullscreen_modal__back:hover, .c-fullscreen_modal__close:hover {
+    background-color: var(--background-hover);
+}
 .c-fullscreen_modal__body {
     color: var(--text);
 }
@@ -1541,6 +1545,9 @@ nav {
 #stars_scroller {
     background-color: var(--background);
 }
+.p-file_flexpane--list {
+    background-color: var(--background-elevated);
+}
 /* whats' new */
 #whats_new_tab #whats_new_scroller {
     background: var(--background);
@@ -1659,6 +1666,9 @@ ts-jumper .p-jumper__help {
 .c-search_autocomplete__suggestion_item {
     color: var(--text);
 }
+.token {
+    color: var(--text-bright) !important;
+}
 /* notification muter */
 .channel_prefs_body__section_header_title {
     color: var(--text);
@@ -1692,4 +1702,13 @@ ts-jumper .p-jumper__help {
 /* unread counter */
 .p-channel_sidebar__channel--unread:not(.p-channel_sidebar__channel--muted):not(.p-channel_sidebar__channel--selected) .p-channel_sidebar__name {
 	color: var(--primary) !important;
+}
+
+/* help modal */
+.p-help_modal__footer {
+    background-color: var(--background);
+}
+.p-help_modal__list__item:focus, .p-help_modal__list__item:hover, .p-help_modal__list__item__focus {
+    background: var(--background-hover);
+    border: 1px solid var(--border-dim);
 }
