@@ -1406,7 +1406,7 @@ ts-jumper ts-jumper-container {
 	background-image: none;
 }
 .c-pillow_file__swap .c-pillow_file__slide {
-    background: var(--background-elevated);
+    background: var(--background);
 }
 .c-pillow_file__icon--slide:after {
     color: var(--background);
