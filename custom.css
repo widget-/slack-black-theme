@@ -407,7 +407,7 @@ ts-message .action_hover_container .btn_msg_action,
 .menu ul li a,
 .btn, .btn_outline, .menu {
   color: var(--text) !important;
-  border-color: var(--border-dim) !important;
+  border-color: border: 1px solid var(--border-dim) !important;
 }
 
 .btn:hover:after {
@@ -910,8 +910,8 @@ ts-thread .view_all_replies_container:hover {
 
 #fs_modal .fs_modal_btn:hover {
     color: var(--text);
+    background-color: var(--background-hover);
 }
-
 #fs_modal, #fs_modal h1, #fs_modal h2,
 #fs_modal h3, #fs_modal h4, #fs_modal h5,
 .modal, .modal h1, .modal h2, .modal h3,
@@ -1042,6 +1042,10 @@ select {
    background-color: var(--background);
    color: var(--text);
    border-color: var(--border-dim);
+}
+
+#select_share_channels .lazy_filter_select .lfs_value .lfs_item.selected {
+    color: var(--text);
 }
 
 .CodeMirror, .CodeMirror .CodeMirror-gutters, .CodeMirror-gutter {
@@ -1216,7 +1220,7 @@ ts-jumper ts-jumper-container {
     color: var(--text);
 }
 .c-fullscreen_modal__back:hover, .c-fullscreen_modal__close:hover {
-    background-color: #e8e8e8;
+    background-color: var(--background-hover);
     color: var(--text-bright);
 }
 /* channel invite */
@@ -1229,6 +1233,9 @@ ts-jumper ts-jumper-container {
 }
 .channel_modal .btn_large {
     border: 1px solid;
+}
+#channel_invite_modal #channel_invite_container .channel_invite_row.disabled {
+    background-color: var(--background-light);
 }
 /* channel browsing */
 #channel_browser .channel_browser_row_header {
@@ -1243,6 +1250,7 @@ ts-jumper ts-jumper-container {
 }
 #channel_browser #channel_list_container:not(.keyboard_active).not_scrolling .channel_browser_row:hover, #channel_browser .channel_browser_row.highlighted {
     background: var(--background-elevated);
+    border-color: var(--border-dim);
 }
 .sk_black {
     color: var(--text);
@@ -1414,6 +1422,10 @@ ts-jumper ts-jumper-container {
 /* file drafts */
 ts-rocket, ts-rocket.post_body {
     color: var(--text);
+}
+
+.modal-backdrop {
+    background: var(--background-elevated);
 }
 
 nav {
@@ -1711,4 +1723,19 @@ ts-jumper .p-jumper__help {
 .p-help_modal__list__item:focus, .p-help_modal__list__item:hover, .p-help_modal__list__item__focus {
     background: var(--background-hover);
     border: 1px solid var(--border-dim);
+}
+
+/* App channel */
+.channel_header .channel_header__tabs .channel_header__tab.--active {
+    color: var(--text);
+}
+.channel_header .channel_header__tabs .channel_header__tab:hover {
+    color: var(--background-light);
+}.p-app_space {
+    background-color: var(--background-elevated);
+}
+.p-app_space_profile__info {
+    background-color: var(--background-elevated);
+}.p-app_space__header {
+    color: var(--text);
 }
