@@ -172,7 +172,7 @@ Instead of launching Slack normally, you'll need to enable developer mode to be 
 
 * Mac: `export SLACK_DEVELOPER_MENU=true; open -a /Applications/Slack.app`
 
-* Linux: (todo)
+* Linux: `export SLACK_DEVELOPER_MENU=true; slack` (when installed via snap)
 
 * Windows: (todo)
 
