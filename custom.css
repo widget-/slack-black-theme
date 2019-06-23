@@ -1121,7 +1121,12 @@ select {
 .notification_example.mac {
   color: #555459; /* default color - leave unthemed */
 }
-
+.p-prefs_modal__radiogroup label.p-prefs_modal__radiogroup--selected {
+    background: var(--background);
+}
+.p-prefs_modal__radiogroup .p-prefs_modal__radio_decorator {
+    background-color: var(--background-elevated);
+}
 /* global jumper */
 ts-jumper, ts-jumper.active {
   background-color: rgba(32,32,32,0.6);
@@ -1471,6 +1476,12 @@ nav {
 .c-button--disabled {
     background-color: var(--background-light);
 }
+.c-select_button {
+    background-color: var(--background-elevated);
+}
+.c-select_button:active {
+    background-color: var(--background-hover);
+}
 /* dialogs */
 .c-dialog__header {
     background: var(--background-elevated);
@@ -1523,10 +1534,22 @@ nav {
 }
 .p-file_list__filters {
 	background: var(--background-elevated);
-	padding-top: 12px;
 }
 .c-pillow_file_container--full_width:focus, .c-pillow_file_container--full_width:focus-within, .c-pillow_file_container--full_width:hover {
 	background-color: var(--background-elevated);
+}
+
+.c-action_buttons.c-file__actions {
+    border-color: var(--border-dim);
+}
+.c-action_buttons__button {
+    background-color: var(--background-elevated);
+}
+.c-action_buttons__button:focus {
+    background-color: var(--background-hover);
+}
+.c-action_buttons__button:hover .c-action_buttons__icon {
+    color: var(--text);
 }
 /* side lists */
 #client-ui .searchable_member_list .team_list_item:hover {
@@ -1653,6 +1676,9 @@ ts-jumper .p-jumper__help {
 .c-message_attachment__author--distinct {
     color: var(--text);
 }
+.c-message_attachment__author_name, .c-message_attachment__author_name.c-link--button, .c-message_attachment__author_name.c-link--button:active, .c-message_attachment__author_name.c-link--button:focus, .c-message_attachment__author_name.c-link--button:hover {
+    color: var(--text);
+}
 
 /* 3.3.1 emoji picker */
 .c-menu.p-emoji_picker, .c-menu.p-emoji_picker div, .c-menu.p-emoji_picker h3 {
@@ -1738,4 +1764,30 @@ ts-jumper .p-jumper__help {
     background-color: var(--background-elevated);
 }.p-app_space__header {
     color: var(--text);
+}
+
+/* file upload */
+.p-multi_file_upload__container .p-galler_scroller__wrapper {
+    background: var(--background);
+}
+.c-pillow_file {
+    background: var(--background-elevated);
+}
+.c-dialog__footer .p-file_upload_dialog__footer_share_inputs {
+    color: var(--text);
+}
+
+/* option list */
+
+.c-select_options_list__wrapper {
+    background-color: var(--background-elevated);
+	border: 1px solid var(--border-dim);
+}
+.c-select_options_list__option {
+    color: var(--text);
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    background: var(--scrollbar-background);
 }
