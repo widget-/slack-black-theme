@@ -15,7 +15,7 @@ A darker, more contrasty, Slack theme.
 ### On Windows
 1. Make sure [7-zip](https://7-zip.de/download.html) is installed
 2. Make sure the [asar-plugin for 7-zip](http://www.tc4shell.com/en/7zip/asar/) is installed
-3. Execute slackBlack.ps1 (Thanks to [tarantulae](https://github.com/tarantulae) on whose script this is largely based)
+3. Execute slackBlack.ps1 (Thanks to [Anthony Northrup](https://github.com/anthonynorthrup314/) and [tarantulae](https://github.com/tarantulae) on whose scripts this is largely based)
 ### On Unix (MacOS/Linux)
 1. Make sure nodejs/npm are installed (`sudo apt install nodejs npm`)
 2. Make sure the asar package is installed (`sudo npm i -g npx asar`)
@@ -31,67 +31,15 @@ Find your Slack's application directory.
 ### For version 4.0.0+
 3. Go to folder "resources"
 4. Open app.asar with 7-zip
-5. In 7-zip, view the file (with right-click on the file) to `app\dist\ssb-interop.bundle.js` and add the code below (section "Code to add").
+5. In 7-zip, view the file (with right-click on the file) to `app\dist\ssb-interop.bundle.js` and add the code from the file "interjectCode.js"
 6. Save **and close the editor**, then press "OK" on the question whether the archive is to be updated.
 
 ### For versions up to Slack 3
 
-Add the code shown below to
-`resources\app.asar.unpacked\src\static\index.js`
+Append the code the code from the file "interjectCode.js" to the following files:
+* `resources\app.asar.unpacked\src\static\index.js`
+* `resources\app.asar.unpacked\src\static\ssb-interop.js`
 
-and to:
-`resources\app.asar.unpacked\src\static\ssb-interop.js`
-
-### Code to add 
-
-```js
-// First make sure the wrapper app is loaded
-document.addEventListener("DOMContentLoaded", function() {
-
-   // Then get its webviews
-   let webviews = document.querySelectorAll(".TeamView webview");
-
-   // Fetch our CSS in parallel ahead of time
-   const cssPath = 'https://cdn.rawgit.com/widget-/slack-black-theme/master/custom.css';
-   let cssPromise = fetch(cssPath).then(response => response.text());
-
-   let customCustomCSS = `
-   :root {
-      /* Modify these to change your theme colors: */
-      --primary: #09F;
-      --text: #999;
-      --background: #111;
-      --background-elevated: #222;
-   }
-   `
-
-   // Insert a style tag into the wrapper view
-   cssPromise.then(css => {
-      let s = document.createElement('style');
-      s.type = 'text/css';
-      s.innerHTML = css + customCustomCSS;
-      document.head.appendChild(s);
-   });
-
-   // Wait for each webview to load
-   webviews.forEach(webview => {
-      webview.addEventListener('ipc-message', message => {
-         if (message.channel == 'didFinishLoading')
-            // Finally add the CSS into the webview
-            cssPromise.then(css => {
-               let script = `
-                     let s = document.createElement('style');
-                     s.type = 'text/css';
-                     s.id = 'slack-custom-css';
-                     s.innerHTML = \`${css + customCustomCSS}\`;
-                     document.head.appendChild(s);
-                     `
-               webview.executeJavaScript(script);
-            })
-      });
-   });
-});
-```
 
 Notice that you can edit any of the theme colors using the custom CSS (for
 the already-custom theme.) Also, you can put any CSS URL you want here,

@@ -1,5 +1,8 @@
 #! /usr/bin/env bash
 
+# Originally written by smitt04 in https://github.com/widget-/slack-black-theme/issues/98#issuecomment-511449693
+# Extended for slack 3/4 recognition by Nockiro
+
 OSX_SLACK_RESOURCES_DIR="/Applications/Slack.app/Contents/Resources"
 LINUX_SLACK_RESOURCES_DIR="/usr/lib/slack/resources"
 
