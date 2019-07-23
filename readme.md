@@ -8,20 +8,41 @@ A darker, more contrasty, Slack theme.
 
 # Installing into Slack
 
+0. Make sure slack is not running
+
+## Via script (automatic "installer" for version 3/4)
+
+### On Windows
+1. Make sure [7-zip](https://7-zip.de/download.html) is installed
+2. Make sure the [asar-plugin for 7-zip](http://www.tc4shell.com/en/7zip/asar/) is installed
+3. Execute slackBlack.ps1 (Thanks to [tarantulae](https://github.com/tarantulae) on whose script this is largely based)
+### On Unix (MacOS/Linux)
+1. Make sure nodejs/npm are installed (`sudo apt install nodejs npm`)
+2. Make sure the asar package is installed (`sudo npm i -g npx asar`)
+3. Execute darkSlack.sh (Thanks to [smitt04](https://github.com/smitt04) on whose script this is based)
+
+## Manually
 Find your Slack's application directory.
 
 * Windows: `%homepath%\AppData\Local\slack\`
 * Mac: `/Applications/Slack.app/Contents/`
 * Linux: `/usr/lib/slack/` (Debian-based)
 
+### For version 4.0.0+
+3. Go to folder "resources"
+4. Open app.asar with 7-zip
+5. In 7-zip, view the file (with right-click on the file) to `app\dist\ssb-interop.bundle.js` and add the code below (section "Code to add").
+6. Save **and close the editor**, then press "OK" on the question whether the archive is to be updated.
 
-Open up the most recent version (e.g. `app-2.5.1`) then open
+### For versions up to Slack 3
+
+Add the code shown below to
 `resources\app.asar.unpacked\src\static\index.js`
 
-For versions after and including `3.0.0` the same code must be added to the following file
+and to:
 `resources\app.asar.unpacked\src\static\ssb-interop.js`
 
-At the very bottom, add
+### Code to add 
 
 ```js
 // First make sure the wrapper app is loaded
@@ -31,26 +52,18 @@ document.addEventListener("DOMContentLoaded", function() {
    let webviews = document.querySelectorAll(".TeamView webview");
 
    // Fetch our CSS in parallel ahead of time
-   const cssPath = 'https://raw.githubusercontent.com/Nockiro/slack-black-theme/master/custom.css';
+   const cssPath = 'https://cdn.rawgit.com/widget-/slack-black-theme/master/custom.css';
    let cssPromise = fetch(cssPath).then(response => response.text());
 
    let customCustomCSS = `
    :root {
       /* Modify these to change your theme colors: */
       --primary: #09F;
-      --text: #CCC;
-      --background: #080808;
+      --text: #999;
+      --background: #111;
       --background-elevated: #222;
-   } 
-
-   a[aria-label^="NAME_OF_CHANNEL_OR_DIRECT_CONVO_TO_STYLE"]
-   {
-        --background: #4d0000  !important;
-        --text-transform: uppercase  !important;
-        --letter-spacing: 2px !important;
-        --text-shadow: 1px 1px white;
-
-    }   `
+   }
+   `
 
    // Insert a style tag into the wrapper view
    cssPromise.then(css => {
@@ -87,6 +100,56 @@ so you don't necessarily need to create an entire fork to change some small styl
 That's it! Restart Slack and see how well it works.
 
 NB: You'll have to do this every time Slack updates.
+# Development
+
+`git clone` the project and `cd` into it.
+
+Change the CSS URL to `const cssPath = 'http://localhost:8080/custom.css';`
+
+Run a static webserver of some sort on port 8080:
+
+```bash
+npm install -g static
+static .
+```
+
+In addition to running the required modifications, you will likely want to add auto-reloading:
+
+```js
+const cssPath = 'http://localhost:8080/custom.css';
+const localCssPath = '/Users/bryankeller/Code/slack-black-theme/custom.css';
+
+window.reloadCss = function() {
+   const webviews = document.querySelectorAll(".TeamView webview");
+   fetch(cssPath + '?zz=' + Date.now(), {cache: "no-store"}) // qs hack to prevent cache
+      .then(response => response.text())
+      .then(css => {
+         console.log(css.slice(0,50));
+         webviews.forEach(webview =>
+            webview.executeJavaScript(`
+               (function() {
+                  let styleElement = document.querySelector('style#slack-custom-css');
+                  styleElement.innerHTML = \`${css}\`;
+               })();
+            `)
+         )
+      });
+};
+
+fs.watchFile(localCssPath, reloadCss);
+```
+
+Instead of launching Slack normally, you'll need to enable developer mode to be able to inspect things.
+
+* Mac: `export SLACK_DEVELOPER_MENU=true; open -a /Applications/Slack.app`
+
+* Linux: (todo)
+
+* Windows: (todo)
+
+# License
+
+Apache 2.0
 
 # Color Schemes
 
@@ -136,101 +199,3 @@ Here's some example color variations you might like.
 --background: #F00;
 --background-elevated: #FF0;
 ```
-
-## Coloring people/channel/conversations
-
-One of the most frustrating things about Slack is the lack of visual emphasis on key conversations beyond a long list of alphabetically ordered favorites. If you want to color a conversation that is easy to do. Using the browser developer tools accessible inside Slack (see section right below) you can find out what CSS to target, but the result is that you basically target the "aria-label" attributes which happen to contain your people and channel conversation names. 
-
-So if you have a channel called "*apj*-sa" then you target and style it like this with additional CSS:
-
-```
-   a[aria-label^="apj-sa"]
-   {
-        background: #4d0000  !important;
-        text-transform: uppercase  !important;
-        letter-spacing: 2px !important;
-        text-shadow: 1px 1px white;
-    }
-
-```
-
-You can also target multiple people or conversations at once, i.e. to target conversations with takuya, Rubs and Yuan Li use this css:
-
-```
-   a[aria-label^="takuya"],
-   a[aria-label^="Yuan Li"],
-   a[aria-label^="Rubs"]
-   {
-        background: #4d0000  !important;
-        text-transform: uppercase  !important;
-        letter-spacing: 2px !important;
-        text-shadow: 1px 1px white;
-
-    }
-
-```
-
-![Screenshot of people/channels/conversations colored](https://user-images.githubusercontent.com/1035157/45020404-39f64000-b072-11e8-981b-e02b5a582faa.png)
-
-
-
-# Development
-
-`git clone` the project and `cd` into it.
-
-Change the CSS URL to `const cssPath = 'http://localhost:8080/custom.css';`
-
-Run a static webserver of some sort on port 8080:
-
-```bash
-npm install -g static
-static .
-```
-
-In addition to running the required modifications, you will likely want to add auto-reloading:
-
-```js
-const cssPath = 'http://localhost:8080/custom.css';
-const localCssPath = '/Users/bryankeller/Code/slack-black-theme/custom.css';
-
-window.reloadCss = function() {
-   const webviews = document.querySelectorAll(".TeamView webview");
-   fetch(cssPath + '?zz=' + Date.now(), {cache: "no-store"}) // qs hack to prevent cache
-      .then(response => response.text())
-      .then(css => {
-         console.log(css.slice(0,50));
-         webviews.forEach(webview =>
-            webview.executeJavaScript(`
-               (function() {
-                  let styleElement = document.querySelector('style#slack-custom-css');
-                  styleElement.innerHTML = \`${css}\`;
-               })();
-            `)
-         )
-      });
-};
-
-fs.watchFile(localCssPath, reloadCss);
-```
-
-Instead of launching Slack normally, you'll need to enable developer mode to be able to inspect things.
-
-* Mac: `export SLACK_DEVELOPER_MENU=true; open -a /Applications/Slack.app`
-
-* Linux: `export SLACK_DEVELOPER_MENU=true && /usr/bin/slack`
-
-* Windows (PowerShell):
-
-```powershell
-# Set environment variable
-[System.Environment]::SetEnvironmentVariable('SLACK_DEVELOPER_MENU', 'true', 'Process')
-
-# Launch Slack (replace x.y.z with the latest version)
-& $env:LOCALAPPDATA\slack\app-x.y.z\slack.exe
-
-# Open developer console by pressing: Ctrl + Alt + I
-```
-
-# License
-
-Apache 2.0
