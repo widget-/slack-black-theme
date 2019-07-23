@@ -1890,3 +1890,10 @@ strong {
 .p-member_directory__member_row:focus, .p-member_directory__member_row:focus-within, .p-member_directory__member_row:hover {
     background-color: var(--background-hover);
 }
+/* autocomplete lists */
+.c-texty_autocomplete {
+    background-color: var(--background-elevated);
+}
+.c-texty_autocomplete__result_highlight {
+    background-color: var(--background);
+}
