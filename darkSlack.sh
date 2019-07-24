@@ -30,7 +30,7 @@ fi
 # on "real" unix systems, there is no version number in the path - so we ask the user
 if [ -z "$APP_VER" ]; then
 	read -p "Enter your slack version (only major, e.g, 4 or 3): " APP_VER
-	APP_VER = "app-${SLACK_RESOURCES_DIR}"
+	APP_VER="app-${APP_VER}"
 fi
 
 SLACK_FILE_PATH_3="${SLACK_RESOURCES_DIR}"/app.asar.unpacked/src/static/index.js
