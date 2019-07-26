@@ -1,4 +1,4 @@
-﻿# Created by: Anthony Northrup
+# Created by: Anthony Northrup
 # Based on: https://github.com/tarantulae/slack-black-theme-4.0PS
 #    Originally linked: https://github.com/widget-/slack-black-theme/issues/98#issuecomment-512283114
 # Extended by: Nockiro
@@ -30,19 +30,19 @@ $SlackResources = $SlackRoot + "\" + $AppVersion + "\resources"
 $7zipRoot = Get-ItemProperty HKLM:\Software\7-Zip | Select-Object -ExpandProperty Path
 if (!$7zipRoot)
 {
-   $7zipRoot = Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\7-Zip |  Select-Object -ExpandProperty InstallLocation
+	$7zipRoot = Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\7-Zip |  Select-Object -ExpandProperty InstallLocation
 }
 if (!$7zipRoot -or !(Test-Path "$7zipRoot\7z.exe"))
 {
-   [System.Windows.Forms.MessageBox]::Show("7-Zip not detected", "Error: Exiting...");
-   exit
+	[System.Windows.Forms.MessageBox]::Show("7-Zip not detected", "Error: Exiting...");
+	exit
 }
 
 # Ensure the ASAR add-in is installed
 if (!(Test-Path "$7zipRoot\Formats\Asar*"))
 {
-   [System.Windows.Forms.MessageBox]::Show("ASAR add-in must be installed. Download from: http://www.tc4shell.com/en/7zip/asar/", "Error: Exiting...")
-   exit
+	[System.Windows.Forms.MessageBox]::Show("ASAR add-in must be installed. Download from: http://www.tc4shell.com/en/7zip/asar/", "Error: Exiting...")
+	exit
 }
 
 # Stop Slack
@@ -51,9 +51,9 @@ Get-Process slack -ErrorAction SilentlyContinue | Stop-Process -PassThru
 # Already have a backup? Might want to restore
 if ((Test-Path "$SlackResources\app.asar.backup") -or (Test-Path "$SlackResources\app.asar.unpacked\src\static\index.js.backup") -or (Test-Path "$SlackResources\app.asar.unpacked\src\static\ssb-interop.backup"))
 {
-   $result = [System.Windows.Forms.MessageBox]::Show("A backup of the app already exists, do you want to remove the custom theme and restore to the previous version?", "Remove custom theme?", [System.Windows.Forms.MessageBoxButtons]::YesNoCancel, [System.Windows.Forms.MessageBoxIcon]::Question)
-   if ($result -eq [System.Windows.Forms.DialogResult]::Yes)
-   {
+	$result = [System.Windows.Forms.MessageBox]::Show("A backup of the app already exists, do you want to remove the custom theme and restore to the previous version?", "Remove custom theme?", [System.Windows.Forms.MessageBoxButtons]::YesNoCancel, [System.Windows.Forms.MessageBoxIcon]::Question)
+	if ($result -eq [System.Windows.Forms.DialogResult]::Yes)
+	{
 		if ($Slack_Major -gt 1) {
 			echo "Restoring for Slack 2+.."		
 			Move-Item -Force $SlackResources\app.asar.unpacked\src\static\index.js.backup $SlackResources\app.asar.unpacked\src\static\index.js
@@ -73,11 +73,11 @@ if ((Test-Path "$SlackResources\app.asar.backup") -or (Test-Path "$SlackResource
 
 		# Prevent further execution
 		exit
-   }
-   elseif ($result -eq [System.Windows.Forms.DialogResult]::Cancel)
-   {
-      exit
-   }
+	}
+	elseif ($result -eq [System.Windows.Forms.DialogResult]::Cancel)
+	{
+		exit
+	}
 }
 
 
@@ -88,7 +88,7 @@ $customThemeJS = Get-Content interjectCode.js
 $tempDir = "C:\temp\SlackBlackTheme_Temp"
 if (!(Test-Path $tempDir))
 {
-   New-Item -Path $tempDir -ItemType Directory
+	New-Item -Path $tempDir -ItemType Directory
 }
 
 $oldLocation = Get-Location
@@ -107,25 +107,25 @@ if ($Slack_Major -eq 4) {
 	$updateFiles = $TRUE
 	if (Test-Path "$SlackResources\app.asar.backup")
 	{
-	   $updateFiles = $FALSE
-	   $result = [System.Windows.Forms.MessageBox]::Show("A backup of the app already exists, do you want to overwrite?", "Warning: Backup exists", [System.Windows.Forms.MessageBoxButtons]::YesNo, [System.Windows.Forms.MessageBoxIcon]::Warning)
-	   if ($result -eq [System.Windows.Forms.DialogResult]::Yes)
-	   {
-		  $updateFiles = $TRUE
-	   }
+		$updateFiles = $FALSE
+		$result = [System.Windows.Forms.MessageBox]::Show("A backup of the app already exists, do you want to overwrite?", "Warning: Backup exists", [System.Windows.Forms.MessageBoxButtons]::YesNo, [System.Windows.Forms.MessageBoxIcon]::Warning)
+		if ($result -eq [System.Windows.Forms.DialogResult]::Yes)
+		{
+			$updateFiles = $TRUE
+		}
 	}
 
 	# Actually update the files
 	if ($updateFiles)
 	{
-	   # Update the modified files in the archive
-	   & $7zipRoot\7z.exe u app.asar dist\ssb-interop.bundle.js
-	   
-	   # Backup the old archive
-	   Copy-Item $SlackResources\app.asar $SlackResources\app.asar.backup
-	   
-	   # Copy the new archive
-	   Copy-Item app.asar $SlackResources
+		# Update the modified files in the archive
+		& $7zipRoot\7z.exe u app.asar dist\ssb-interop.bundle.js
+		
+		# Backup the old archive
+		Copy-Item $SlackResources\app.asar $SlackResources\app.asar.backup
+		
+		# Copy the new archive
+		Copy-Item app.asar $SlackResources
 	}
 } else {
 	
@@ -133,12 +133,12 @@ if ($Slack_Major -eq 4) {
 	$updateFiles = $TRUE
 	if ((Test-Path "$SlackResources\app.asar.unpacked\src\static\index.js.backup") -or (Test-Path "$SlackResources\app.asar.unpacked\src\static\ssb-interop.backup"))
 	{
-	   $updateFiles = $FALSE
-	   $result = [System.Windows.Forms.MessageBox]::Show("A backup of the app already exists, do you want to overwrite?", "Warning: Backup exists", [System.Windows.Forms.MessageBoxButtons]::YesNo, [System.Windows.Forms.MessageBoxIcon]::Warning)
-	   if ($result -eq [System.Windows.Forms.DialogResult]::Yes)
-	   {
-		  $updateFiles = $TRUE
-	   }
+		$updateFiles = $FALSE
+		$result = [System.Windows.Forms.MessageBox]::Show("A backup of the app already exists, do you want to overwrite?", "Warning: Backup exists", [System.Windows.Forms.MessageBoxButtons]::YesNo, [System.Windows.Forms.MessageBoxIcon]::Warning)
+		if ($result -eq [System.Windows.Forms.DialogResult]::Yes)
+		{
+			$updateFiles = $TRUE
+		}
 	}
 	
 	Copy-Item $SlackResources\app.asar.unpacked\src\static\index.js .
@@ -149,7 +149,7 @@ if ($Slack_Major -eq 4) {
 			Add-Content $SlackResources\app.asar.unpacked\src\static\index.js -Value $customThemeJS
 			
 			# Backup old index file
-		    Copy-Item .\index.js $SlackResources\app.asar.unpacked\src\static\index.js.backup
+			Copy-Item .\index.js $SlackResources\app.asar.unpacked\src\static\index.js.backup
 			if ($Slack_Major -gt 2) {			
 				echo "Adding code for slack 3"
 				Add-Content $SlackResources\app.asar.unpacked\src\static\ssb-interop.js -Value $customThemeJS
