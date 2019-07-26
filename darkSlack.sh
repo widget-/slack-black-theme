@@ -59,15 +59,15 @@ if [[ $APP_VER == app-4* ]]; then
 
 	sudo npx asar extract "${SLACK_RESOURCES_DIR}"/app.asar "${SLACK_RESOURCES_DIR}"/app.asar.unpacked
 
-	sudo tee -a "${SLACK_FILE_PATH_4}" > /dev/null <<< $(cat interjectCode.js)
+	cat interjectCode.js | sudo tee -a "${SLACK_FILE_PATH_4}" > /dev/null
 
 	sudo npx asar pack "${SLACK_RESOURCES_DIR}"/app.asar.unpacked "${SLACK_RESOURCES_DIR}"/app.asar
 fi
 
 if [[ $APP_VER == app-3* ]]; then
 	echo "Updating Slack 3 code.."
-	sudo tee -a "${SLACK_FILE_PATH_3}" > /dev/null <<< $(cat interjectCode.js)
-	sudo tee -a "${SLACK_FILE_PATH_3_1}" > /dev/null <<< $(cat interjectCode.js)
+	cat interjectCode.js | sudo tee -a "${SLACK_FILE_PATH_3}" > /dev/null
+	cat interjectCode.js | sudo tee -a "${SLACK_FILE_PATH_3_1}" > /dev/null
 fi
 
 echo ""
