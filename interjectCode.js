@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
    :root {
       /* Modify these to change your theme colors: */
       --primary: #09F;
-      --text: #999;
+      --text: #888;
       --background: #111;
       --background-elevated: #222;
    } 
