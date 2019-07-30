@@ -35,8 +35,15 @@ if [[ $APP_VER == app-4* ]]; then
 	echo ""
 	echo "This script requires sudo privileges." && echo "You'll need to provide your password."
 
-	# sudo npx asar extract "${SLACK_RESOURCES_DIR}"/app.asar "${SLACK_RESOURCES_DIR}"/app.asar.unpacked
-# Manually open ssb-interop.bundle.js and clear existing code. Above only good on fresh Slack.
+	# IF FRESH SLACK UPDATE:
+	# Uncomment below line
+	sudo npx asar extract "${SLACK_RESOURCES_DIR}"/app.asar "${SLACK_RESOURCES_DIR}"/app.asar.unpacked
+
+	# ELSE IF UPDATING STYLES:
+	# 0. Comment out above line
+	# 1. open `code /Applications/Slack.app/Contents/Resources/app.asar.unpacked/dist/ssb-interop.bundle.js` &
+	# 2. Clear existing code after //# sourceMappingURL=ssb-interop.bundle.js.map
+
 	cat interjectCode.js | sudo tee -a "${SLACK_FILE_PATH_4}" > /dev/null
 
 	sudo npx asar pack "${SLACK_RESOURCES_DIR}"/app.asar.unpacked "${SLACK_RESOURCES_DIR}"/app.asar
