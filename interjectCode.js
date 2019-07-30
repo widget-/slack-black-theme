@@ -10,13 +10,32 @@ document.addEventListener("DOMContentLoaded", function() {
 
    let customCustomCSS = `
    :root {
-      /* Modify these to change your theme colors: */
-      --primary: #09F;
-      --text: #888;
-      --background: #111;
-      --background-elevated: #222;
-   } 
+      --primary: #61AFEF;
+    --text: rgb(235, 235, 235);
+    --background: #282C34;
+    --background-elevated: #3B4048;
 
+   /* These should be less important: */
+   --background-hover: rgba(255, 255, 255, 0.1);
+   --background-light: rgb(37, 30, 30);
+   --background-bright: rgb(66, 66, 66);
+
+   --border-dim: rgb(185, 178, 178);
+   --border-bright: var(--primary);
+
+   --text-bright: rgb(255, 255, 255);
+   --text-special: var(--primary);
+
+   --scrollbar-background: #000;
+   --scrollbar-border: var(--primary);
+   }
+
+   .p-unreads_view__header, .p-unreads_view, .p-workspace__primary_view_contents {
+      background: var(--background);
+   }
+   .p-classic_nav__channel_header__subtitle {
+      color: var(--text);
+   }
    a[aria-label^="NAME_OF_CHANNEL_OR_DIRECT_CONVO_TO_STYLE"]
    {
         --background: #4d0000  !important;
